@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct StoryTreeNode {
+class StoryTreeNode {
     
     let fileName: String
     let uniqueID: Int
