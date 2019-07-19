@@ -25,6 +25,7 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
         formatStoryScrollView()
         formatStoryContentView()
         createStoryTextLabel()
+        createNextButton()
     }
     
     private func formatStoryContentView() {
@@ -139,6 +140,7 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
     
     private func createChoicesTableView() {
         let choicesTableView = SelfSizedTableView()
+        choicesTableView.translatesAutoresizingMaskIntoConstraints = false
         choicesTableView.delegate = choicesTableViewController
         choicesTableView.dataSource = choicesTableViewController
         choicesTableView.isScrollEnabled = false
@@ -167,6 +169,32 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
                                                     multiplier: 1.0,
                                                     constant: 0)
         NSLayoutConstraint.activate([topConstraint, leadingConstraint, trailingConstraint])
+    }
+    
+    private func createNextButton() {
+        let nextButton = UIButton()
+        nextButton.setTitle("Next", for: .normal)
+        nextButton.setTitleColor(.blue, for: .normal)
+        nextButton.translatesAutoresizingMaskIntoConstraints = false
+        storyContentView.addSubview(nextButton)
+        
+        let topConstraint = NSLayoutConstraint(item: nextButton,
+                                               attribute: .top,
+                                               relatedBy: .equal,
+                                               toItem: storyContentView.subviews[0],
+                                               attribute: .bottom,
+                                               multiplier: 1.0,
+                                               constant: 8)
+        let centerXConstraint = NSLayoutConstraint(item: nextButton,
+                                                   attribute: .centerX,
+                                                   relatedBy: .equal,
+                                                   toItem: storyContentView,
+                                                   attribute: .centerX,
+                                                   multiplier: 1.0,
+                                                   constant: 0)
+        NSLayoutConstraint.activate([topConstraint, centerXConstraint])
+
+        
     }
     //MARK: UIScrollViewDelegate Methods
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
