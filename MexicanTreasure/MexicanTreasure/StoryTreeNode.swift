@@ -10,6 +10,13 @@ import Foundation
 
 class StoryTreeNode {
     
+    init(fileName: String, uniqueID: Int, requiredStatsDict: [Stats: Int], next: [StoryTreeNode]) {
+        self.fileName = fileName
+        self.uniqueID = uniqueID
+        self.requiredStatsDict = requiredStatsDict
+        self.next = next
+    }
+    
     let fileName: String
     let uniqueID: Int
     let requiredStatsDict: [Stats: Int]
