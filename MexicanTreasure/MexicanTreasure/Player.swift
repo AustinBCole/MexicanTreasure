@@ -26,19 +26,19 @@ class Player {
     let name: String
     var infamy: Int
     
-    private func setStat(stat: Stats, value: Int) {
+    internal func setStat(stat: Stats, value: Int) {
         statsDict[stat] = value
     }
-    private func getStat(stat: Stats) -> Int {
+    internal func getStat(stat: Stats) -> Int {
         return statsDict[stat] ?? 0
     }
-    private func getName() -> String {
+    internal func getName() -> String {
         return name
     }
-    private func setInfamy(value: Int) {
+    internal func setInfamy(value: Int) {
         infamy = value
     }
-    private func getInfamy() -> Int {
+    internal func getInfamy() -> Int {
         return infamy
     }
 }
