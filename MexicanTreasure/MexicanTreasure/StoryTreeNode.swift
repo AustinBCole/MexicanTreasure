@@ -8,12 +8,12 @@
 
 import Foundation
 
-struct SceneListNode {
+struct StoryTreeNode {
     
     let fileName: String
     let uniqueID: Int
     let requiredStatsDict: [Stats: Int]
-    let next: [SceneListNode]
+    let next: [StoryTreeNode]
     
     internal func readFromFile() -> String {
         var text = ""
