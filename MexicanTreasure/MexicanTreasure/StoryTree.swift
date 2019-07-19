@@ -8,4 +8,11 @@
 
 import Foundation
 
-class StoryTree
+class StoryTree {
+    
+    init(storyTreeNode: StoryTreeNode) {
+        self.storyTreeNode = storyTreeNode
+    }
+    
+    var storyTreeNode: StoryTreeNode
+}
