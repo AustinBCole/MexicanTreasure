@@ -138,11 +138,20 @@
                                     <constraint firstItem="QUM-XQ-nb1" firstAttribute="width" secondItem="fmG-BX-zUx" secondAttribute="width" id="bSa-xh-WjQ"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RFV-wB-42a">
+                                <rect key="frame" x="160" y="182.5" width="94" height="30"/>
+                                <state key="normal" title="Restart Game"/>
+                                <connections>
+                                    <action selector="restartGameButtonTapped:" destination="QKg-GT-mUa" eventType="touchUpInside" id="SFR-1u-6p8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="ab5-aF-gJs" secondAttribute="trailing" constant="20" id="Ezh-TB-KNt"/>
+                            <constraint firstItem="RFV-wB-42a" firstAttribute="centerX" secondItem="Zu9-Ur-Nhg" secondAttribute="centerX" id="Seb-4k-7Ao"/>
                             <constraint firstItem="ab5-aF-gJs" firstAttribute="top" secondItem="Zu9-Ur-Nhg" secondAttribute="topMargin" constant="20" id="Z1s-0E-Yjm"/>
+                            <constraint firstItem="RFV-wB-42a" firstAttribute="top" secondItem="ab5-aF-gJs" secondAttribute="bottom" constant="8" id="smC-Nc-1lR"/>
                             <constraint firstItem="ab5-aF-gJs" firstAttribute="leading" secondItem="Zu9-Ur-Nhg" secondAttribute="leadingMargin" constant="20" id="tCi-vL-smy"/>
                         </constraints>
                     </view>

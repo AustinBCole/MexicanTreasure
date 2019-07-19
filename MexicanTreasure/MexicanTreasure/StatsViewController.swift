@@ -28,6 +28,9 @@ class StatsViewController: UIViewController {
         super.viewWillAppear(animated)
         populateLabelsText()
     }
+    @IBAction func restartGameButtonTapped(_ sender: Any) {
+    }
+    
     //MARK: Private Methods
     private func populateLabelsText() {
         let player = guardPlayer()
