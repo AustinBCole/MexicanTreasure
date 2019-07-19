@@ -33,7 +33,7 @@ class StoryViewController: UIViewController {
                                                toItem: view,
                                                attribute: .top,
                                                multiplier: 1.0,
-                                               constant: 20)
+                                               constant: 60)
         let leadingConstraint = NSLayoutConstraint(item: storyScrollView,
                                                    attribute: .leading,
                                                    relatedBy: .equal,
@@ -54,7 +54,7 @@ class StoryViewController: UIViewController {
                                                   toItem: view,
                                                   attribute: .bottom,
                                                   multiplier: 1.0,
-                                                  constant: 20)
+                                                  constant: 60)
         NSLayoutConstraint.activate([topConstraint, leadingConstraint, trailingConstraint, bottomConstraint])
         
     }
