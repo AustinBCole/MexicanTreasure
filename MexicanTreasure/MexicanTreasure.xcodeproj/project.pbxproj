@@ -19,6 +19,7 @@
 		A2A6C45F22E262DD0055DAA1 /* StoryTreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6C45E22E262DD0055DAA1 /* StoryTreeNode.swift */; };
 		A2A6C46122E265940055DAA1 /* SceneLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6C46022E265940055DAA1 /* SceneLinkedList.swift */; };
 		A2A6C46322E266B80055DAA1 /* StoryTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6C46222E266B80055DAA1 /* StoryTree.swift */; };
+		A2A6C46522E268790055DAA1 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6C46422E268790055DAA1 /* StatsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		A2A6C45E22E262DD0055DAA1 /* StoryTreeNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryTreeNode.swift; sourceTree = "<group>"; };
 		A2A6C46022E265940055DAA1 /* SceneLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneLinkedList.swift; sourceTree = "<group>"; };
 		A2A6C46222E266B80055DAA1 /* StoryTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryTree.swift; sourceTree = "<group>"; };
+		A2A6C46422E268790055DAA1 /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				A2A6C44622E232EA0055DAA1 /* ViewController.swift */,
 				A2A6C44822E232EA0055DAA1 /* Main.storyboard */,
 				A2A6C45622E233470055DAA1 /* StoryViewController.swift */,
+				A2A6C46422E268790055DAA1 /* StatsViewController.swift */,
 				A2A6C45C22E24AED0055DAA1 /* Player.swift */,
 				A2A6C45E22E262DD0055DAA1 /* StoryTreeNode.swift */,
 				A2A6C46222E266B80055DAA1 /* StoryTree.swift */,
@@ -164,6 +167,7 @@
 				A2A6C45B22E246710055DAA1 /* SelfSizedTableView.swift in Sources */,
 				A2A6C45F22E262DD0055DAA1 /* StoryTreeNode.swift in Sources */,
 				A2A6C45D22E24AED0055DAA1 /* Player.swift in Sources */,
+				A2A6C46522E268790055DAA1 /* StatsViewController.swift in Sources */,
 				A2A6C44522E232EA0055DAA1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
