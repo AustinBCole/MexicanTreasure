@@ -8,23 +8,67 @@
 
 import UIKit
 
-class StoryViewController: UIViewController {
+class StoryViewController: UIViewController, UIScrollViewDelegate {
     
     private let storyScrollView = UIScrollView()
+    private let storyContentView = UIView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         createViews()
+        storyScrollView.delegate = self
         // Do any additional setup after loading the view.
     }
     
     private func createViews() {
         formatStoryScrollView()
+        formatStoryContentView()
         createStoryTextLabel()
+    }
+    
+    private func formatStoryContentView() {
+        storyContentView.translatesAutoresizingMaskIntoConstraints = false
+        storyScrollView.addSubview(storyContentView)
+        
+        let topConstraint = NSLayoutConstraint(item: storyContentView,
+                                               attribute: .top,
+                                               relatedBy: .equal,
+                                               toItem: view,
+                                               attribute: .top,
+                                               multiplier: 1.0,
+                                               constant: 60)
+        let leadingConstraint = NSLayoutConstraint(item: storyContentView,
+                                                   attribute: .leading,
+                                                   relatedBy: .equal,
+                                                   toItem: view,
+                                                   attribute: .leading,
+                                                   multiplier: 1.0,
+                                                   constant: 20)
+        let trailingConstraint = NSLayoutConstraint(item: storyContentView,
+                                                    attribute: .trailing,
+                                                    relatedBy: .equal,
+                                                    toItem: view,
+                                                    attribute: .trailing,
+                                                    multiplier: 1.0,
+                                                    constant: -20)
+        let bottomConstraint = NSLayoutConstraint(item: storyContentView,
+                                                  attribute: .bottom,
+                                                  relatedBy: .equal,
+                                                  toItem: view,
+                                                  attribute: .bottom,
+                                                  multiplier: 1.0,
+                                                  constant: 60)
+        
+        NSLayoutConstraint.activate([topConstraint, trailingConstraint, leadingConstraint, bottomConstraint])
+        
     }
     
     private func formatStoryScrollView() {
         storyScrollView.translatesAutoresizingMaskIntoConstraints = false
+        var heightOfSubviews: CGFloat = 0
+        for subView in storyScrollView.subviews {
+            heightOfSubviews += subView.frame.height
+        }
         view.addSubview(storyScrollView)
         
         let topConstraint = NSLayoutConstraint(item: storyScrollView,
@@ -65,41 +109,34 @@ class StoryViewController: UIViewController {
         storyTextLabel.lineBreakMode = .byWordWrapping
         storyTextLabel.numberOfLines = 0
         storyTextLabel.text = "Hello world. Let's see if this word wraps appropriately, and if the container view goes down. Whoohoo! Hopefully these words are enough to accomplish the purpose."
-        storyScrollView.addSubview(storyTextLabel)
+        storyContentView.addSubview(storyTextLabel)
         
         let topConstraint = NSLayoutConstraint(item: storyTextLabel,
                                                attribute: .top,
                                                relatedBy: .equal,
-                                               toItem: storyScrollView,
+                                               toItem: storyContentView,
                                                attribute: .top,
                                                multiplier: 1.0,
                                                constant: 0)
         let leadingConstraint = NSLayoutConstraint(item: storyTextLabel,
                                                    attribute: .leading,
                                                    relatedBy: .equal,
-                                                   toItem: storyScrollView,
+                                                   toItem: storyContentView,
                                                    attribute: .leading,
                                                    multiplier: 1.0,
                                                    constant: 0)
         let trailingConstraint = NSLayoutConstraint(item: storyTextLabel,
                                                     attribute: .trailing,
                                                     relatedBy: .equal,
-                                                    toItem: storyScrollView,
+                                                    toItem: storyContentView,
                                                     attribute: .trailing,
                                                     multiplier: 1.0,
                                                     constant: 0)
         
         NSLayoutConstraint.activate([topConstraint, leadingConstraint, trailingConstraint])
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    //MARK: UIScrollViewDelegate Methods
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        scrollView.contentOffset.x = 0.0
     }
-    */
-
 }
