@@ -12,6 +12,7 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
     
     private let storyScrollView = UIScrollView()
     private let storyContentView = UIView()
+    private let choicesTableViewController = ChoicesTableViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -133,6 +134,38 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
                                                     multiplier: 1.0,
                                                     constant: 0)
         
+        NSLayoutConstraint.activate([topConstraint, leadingConstraint, trailingConstraint])
+    }
+    
+    private func createChoicesTableView() {
+        let choicesTableView = SelfSizedTableView()
+        choicesTableView.delegate = choicesTableViewController
+        choicesTableView.dataSource = choicesTableViewController
+        choicesTableView.isScrollEnabled = false
+        choicesTableView.maxHeight = 372
+        storyContentView.addSubview(choicesTableView)
+        
+        let topConstraint = NSLayoutConstraint(item: choicesTableView,
+                                               attribute: .top,
+                                               relatedBy: .equal,
+                                               toItem: storyContentView.subviews[0],
+                                               attribute: .bottom,
+                                               multiplier: 1.0,
+                                               constant: 8)
+        let leadingConstraint = NSLayoutConstraint(item: choicesTableView,
+                                                   attribute: .leading,
+                                                   relatedBy: .equal,
+                                                   toItem: storyContentView,
+                                                   attribute: .leading,
+                                                   multiplier: 1.0,
+                                                   constant: 0)
+        let trailingConstraint = NSLayoutConstraint(item: choicesTableView,
+                                                    attribute: .trailing,
+                                                    relatedBy: .equal,
+                                                    toItem: storyContentView,
+                                                    attribute: .trailing,
+                                                    multiplier: 1.0,
+                                                    constant: 0)
         NSLayoutConstraint.activate([topConstraint, leadingConstraint, trailingConstraint])
     }
     //MARK: UIScrollViewDelegate Methods
