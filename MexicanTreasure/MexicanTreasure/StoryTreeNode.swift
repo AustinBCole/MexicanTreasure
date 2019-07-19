@@ -8,7 +8,7 @@
 
 import Foundation
 
-class StoryTreeNode {
+struct StoryTreeNode {
     
     init(fileName: String, uniqueID: Int, requiredStatsDict: [Stats: Int], next: [StoryTreeNode]) {
         self.fileName = fileName
