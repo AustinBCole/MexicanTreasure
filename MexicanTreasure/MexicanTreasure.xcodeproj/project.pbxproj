@@ -16,7 +16,8 @@
 		A2A6C45922E234CC0055DAA1 /* ChoicesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6C45822E234CC0055DAA1 /* ChoicesTableViewController.swift */; };
 		A2A6C45B22E246710055DAA1 /* SelfSizedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6C45A22E246710055DAA1 /* SelfSizedTableView.swift */; };
 		A2A6C45D22E24AED0055DAA1 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6C45C22E24AED0055DAA1 /* Player.swift */; };
-		A2A6C45F22E262DD0055DAA1 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6C45E22E262DD0055DAA1 /* Scene.swift */; };
+		A2A6C45F22E262DD0055DAA1 /* SceneListNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6C45E22E262DD0055DAA1 /* SceneListNode.swift */; };
+		A2A6C46122E265940055DAA1 /* SceneLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6C46022E265940055DAA1 /* SceneLinkedList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +32,8 @@
 		A2A6C45822E234CC0055DAA1 /* ChoicesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoicesTableViewController.swift; sourceTree = "<group>"; };
 		A2A6C45A22E246710055DAA1 /* SelfSizedTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfSizedTableView.swift; sourceTree = "<group>"; };
 		A2A6C45C22E24AED0055DAA1 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
-		A2A6C45E22E262DD0055DAA1 /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
+		A2A6C45E22E262DD0055DAA1 /* SceneListNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneListNode.swift; sourceTree = "<group>"; };
+		A2A6C46022E265940055DAA1 /* SceneLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneLinkedList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +71,8 @@
 				A2A6C44822E232EA0055DAA1 /* Main.storyboard */,
 				A2A6C45622E233470055DAA1 /* StoryViewController.swift */,
 				A2A6C45C22E24AED0055DAA1 /* Player.swift */,
-				A2A6C45E22E262DD0055DAA1 /* Scene.swift */,
+				A2A6C45E22E262DD0055DAA1 /* SceneListNode.swift */,
+				A2A6C46022E265940055DAA1 /* SceneLinkedList.swift */,
 				A2A6C45A22E246710055DAA1 /* SelfSizedTableView.swift */,
 				A2A6C45822E234CC0055DAA1 /* ChoicesTableViewController.swift */,
 				A2A6C44B22E232EA0055DAA1 /* Assets.xcassets */,
@@ -152,9 +155,10 @@
 			files = (
 				A2A6C45922E234CC0055DAA1 /* ChoicesTableViewController.swift in Sources */,
 				A2A6C45722E233470055DAA1 /* StoryViewController.swift in Sources */,
+				A2A6C46122E265940055DAA1 /* SceneLinkedList.swift in Sources */,
 				A2A6C44722E232EA0055DAA1 /* ViewController.swift in Sources */,
 				A2A6C45B22E246710055DAA1 /* SelfSizedTableView.swift in Sources */,
-				A2A6C45F22E262DD0055DAA1 /* Scene.swift in Sources */,
+				A2A6C45F22E262DD0055DAA1 /* SceneListNode.swift in Sources */,
 				A2A6C45D22E24AED0055DAA1 /* Player.swift in Sources */,
 				A2A6C44522E232EA0055DAA1 /* AppDelegate.swift in Sources */,
 			);
