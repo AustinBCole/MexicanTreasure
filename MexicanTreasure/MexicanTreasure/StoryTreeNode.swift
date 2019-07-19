@@ -10,7 +10,7 @@ import Foundation
 
 struct StoryTreeNode {
     
-    init(fileName: String, uniqueID: Int, requiredStatsDict: [Stats: Int], next: [StoryTreeNode]) {
+    init(fileName: String, uniqueID: Int, requiredStatsDict: [Stats: Int]?, next: [StoryTreeNode]) {
         self.fileName = fileName
         self.uniqueID = uniqueID
         self.requiredStatsDict = requiredStatsDict
@@ -19,7 +19,7 @@ struct StoryTreeNode {
     
     let fileName: String
     let uniqueID: Int
-    let requiredStatsDict: [Stats: Int]
+    let requiredStatsDict: [Stats: Int]?
     let next: [StoryTreeNode]
     
     internal func readFromFile() -> String {
@@ -37,10 +37,13 @@ struct StoryTreeNode {
         }
         return text
     }
+    internal func getNextScenes() -> [StoryTreeNode] {
+        return next
+    }
     internal func getUniqueID() -> Int {
         return uniqueID
     }
-    internal func getRequiredStatsDict() -> [Stats: Int] {
+    internal func getRequiredStatsDict() -> [Stats: Int]? {
         return requiredStatsDict
     }
     

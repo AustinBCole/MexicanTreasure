@@ -9,15 +9,25 @@
 import UIKit
 
 class ChoicesTableViewController: UITableViewController {
+    
+    private var choices: [StoryTreeNode] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    //MARK: Internal Methods
+    internal func setChoices(choices: [StoryTreeNode]) {
+        self.choices = choices
     }
 
     // MARK: - Table view data source
