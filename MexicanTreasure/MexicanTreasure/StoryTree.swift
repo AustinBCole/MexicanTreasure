@@ -14,5 +14,12 @@ class StoryTree {
         self.storyTreeNode = storyTreeNode
     }
     
-    var storyTreeNode: StoryTreeNode
+    private var storyTreeNode: StoryTreeNode
+    
+    internal func getScene() -> StoryTreeNode {
+        return storyTreeNode
+    }
+    internal func advanceToNextScene(index: Int) {
+        storyTreeNode = storyTreeNode.next[index]
+    }
 }

@@ -17,6 +17,7 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
     private let choicesTableView = SelfSizedTableView()
     private let choicesTableViewController = ChoicesTableViewController()
     private let player: Player? = nil
+    private let storyTree = StoryTree()
     
     
     override func viewDidLoad() {
@@ -24,7 +25,7 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
         createViews()
         storyScrollView.delegate = self
         choicesTableViewController.tableView = choicesTableView
-        nextButton.addTarget(self, action: #selector(<#T##@objc method#>), for: <#T##UIControl.Event#>)
+        nextButton.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
         // Do any additional setup after loading the view.
     }
     @objc
@@ -36,16 +37,16 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
     private func choiceAlgorithm() {
         // Check to see if the choice requires a specific stat
         let player = Player.guardPlayer(player: self.player)
-        
+        let scene = storyTree.storyTreeNode
         // If the player does meet the stat requirement for choice
-        if player.doesMeetSceneStatRequirements(scene: <#T##StoryTreeNode#>) {
+        if player.doesMeetSceneStatRequirements(scene: scene) {
             // Player can make choice
             // Update story text with new scene text
-            updateStoryText(scene: <#T##StoryTreeNode#>)
+            updateStoryText(scene: scene)
             // If there are choices associated with new scene
             if scene.getNextScenes.count != 0 {
                 // Update the table view to display the new choices associated with that scene
-                updateChoicesTableView(scene: <#T##StoryTreeNode#>)
+                updateChoicesTableView(scene: scene)
             }
             // Else
             else {
