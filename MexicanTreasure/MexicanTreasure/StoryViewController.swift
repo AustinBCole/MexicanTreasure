@@ -22,7 +22,7 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
     private let choicesTableView = IntrinsicTableView()
     private let choicesTableViewController = ChoicesTableViewController()
     private let player: Player? = nil
-    private let storyTree = StoryTree(storyTreeNode: StoryTreeNode(fileName: "opening", uniqueID: 1, requiredStatsDict: nil, next: []))
+    private let storyTree = StoryTree(storyTreeNode: StoryTreeNode(fileName: "opening", uniqueID: 1, requiredStatsDict: nil, next: [], choiceText: "Whatever"))
 
     
     

@@ -28,7 +28,7 @@ class StoryTree {
         let flee = StoryTreeNode(fileName: "flee", uniqueID: 8, requiredStatsDict: [.strength: 1], next: [robberTogetherGetIt, robberScout, robberAlone, aloneWithoutRobber], choiceText: "The robber must know what is going on. You bust the robber out of jail.")
         let mexico = StoryTreeNode(fileName: "mexico", uniqueID: 7, requiredStatsDict: nil, next: [], choiceText: "You decide to go it alone and do your own research.")
         let friend = StoryTreeNode(fileName: "friend", uniqueID: 6, requiredStatsDict: nil, next: [fly], choiceText:  "You get help from an archeaoligist friend.")
-        let theft = StoryTreeNode(fileName: "theft", uniqueID: 5, requiredStatsDict: nil, next: [friend, mexico, flee], "You hide in a closet.")
+        let theft = StoryTreeNode(fileName: "theft", uniqueID: 5, requiredStatsDict: nil, next: [friend, mexico, flee], choiceText: "You hide in a closet.")
         let defend = StoryTreeNode(fileName: "defend", uniqueID: 4, requiredStatsDict: nil, next: [friend, mexico], choiceText: "You run for your handgun to shoot the robber.")
         let pizza = StoryTreeNode(fileName: "pizza", uniqueID: 3, requiredStatsDict: nil, next: [], choiceText: "You make the robber a pizza as a peace offering and hope he leaves.")
         let robber = StoryTreeNode(fileName: "robber", uniqueID: 2, requiredStatsDict: nil, next: [pizza, defend, theft], choiceText: nil)

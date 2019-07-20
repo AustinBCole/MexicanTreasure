@@ -45,8 +45,9 @@ class ChoicesTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let choiceCell = UITableViewCell(style: .default, reuseIdentifier: "reuseIdentifier")
-
-        choiceCell.textLabel?.text = "Hello"
+        if let choiceText = choices[indexPath.row].choiceText {
+            choiceCell.textLabel?.text = choiceText
+        }
 
         return choiceCell
     }
