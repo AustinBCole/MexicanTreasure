@@ -19,7 +19,7 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
     private let storyContentView = UIView()
     private let storyTextLabel = UILabel()
     private let nextButton = UIButton()
-    private let choicesTableView = SelfSizedTableView()
+    private let choicesTableView = IntrinsicTableView()
     private let choicesTableViewController = ChoicesTableViewController()
     private let player: Player? = nil
     private let storyTree = StoryTree(storyTreeNode: StoryTreeNode(fileName: "opening", uniqueID: 1, requiredStatsDict: nil, next: []))
@@ -109,6 +109,7 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
         formatStoryContentView()
         formatStoryTextLabel()
         formatNextButton()
+        formatChoicesTableView()
     }
     
     private func formatStoryContentView() {
@@ -224,7 +225,9 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
         choicesTableView.delegate = choicesTableViewController
         choicesTableView.dataSource = choicesTableViewController
         choicesTableView.isScrollEnabled = false
-        choicesTableView.maxHeight = 372
+        // The next two properties are for automatically resizing the cells
+        choicesTableView.estimatedRowHeight = 85.0
+        choicesTableView.rowHeight = UITableView.automaticDimension
         storyContentView.addSubview(choicesTableView)
         
         let topConstraint = NSLayoutConstraint(item: choicesTableView,
