@@ -14,12 +14,26 @@
 		A2A6C44F22E232EA0055DAA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2A6C44D22E232EA0055DAA1 /* LaunchScreen.storyboard */; };
 		A2A6C45722E233470055DAA1 /* StoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6C45622E233470055DAA1 /* StoryViewController.swift */; };
 		A2A6C45922E234CC0055DAA1 /* ChoicesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6C45822E234CC0055DAA1 /* ChoicesTableViewController.swift */; };
-		A2A6C45B22E246710055DAA1 /* SelfSizedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6C45A22E246710055DAA1 /* SelfSizedTableView.swift */; };
+		A2A6C45B22E246710055DAA1 /* IntrinsicTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6C45A22E246710055DAA1 /* IntrinsicTableView.swift */; };
 		A2A6C45D22E24AED0055DAA1 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6C45C22E24AED0055DAA1 /* Player.swift */; };
 		A2A6C45F22E262DD0055DAA1 /* StoryTreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6C45E22E262DD0055DAA1 /* StoryTreeNode.swift */; };
-		A2A6C46122E265940055DAA1 /* SceneLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6C46022E265940055DAA1 /* SceneLinkedList.swift */; };
 		A2A6C46322E266B80055DAA1 /* StoryTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6C46222E266B80055DAA1 /* StoryTree.swift */; };
 		A2A6C46522E268790055DAA1 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6C46422E268790055DAA1 /* StatsViewController.swift */; };
+		A2A6C47722E332E30055DAA1 /* robber_scout.txt in Resources */ = {isa = PBXBuildFile; fileRef = A2A6C46822E332E20055DAA1 /* robber_scout.txt */; };
+		A2A6C47822E332E30055DAA1 /* robber_together_get_it.txt in Resources */ = {isa = PBXBuildFile; fileRef = A2A6C46922E332E20055DAA1 /* robber_together_get_it.txt */; };
+		A2A6C47922E332E30055DAA1 /* friend_together.txt in Resources */ = {isa = PBXBuildFile; fileRef = A2A6C46A22E332E20055DAA1 /* friend_together.txt */; };
+		A2A6C47A22E332E30055DAA1 /* theft.txt in Resources */ = {isa = PBXBuildFile; fileRef = A2A6C46B22E332E20055DAA1 /* theft.txt */; };
+		A2A6C47B22E332E30055DAA1 /* defend.txt in Resources */ = {isa = PBXBuildFile; fileRef = A2A6C46C22E332E20055DAA1 /* defend.txt */; };
+		A2A6C47C22E332E30055DAA1 /* friend.txt in Resources */ = {isa = PBXBuildFile; fileRef = A2A6C46D22E332E20055DAA1 /* friend.txt */; };
+		A2A6C47D22E332E30055DAA1 /* fly.txt in Resources */ = {isa = PBXBuildFile; fileRef = A2A6C46E22E332E20055DAA1 /* fly.txt */; };
+		A2A6C47E22E332E30055DAA1 /* pizza.txt in Resources */ = {isa = PBXBuildFile; fileRef = A2A6C46F22E332E20055DAA1 /* pizza.txt */; };
+		A2A6C47F22E332E30055DAA1 /* mexico.txt in Resources */ = {isa = PBXBuildFile; fileRef = A2A6C47022E332E20055DAA1 /* mexico.txt */; };
+		A2A6C48022E332E30055DAA1 /* friend_scout.txt in Resources */ = {isa = PBXBuildFile; fileRef = A2A6C47122E332E20055DAA1 /* friend_scout.txt */; };
+		A2A6C48122E332E30055DAA1 /* robber_alone.txt in Resources */ = {isa = PBXBuildFile; fileRef = A2A6C47222E332E20055DAA1 /* robber_alone.txt */; };
+		A2A6C48222E332E30055DAA1 /* opening.txt in Resources */ = {isa = PBXBuildFile; fileRef = A2A6C47322E332E20055DAA1 /* opening.txt */; };
+		A2A6C48322E332E30055DAA1 /* robber.txt in Resources */ = {isa = PBXBuildFile; fileRef = A2A6C47422E332E30055DAA1 /* robber.txt */; };
+		A2A6C48422E332E30055DAA1 /* alone_without_robber.txt in Resources */ = {isa = PBXBuildFile; fileRef = A2A6C47522E332E30055DAA1 /* alone_without_robber.txt */; };
+		A2A6C48522E332E30055DAA1 /* flee.txt in Resources */ = {isa = PBXBuildFile; fileRef = A2A6C47622E332E30055DAA1 /* flee.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,12 +46,26 @@
 		A2A6C45022E232EA0055DAA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2A6C45622E233470055DAA1 /* StoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewController.swift; sourceTree = "<group>"; };
 		A2A6C45822E234CC0055DAA1 /* ChoicesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoicesTableViewController.swift; sourceTree = "<group>"; };
-		A2A6C45A22E246710055DAA1 /* SelfSizedTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfSizedTableView.swift; sourceTree = "<group>"; };
+		A2A6C45A22E246710055DAA1 /* IntrinsicTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntrinsicTableView.swift; sourceTree = "<group>"; };
 		A2A6C45C22E24AED0055DAA1 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		A2A6C45E22E262DD0055DAA1 /* StoryTreeNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryTreeNode.swift; sourceTree = "<group>"; };
-		A2A6C46022E265940055DAA1 /* SceneLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneLinkedList.swift; sourceTree = "<group>"; };
 		A2A6C46222E266B80055DAA1 /* StoryTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryTree.swift; sourceTree = "<group>"; };
 		A2A6C46422E268790055DAA1 /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
+		A2A6C46822E332E20055DAA1 /* robber_scout.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = robber_scout.txt; path = ../../robber_scout.txt; sourceTree = "<group>"; };
+		A2A6C46922E332E20055DAA1 /* robber_together_get_it.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = robber_together_get_it.txt; path = ../../robber_together_get_it.txt; sourceTree = "<group>"; };
+		A2A6C46A22E332E20055DAA1 /* friend_together.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = friend_together.txt; path = ../../friend_together.txt; sourceTree = "<group>"; };
+		A2A6C46B22E332E20055DAA1 /* theft.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = theft.txt; path = ../../theft.txt; sourceTree = "<group>"; };
+		A2A6C46C22E332E20055DAA1 /* defend.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = defend.txt; path = ../../defend.txt; sourceTree = "<group>"; };
+		A2A6C46D22E332E20055DAA1 /* friend.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = friend.txt; path = ../../friend.txt; sourceTree = "<group>"; };
+		A2A6C46E22E332E20055DAA1 /* fly.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = fly.txt; path = ../../fly.txt; sourceTree = "<group>"; };
+		A2A6C46F22E332E20055DAA1 /* pizza.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = pizza.txt; path = ../../pizza.txt; sourceTree = "<group>"; };
+		A2A6C47022E332E20055DAA1 /* mexico.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = mexico.txt; path = ../../mexico.txt; sourceTree = "<group>"; };
+		A2A6C47122E332E20055DAA1 /* friend_scout.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = friend_scout.txt; path = ../../friend_scout.txt; sourceTree = "<group>"; };
+		A2A6C47222E332E20055DAA1 /* robber_alone.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = robber_alone.txt; path = ../../robber_alone.txt; sourceTree = "<group>"; };
+		A2A6C47322E332E20055DAA1 /* opening.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = opening.txt; path = ../../opening.txt; sourceTree = "<group>"; };
+		A2A6C47422E332E30055DAA1 /* robber.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = robber.txt; path = ../../robber.txt; sourceTree = "<group>"; };
+		A2A6C47522E332E30055DAA1 /* alone_without_robber.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = alone_without_robber.txt; path = ../../alone_without_robber.txt; sourceTree = "<group>"; };
+		A2A6C47622E332E30055DAA1 /* flee.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = flee.txt; path = ../../flee.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,9 +106,23 @@
 				A2A6C45C22E24AED0055DAA1 /* Player.swift */,
 				A2A6C45E22E262DD0055DAA1 /* StoryTreeNode.swift */,
 				A2A6C46222E266B80055DAA1 /* StoryTree.swift */,
-				A2A6C46022E265940055DAA1 /* SceneLinkedList.swift */,
-				A2A6C45A22E246710055DAA1 /* SelfSizedTableView.swift */,
+				A2A6C45A22E246710055DAA1 /* IntrinsicTableView.swift */,
 				A2A6C45822E234CC0055DAA1 /* ChoicesTableViewController.swift */,
+				A2A6C47522E332E30055DAA1 /* alone_without_robber.txt */,
+				A2A6C46C22E332E20055DAA1 /* defend.txt */,
+				A2A6C47622E332E30055DAA1 /* flee.txt */,
+				A2A6C46E22E332E20055DAA1 /* fly.txt */,
+				A2A6C47122E332E20055DAA1 /* friend_scout.txt */,
+				A2A6C46A22E332E20055DAA1 /* friend_together.txt */,
+				A2A6C46D22E332E20055DAA1 /* friend.txt */,
+				A2A6C47022E332E20055DAA1 /* mexico.txt */,
+				A2A6C47322E332E20055DAA1 /* opening.txt */,
+				A2A6C46F22E332E20055DAA1 /* pizza.txt */,
+				A2A6C47222E332E20055DAA1 /* robber_alone.txt */,
+				A2A6C46822E332E20055DAA1 /* robber_scout.txt */,
+				A2A6C46922E332E20055DAA1 /* robber_together_get_it.txt */,
+				A2A6C47422E332E30055DAA1 /* robber.txt */,
+				A2A6C46B22E332E20055DAA1 /* theft.txt */,
 				A2A6C44B22E232EA0055DAA1 /* Assets.xcassets */,
 				A2A6C44D22E232EA0055DAA1 /* LaunchScreen.storyboard */,
 				A2A6C45022E232EA0055DAA1 /* Info.plist */,
@@ -146,9 +188,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2A6C47822E332E30055DAA1 /* robber_together_get_it.txt in Resources */,
 				A2A6C44F22E232EA0055DAA1 /* LaunchScreen.storyboard in Resources */,
+				A2A6C47D22E332E30055DAA1 /* fly.txt in Resources */,
+				A2A6C47C22E332E30055DAA1 /* friend.txt in Resources */,
+				A2A6C48322E332E30055DAA1 /* robber.txt in Resources */,
+				A2A6C48022E332E30055DAA1 /* friend_scout.txt in Resources */,
+				A2A6C47A22E332E30055DAA1 /* theft.txt in Resources */,
+				A2A6C47F22E332E30055DAA1 /* mexico.txt in Resources */,
+				A2A6C47922E332E30055DAA1 /* friend_together.txt in Resources */,
+				A2A6C48122E332E30055DAA1 /* robber_alone.txt in Resources */,
 				A2A6C44C22E232EA0055DAA1 /* Assets.xcassets in Resources */,
+				A2A6C48222E332E30055DAA1 /* opening.txt in Resources */,
+				A2A6C47E22E332E30055DAA1 /* pizza.txt in Resources */,
 				A2A6C44A22E232EA0055DAA1 /* Main.storyboard in Resources */,
+				A2A6C47B22E332E30055DAA1 /* defend.txt in Resources */,
+				A2A6C47722E332E30055DAA1 /* robber_scout.txt in Resources */,
+				A2A6C48522E332E30055DAA1 /* flee.txt in Resources */,
+				A2A6C48422E332E30055DAA1 /* alone_without_robber.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,10 +218,9 @@
 			files = (
 				A2A6C45922E234CC0055DAA1 /* ChoicesTableViewController.swift in Sources */,
 				A2A6C45722E233470055DAA1 /* StoryViewController.swift in Sources */,
-				A2A6C46122E265940055DAA1 /* SceneLinkedList.swift in Sources */,
 				A2A6C44722E232EA0055DAA1 /* ViewController.swift in Sources */,
 				A2A6C46322E266B80055DAA1 /* StoryTree.swift in Sources */,
-				A2A6C45B22E246710055DAA1 /* SelfSizedTableView.swift in Sources */,
+				A2A6C45B22E246710055DAA1 /* IntrinsicTableView.swift in Sources */,
 				A2A6C45F22E262DD0055DAA1 /* StoryTreeNode.swift in Sources */,
 				A2A6C45D22E24AED0055DAA1 /* Player.swift in Sources */,
 				A2A6C46522E268790055DAA1 /* StatsViewController.swift in Sources */,

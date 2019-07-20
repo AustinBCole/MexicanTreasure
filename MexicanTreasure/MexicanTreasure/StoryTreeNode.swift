@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct StoryTreeNode {
+class StoryTreeNode {
     
-    init(fileName: String, uniqueID: Int, requiredStatsDict: [Stats: Int], next: [StoryTreeNode]) {
+    init(fileName: String, uniqueID: Int, requiredStatsDict: [Stats: Int]?, next: [StoryTreeNode]) {
         self.fileName = fileName
         self.uniqueID = uniqueID
         self.requiredStatsDict = requiredStatsDict
@@ -19,28 +19,27 @@ struct StoryTreeNode {
     
     let fileName: String
     let uniqueID: Int
-    let requiredStatsDict: [Stats: Int]
+    let requiredStatsDict: [Stats: Int]?
     let next: [StoryTreeNode]
     
     internal func readFromFile() -> String {
-        var text = ""
-        if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
-            let file = "\(fileName).txt"
-            let fileURL = dir.appendingPathComponent(file)
-            //reading
-            do {
-                text = try String(contentsOf: fileURL, encoding: .utf8)
-            }
-            catch {
-                fatalError("Error reading from \(fileName).txt: \(error.localizedDescription)")
-            }
+        let file = self.fileName
+        let path = Bundle.main.path(forResource: file, ofType: "txt")
+        let text: String
+        do {
+            text = try String(contentsOfFile: path!, encoding: .utf8)
+        } catch {
+            fatalError()
         }
         return text
+    }
+    internal func getNextScenes() -> [StoryTreeNode] {
+        return next
     }
     internal func getUniqueID() -> Int {
         return uniqueID
     }
-    internal func getRequiredStatsDict() -> [Stats: Int] {
+    internal func getRequiredStatsDict() -> [Stats: Int]? {
         return requiredStatsDict
     }
     

@@ -8,24 +8,108 @@
 
 import UIKit
 
+enum TableOrButton {
+    case choicesTable
+    case nextButton
+}
+
 class StoryViewController: UIViewController, UIScrollViewDelegate {
     
     private let storyScrollView = UIScrollView()
     private let storyContentView = UIView()
+    private let storyTextLabel = UILabel()
+    private let nextButton = UIButton()
+    private let choicesTableView = IntrinsicTableView()
     private let choicesTableViewController = ChoicesTableViewController()
+    private let player: Player? = nil
+    private let storyTree = StoryTree(storyTreeNode: StoryTreeNode(fileName: "opening", uniqueID: 1, requiredStatsDict: nil, next: []))
+
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         createViews()
         storyScrollView.delegate = self
+        choicesTableViewController.tableView = choicesTableView
+        choicesTableView.delegate = choicesTableViewController
+        choicesTableView.dataSource = choicesTableViewController
+        nextButton.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
+        storyTree.initializeStoryTree()
+        updateStoryText(scene: storyTree.getScene())
+        updateChoicesTableView(scene: storyTree.getScene())
+        choicesTableView.isHidden = true
+        
         // Do any additional setup after loading the view.
+    }
+    @objc
+    private func nextButtonTapped() {
+        storyTree.advanceToNextScene(index: 0)
+        choiceAlgorithm()
+    }
+    //MARK: Private Methods
+    private func initializeStory() {
+        
+    }
+    private func choiceAlgorithm() {
+        // Check to see if the choice requires a specific stat
+        let player = Player.guardPlayer(player: self.player)
+        let scene = storyTree.getScene()
+        // If the player does meet the stat requirement for choice
+        if player.doesMeetSceneStatRequirements(scene: scene) {
+            // Player can make choice
+            // Update story text with new scene text
+            updateStoryText(scene: scene)
+            // If there are choices associated with new scene
+            if scene.getNextScenes().count != 0 {
+                // Make sure the choices table is shown
+                toggleChoicesTableViewAndNextButton(element: .choicesTable)
+                // Update the table view to display the new choices associated with that scene
+                updateChoicesTableView(scene: scene)
+            }
+            // Else
+            else {
+                // Display the "next" button and hide the choices table
+                toggleChoicesTableViewAndNextButton(element: .nextButton)
+            }
+        }
+        // Base case for now is just return
+        return
+    }
+    private func toggleChoicesTableViewAndNextButton(element: TableOrButton) {
+        if element == .choicesTable {
+        showChoicesTableView()
+        }
+        else {
+        showNextButton()
+        }
+    }
+    private func showChoicesTableView() {
+        if choicesTableView.isHidden {
+        nextButton.isHidden = true
+        choicesTableView.isHidden = false
+        }
+    }
+    private func showNextButton() {
+        if nextButton.isHidden {
+        choicesTableView.isHidden = true
+        nextButton.isHidden = false
+        }
+    }
+    
+    private func updateStoryText(scene: StoryTreeNode) {
+        storyTextLabel.text = scene.readFromFile()
+    }
+    private func updateChoicesTableView(scene: StoryTreeNode) {
+        let choices = scene.getNextScenes()
+        choicesTableViewController.setChoices(choices: choices)
     }
     
     private func createViews() {
         formatStoryScrollView()
         formatStoryContentView()
-        createStoryTextLabel()
-        createNextButton()
+        formatStoryTextLabel()
+        formatNextButton()
+        formatChoicesTableView()
     }
     
     private func formatStoryContentView() {
@@ -105,12 +189,10 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
         
     }
     
-    private func createStoryTextLabel() {
-        let storyTextLabel = UILabel()
+    private func formatStoryTextLabel() {
         storyTextLabel.translatesAutoresizingMaskIntoConstraints = false
         storyTextLabel.lineBreakMode = .byWordWrapping
         storyTextLabel.numberOfLines = 0
-        storyTextLabel.text = "Hello world. Let's see if this word wraps appropriately, and if the container view goes down. Whoohoo! Hopefully these words are enough to accomplish the purpose."
         storyContentView.addSubview(storyTextLabel)
         
         let topConstraint = NSLayoutConstraint(item: storyTextLabel,
@@ -138,13 +220,15 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
         NSLayoutConstraint.activate([topConstraint, leadingConstraint, trailingConstraint])
     }
     
-    private func createChoicesTableView() {
-        let choicesTableView = SelfSizedTableView()
+    private func formatChoicesTableView() {
         choicesTableView.translatesAutoresizingMaskIntoConstraints = false
         choicesTableView.delegate = choicesTableViewController
         choicesTableView.dataSource = choicesTableViewController
         choicesTableView.isScrollEnabled = false
-        choicesTableView.maxHeight = 372
+        choicesTableView.separatorStyle = .none
+        // The next two properties are for automatically resizing the cells
+        choicesTableView.estimatedRowHeight = 85.0
+        choicesTableView.rowHeight = UITableView.automaticDimension
         storyContentView.addSubview(choicesTableView)
         
         let topConstraint = NSLayoutConstraint(item: choicesTableView,
@@ -168,11 +252,17 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
                                                     attribute: .trailing,
                                                     multiplier: 1.0,
                                                     constant: 0)
-        NSLayoutConstraint.activate([topConstraint, leadingConstraint, trailingConstraint])
+        let bottomConstraint = NSLayoutConstraint(item: choicesTableView,
+                                                  attribute: .bottom,
+                                                  relatedBy: .equal,
+                                                  toItem: storyContentView,
+                                                  attribute: .bottom,
+                                                  multiplier: 1.0,
+                                                  constant: 8)
+        NSLayoutConstraint.activate([topConstraint, leadingConstraint, trailingConstraint, bottomConstraint])
     }
     
-    private func createNextButton() {
-        let nextButton = UIButton()
+    private func formatNextButton() {
         nextButton.setTitle("Next", for: .normal)
         nextButton.setTitleColor(.blue, for: .normal)
         nextButton.translatesAutoresizingMaskIntoConstraints = false

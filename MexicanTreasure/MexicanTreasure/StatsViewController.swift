@@ -28,23 +28,21 @@ class StatsViewController: UIViewController {
         super.viewWillAppear(animated)
         populateLabelsText()
     }
+    @IBAction func restartGameButtonTapped(_ sender: Any) {
+    }
+    
     //MARK: Private Methods
     private func populateLabelsText() {
-        let player = guardPlayer()
+        let player = Player.guardPlayer(player: self.player)
         nameLabel.text = player.getName()
         strengthLabel.text = String(player.getStat(stat: .strength))
         agilityLabel.text = String(player.getStat(stat: .agility))
         ancientLanguagesLabel.text = String(player.getStat(stat: .ancientLanguages))
         infamyLabel.text = String(player.getInfamy())
     }
-    private func guardPlayer() -> Player {
-        let player = self.player ?? Player(statsDict: [.strength: 0, .agility: 0, .ancientLanguages: 0], name: "Corrupted", infamy: 0)
-        return player
-    }
+
     //MARK: Internal Methods
-    internal func setPlayer(player: Player) {
-        self.player = player
-    }
+    
     //MARK: Public Methods
     
     
