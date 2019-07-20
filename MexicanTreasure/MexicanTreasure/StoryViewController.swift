@@ -33,13 +33,16 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
         choicesTableViewController.tableView = choicesTableView
         nextButton.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
         storyTree.initializeStoryTree()
+        updateStoryText(scene: storyTree.getScene())
+        updateChoicesTableView(scene: storyTree.getScene())
+        choicesTableView.isHidden = true
         
         // Do any additional setup after loading the view.
     }
     @objc
     private func nextButtonTapped() {
+        storyTree.advanceToNextScene(index: 0)
         choiceAlgorithm()
-        toggleChoicesTableViewAndNextButton()
     }
     //MARK: Private Methods
     private func initializeStory() {
@@ -48,14 +51,14 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
     private func choiceAlgorithm() {
         // Check to see if the choice requires a specific stat
         let player = Player.guardPlayer(player: self.player)
-        let scene = storyTree.storyTreeNode
+        let scene = storyTree.getScene()
         // If the player does meet the stat requirement for choice
         if player.doesMeetSceneStatRequirements(scene: scene) {
             // Player can make choice
             // Update story text with new scene text
             updateStoryText(scene: scene)
             // If there are choices associated with new scene
-            if scene.getNextScenes.count != 0 {
+            if scene.getNextScenes().count != 0 {
                 // Make sure the choices table is shown
                 toggleChoicesTableViewAndNextButton(element: .choicesTable)
                 // Update the table view to display the new choices associated with that scene
@@ -71,19 +74,23 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
         return
     }
     private func toggleChoicesTableViewAndNextButton(element: TableOrButton) {
+        if element == .choicesTable {
         showChoicesTableView()
+        }
+        else {
         showNextButton()
+        }
     }
     private func showChoicesTableView() {
-        if !storyContentView.subviews.contains(choicesTableView) {
-        nextButton.removeFromSuperview()
-        storyContentView.addSubview(choicesTableView)
+        if choicesTableView.isHidden {
+        nextButton.isHidden = true
+        choicesTableView.isHidden = false
         }
     }
     private func showNextButton() {
-        if !storyContentView.subviews.contains(nextButton) {
-        choicesTableView.removeFromSuperview()
-        storyContentView.addSubview(nextButton)
+        if nextButton.isHidden {
+        choicesTableView.isHidden = true
+        nextButton.isHidden = false
         }
     }
     
