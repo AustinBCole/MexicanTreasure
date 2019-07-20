@@ -26,6 +26,7 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
         storyScrollView.delegate = self
         choicesTableViewController.tableView = choicesTableView
         nextButton.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
+        
         // Do any additional setup after loading the view.
     }
     @objc
@@ -34,6 +35,9 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
         toggleChoicesTableViewAndNextButton()
     }
     //MARK: Private Methods
+    private func initializeStory() {
+        
+    }
     private func choiceAlgorithm() {
         // Check to see if the choice requires a specific stat
         let player = Player.guardPlayer(player: self.player)
