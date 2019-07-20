@@ -10,17 +10,19 @@ import Foundation
 
 class StoryTreeNode {
     
-    init(fileName: String, uniqueID: Int, requiredStatsDict: [Stats: Int]?, next: [StoryTreeNode]) {
+    init(fileName: String, uniqueID: Int, requiredStatsDict: [Stats: Int]?, next: [StoryTreeNode], choiceText: String?) {
         self.fileName = fileName
         self.uniqueID = uniqueID
         self.requiredStatsDict = requiredStatsDict
         self.next = next
+        self.choiceText = choiceText
     }
     
     let fileName: String
     let uniqueID: Int
     let requiredStatsDict: [Stats: Int]?
     let next: [StoryTreeNode]
+    let choiceText: String?
     
     internal func readFromFile() -> String {
         let file = self.fileName
