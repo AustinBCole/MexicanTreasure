@@ -8,8 +8,12 @@
 
 import Foundation
 
-struct StoryTree {
-
+class StoryTree {
+    
+    init(storyTreeNode: StoryTreeNode) {
+        self.storyTreeNode = storyTreeNode
+    }
+    
     private var storyTreeNode: StoryTreeNode
     
     //MARK: Private Methods
