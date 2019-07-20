@@ -31,6 +31,8 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
         createViews()
         storyScrollView.delegate = self
         choicesTableViewController.tableView = choicesTableView
+        choicesTableView.delegate = choicesTableViewController
+        choicesTableView.dataSource = choicesTableViewController
         nextButton.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
         storyTree.initializeStoryTree()
         updateStoryText(scene: storyTree.getScene())
@@ -190,7 +192,6 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
         storyTextLabel.translatesAutoresizingMaskIntoConstraints = false
         storyTextLabel.lineBreakMode = .byWordWrapping
         storyTextLabel.numberOfLines = 0
-        storyTextLabel.text = "Hello world. Let's see if this word wraps appropriately, and if the container view goes down. Whoohoo! Hopefully these words are enough to accomplish the purpose."
         storyContentView.addSubview(storyTextLabel)
         
         let topConstraint = NSLayoutConstraint(item: storyTextLabel,
@@ -247,7 +248,14 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
                                                     attribute: .trailing,
                                                     multiplier: 1.0,
                                                     constant: 0)
-        NSLayoutConstraint.activate([topConstraint, leadingConstraint, trailingConstraint])
+        let bottomConstraint = NSLayoutConstraint(item: choicesTableView,
+                                                  attribute: .bottom,
+                                                  relatedBy: .equal,
+                                                  toItem: storyContentView,
+                                                  attribute: .bottom,
+                                                  multiplier: 1.0,
+                                                  constant: 8)
+        NSLayoutConstraint.activate([topConstraint, leadingConstraint, trailingConstraint, bottomConstraint])
     }
     
     private func formatNextButton() {
