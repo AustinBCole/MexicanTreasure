@@ -22,6 +22,7 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
     private let choicesTableView = SelfSizedTableView()
     private let choicesTableViewController = ChoicesTableViewController()
     private let player: Player? = nil
+    private let storyTree = StoryTree(storyTreeNode: StoryTreeNode(fileName: "opening", uniqueID: 1, requiredStatsDict: nil, next: []))
 
     
     
@@ -31,6 +32,7 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
         storyScrollView.delegate = self
         choicesTableViewController.tableView = choicesTableView
         nextButton.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
+        storyTree.initializeStoryTree()
         
         // Do any additional setup after loading the view.
     }

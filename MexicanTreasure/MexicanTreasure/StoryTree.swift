@@ -16,8 +16,8 @@ class StoryTree {
     
     private var storyTreeNode: StoryTreeNode
     
-    //MARK: Private Methods
-    private func initializeStoryTree() {
+    //MARK: Internal Methods
+    internal func initializeStoryTree() {
         let friendScout = StoryTreeNode(fileName: "friend_scout", uniqueID: 15, requiredStatsDict: nil, next: [])
         let friendTogether = StoryTreeNode(fileName: "friend_together", uniqueID: 14, requiredStatsDict: nil, next: [])
         let aloneWithoutRobber = StoryTreeNode(fileName: "alone_without_robber", uniqueID: 13, requiredStatsDict: nil, next: [])
