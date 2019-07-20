@@ -225,6 +225,7 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
         choicesTableView.delegate = choicesTableViewController
         choicesTableView.dataSource = choicesTableViewController
         choicesTableView.isScrollEnabled = false
+        choicesTableView.separatorStyle = .none
         // The next two properties are for automatically resizing the cells
         choicesTableView.estimatedRowHeight = 85.0
         choicesTableView.rowHeight = UITableView.automaticDimension
