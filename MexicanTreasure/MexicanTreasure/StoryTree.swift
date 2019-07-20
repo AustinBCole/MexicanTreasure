@@ -10,11 +10,12 @@ import Foundation
 
 class StoryTree {
     
-    init(storyTreeNode: StoryTreeNode) {
-        self.storyTreeNode = storyTreeNode
-    }
+    //MARK: Singleton
+    static let shared = StoryTree()
+    private init () {}
     
-    private var storyTreeNode: StoryTreeNode
+    
+    private var storyTreeNode: StoryTreeNode = StoryTreeNode(fileName: "opening", uniqueID: 1, requiredStatsDict: nil, next: [], choiceText: nil)
     
     //MARK: Internal Methods
     internal func initializeStoryTree() {

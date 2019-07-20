@@ -20,9 +20,9 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
     private let storyTextLabel = UILabel()
     private let nextButton = UIButton()
     private let choicesTableView = IntrinsicTableView()
-    private let choicesTableViewController = ChoicesTableViewController()
+    private var choicesTableViewController = ChoicesTableViewController(storyTree: StoryTree(storyTreeNode: StoryTreeNode(fileName: "", uniqueID: 0, requiredStatsDict: nil, next: [], choiceText: nil)), storyViewController: sel )
     private let player: Player? = nil
-    private let storyTree = StoryTree(storyTreeNode: StoryTreeNode(fileName: "opening", uniqueID: 1, requiredStatsDict: nil, next: [], choiceText: "Whatever"))
+    private let storyTree = StoryTree.shared
 
     
     
@@ -46,11 +46,8 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
         storyTree.advanceToNextScene(index: 0)
         choiceAlgorithm()
     }
-    //MARK: Private Methods
-    private func initializeStory() {
-        
-    }
-    private func choiceAlgorithm() {
+    //MARK: Internal Methods
+    internal func choiceAlgorithm() {
         // Check to see if the choice requires a specific stat
         let player = Player.guardPlayer(player: self.player)
         let scene = storyTree.getScene()
@@ -75,6 +72,7 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
         // Base case for now is just return
         return
     }
+    //MARK: Private Methods
     private func toggleChoicesTableViewAndNextButton(element: TableOrButton) {
         if element == .choicesTable {
         showChoicesTableView()
@@ -221,6 +219,7 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
     }
     
     private func formatChoicesTableView() {
+        choicesTableViewController = ChoicesTableViewController(storyTree: self.storyTree)
         choicesTableView.translatesAutoresizingMaskIntoConstraints = false
         choicesTableView.delegate = choicesTableViewController
         choicesTableView.dataSource = choicesTableViewController
