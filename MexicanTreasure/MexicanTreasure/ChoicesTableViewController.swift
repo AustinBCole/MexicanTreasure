@@ -44,11 +44,11 @@ class ChoicesTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let choiceCell = UITableViewCell(style: .default, reuseIdentifier: "reuseIdentifier")
 
-        cell.textLabel?.text = "Hello"
+        choiceCell.textLabel?.text = "Hello"
 
-        return cell
+        return choiceCell
     }
  
 
