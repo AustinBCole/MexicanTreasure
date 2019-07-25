@@ -63,7 +63,7 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
                 updateChoicesTableView(scene: scene)
             }
             // Else
-            else {
+            else if scene.getNextScenes().count == 1 {
                 // Display the "next" button and hide the choices table
                 toggleChoicesTableViewAndNextButton(element: .nextButton)
             }
