@@ -61,5 +61,6 @@ class ChoicesTableViewController: UITableViewController {
         storyTree.advanceToNextScene(index: indexPath.row)
         storyTextDelegate?.textShouldChange()
         self.setChoices(choices: storyTree.getScene().next)
+        
     }
 }

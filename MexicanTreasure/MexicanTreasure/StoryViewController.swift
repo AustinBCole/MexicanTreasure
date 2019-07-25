@@ -56,7 +56,7 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
             // Update story text with new scene text
             updateStoryText(scene: scene)
             // If there are choices associated with new scene
-            if scene.getNextScenes().count != 0 {
+            if scene.getNextScenes().count > 1 {
                 // Make sure the choices table is shown
                 toggleChoicesTableViewAndNextButton(element: .choicesTable)
                 // Update the table view to display the new choices associated with that scene

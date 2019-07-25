@@ -28,6 +28,7 @@ class Player {
     let name: String
     var infamy: Int
     
+    
     //MARK: Static Methods
     static func guardPlayer(player: Player?) -> Player {
         let player = player ?? Player(statsDict: [.strength: 0, .agility: 0, .ancientLanguages: 0], name: "Corrupted", infamy: 0)
