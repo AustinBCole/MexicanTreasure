@@ -50,5 +50,6 @@ class StoryTree {
     }
     internal func resetStoryTree() {
         self.storyTreeNode = originalStoryTreeNode
+        storyDelegate?.storyHasChanged()
     }
 }
