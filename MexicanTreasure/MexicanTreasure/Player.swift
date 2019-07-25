@@ -16,8 +16,6 @@ enum Stats: String {
 
 class Player {
     
-    //MARK: Singleton
-    
     init(statsDict: [Stats: Int], name: String, infamy: Int) {
         self.statsDict = statsDict
         self.name = name

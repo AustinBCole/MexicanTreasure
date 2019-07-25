@@ -44,9 +44,11 @@ class StoryTree {
     internal func getScene() -> StoryTreeNode {
         return storyTreeNode
     }
-    internal func advanceToNextScene(index: Int) {
-        storyTreeNode = storyTreeNode.next[index]
-        storyDelegate?.storyHasChanged()
+    internal func advanceToNextScene(index: Int, player: Player) {
+        if player.doesMeetSceneStatRequirements(scene: self.storyTreeNode.next[index]) {
+            storyTreeNode = storyTreeNode.next[index]
+            storyDelegate?.storyHasChanged()
+        }
     }
     internal func resetStoryTree() {
         self.storyTreeNode = originalStoryTreeNode

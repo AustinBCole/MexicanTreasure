@@ -42,7 +42,8 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
     }
     @objc
     private func nextButtonTapped() {
-        storyTree.advanceToNextScene(index: 0)
+        let player = Player.guardPlayer(player: self.player)
+        storyTree.advanceToNextScene(index: 0, player: player)
         choiceAlgorithm()
     }
     //MARK: Internal Methods
@@ -55,18 +56,19 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
             // Player can make choice
             // Update story text with new scene text
             updateStoryText(scene: scene)
-            // If there are choices associated with new scene
-            if scene.getNextScenes().count > 1 {
+            // If there are zero or more than one choices associated with new scene
+            if scene.getNextScenes().count != 1 {
                 // Make sure the choices table is shown
                 toggleChoicesTableViewAndNextButton(element: .choicesTable)
                 // Update the table view to display the new choices associated with that scene
                 updateChoicesTableView(scene: scene)
             }
             // Else
-            else if scene.getNextScenes().count == 1 {
+            else {
                 // Display the "next" button and hide the choices table
                 toggleChoicesTableViewAndNextButton(element: .nextButton)
             }
+            // Else
         }
         // Base case for now is just return
         return

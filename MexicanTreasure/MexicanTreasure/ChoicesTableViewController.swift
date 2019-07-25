@@ -11,6 +11,7 @@ import UIKit
 class ChoicesTableViewController: UITableViewController {
     
     private let storyTree: StoryTree = StoryTree.shared
+    var player: Player?
      
     private var choices: [StoryTreeNode] = [] {
         didSet {
@@ -56,8 +57,8 @@ class ChoicesTableViewController: UITableViewController {
         return choiceCell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        storyTree.advanceToNextScene(index: indexPath.row)
-        self.setChoices(choices: storyTree.getScene().next)
+        let player = Player.guardPlayer(player: self.player)
+        storyTree.advanceToNextScene(index: indexPath.row, player: player)
         
     }
 }
