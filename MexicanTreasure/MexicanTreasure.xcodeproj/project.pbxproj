@@ -34,6 +34,7 @@
 		A2A6C48322E332E30055DAA1 /* robber.txt in Resources */ = {isa = PBXBuildFile; fileRef = A2A6C47422E332E30055DAA1 /* robber.txt */; };
 		A2A6C48422E332E30055DAA1 /* alone_without_robber.txt in Resources */ = {isa = PBXBuildFile; fileRef = A2A6C47522E332E30055DAA1 /* alone_without_robber.txt */; };
 		A2A6C48522E332E30055DAA1 /* flee.txt in Resources */ = {isa = PBXBuildFile; fileRef = A2A6C47622E332E30055DAA1 /* flee.txt */; };
+		A2A6C48B22EA55AE0055DAA1 /* StoryDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6C48A22EA55AE0055DAA1 /* StoryDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		A2A6C47422E332E30055DAA1 /* robber.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = robber.txt; path = ../../robber.txt; sourceTree = "<group>"; };
 		A2A6C47522E332E30055DAA1 /* alone_without_robber.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = alone_without_robber.txt; path = ../../alone_without_robber.txt; sourceTree = "<group>"; };
 		A2A6C47622E332E30055DAA1 /* flee.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = flee.txt; path = ../../flee.txt; sourceTree = "<group>"; };
+		A2A6C48A22EA55AE0055DAA1 /* StoryDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				A2A6C44822E232EA0055DAA1 /* Main.storyboard */,
 				A2A6C45622E233470055DAA1 /* StoryViewController.swift */,
 				A2A6C46422E268790055DAA1 /* StatsViewController.swift */,
+				A2A6C48A22EA55AE0055DAA1 /* StoryDelegate.swift */,
 				A2A6C45C22E24AED0055DAA1 /* Player.swift */,
 				A2A6C45E22E262DD0055DAA1 /* StoryTreeNode.swift */,
 				A2A6C46222E266B80055DAA1 /* StoryTree.swift */,
@@ -224,6 +227,7 @@
 				A2A6C45F22E262DD0055DAA1 /* StoryTreeNode.swift in Sources */,
 				A2A6C45D22E24AED0055DAA1 /* Player.swift in Sources */,
 				A2A6C46522E268790055DAA1 /* StatsViewController.swift in Sources */,
+				A2A6C48B22EA55AE0055DAA1 /* StoryDelegate.swift in Sources */,
 				A2A6C44522E232EA0055DAA1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

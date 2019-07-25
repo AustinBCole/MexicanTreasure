@@ -16,8 +16,6 @@ enum Stats: String {
 
 class Player {
     
-    //MARK: Singleton
-    
     init(statsDict: [Stats: Int], name: String, infamy: Int) {
         self.statsDict = statsDict
         self.name = name
@@ -27,6 +25,7 @@ class Player {
     var statsDict: [Stats: Int]
     let name: String
     var infamy: Int
+    
     
     //MARK: Static Methods
     static func guardPlayer(player: Player?) -> Player {

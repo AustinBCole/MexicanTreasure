@@ -11,18 +11,8 @@ import UIKit
 class ChoicesTableViewController: UITableViewController {
     
     private let storyTree: StoryTree = StoryTree.shared
-    private let storyViewController: StoryViewController
-    
-    init(storyTree: StoryTree, storyViewController: StoryViewController) {
-        self.storyTree = storyTree
-        self.storyViewController = storyViewController
-        
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
+    var player: Player?
+     
     private var choices: [StoryTreeNode] = [] {
         didSet {
             tableView.reloadData()
@@ -67,7 +57,8 @@ class ChoicesTableViewController: UITableViewController {
         return choiceCell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        storyTree.advanceToNextScene(index: 0)
-        choiceAlgorithm()
+        let player = Player.guardPlayer(player: self.player)
+        storyTree.advanceToNextScene(index: indexPath.row, player: player)
+        
     }
 }

@@ -20,10 +20,9 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
     private let storyTextLabel = UILabel()
     private let nextButton = UIButton()
     private let choicesTableView = IntrinsicTableView()
-    private var choicesTableViewController = ChoicesTableViewController(storyTree: StoryTree(storyTreeNode: StoryTreeNode(fileName: "", uniqueID: 0, requiredStatsDict: nil, next: [], choiceText: nil)), storyViewController: sel )
-    private let player: Player? = nil
+    private var choicesTableViewController = ChoicesTableViewController()
+    private var player: Player?
     private let storyTree = StoryTree.shared
-
     
     
     override func viewDidLoad() {
@@ -38,12 +37,13 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
         updateStoryText(scene: storyTree.getScene())
         updateChoicesTableView(scene: storyTree.getScene())
         choicesTableView.isHidden = true
-        
+        storyTree.storyDelegate = self
         // Do any additional setup after loading the view.
     }
     @objc
     private func nextButtonTapped() {
-        storyTree.advanceToNextScene(index: 0)
+        let player = Player.guardPlayer(player: self.player)
+        storyTree.advanceToNextScene(index: 0, player: player)
         choiceAlgorithm()
     }
     //MARK: Internal Methods
@@ -56,8 +56,8 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
             // Player can make choice
             // Update story text with new scene text
             updateStoryText(scene: scene)
-            // If there are choices associated with new scene
-            if scene.getNextScenes().count != 0 {
+            // If there are zero or more than one choices associated with new scene
+            if scene.getNextScenes().count != 1 {
                 // Make sure the choices table is shown
                 toggleChoicesTableViewAndNextButton(element: .choicesTable)
                 // Update the table view to display the new choices associated with that scene
@@ -68,6 +68,7 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
                 // Display the "next" button and hide the choices table
                 toggleChoicesTableViewAndNextButton(element: .nextButton)
             }
+            // Else
         }
         // Base case for now is just return
         return
@@ -219,7 +220,7 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
     }
     
     private func formatChoicesTableView() {
-        choicesTableViewController = ChoicesTableViewController(storyTree: self.storyTree)
+        choicesTableViewController = ChoicesTableViewController()
         choicesTableView.translatesAutoresizingMaskIntoConstraints = false
         choicesTableView.delegate = choicesTableViewController
         choicesTableView.dataSource = choicesTableViewController
@@ -289,4 +290,14 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         scrollView.contentOffset.x = 0.0
     }
+}
+
+extension StoryViewController: StoryDelegate {
+    func storyHasChanged() {
+        choiceAlgorithm()
+    }
+    
+
+    
+    
 }
