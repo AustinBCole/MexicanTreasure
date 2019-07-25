@@ -20,10 +20,9 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
     private let storyTextLabel = UILabel()
     private let nextButton = UIButton()
     private let choicesTableView = IntrinsicTableView()
-    private var choicesTableViewController = ChoicesTableViewController(storyTree: StoryTree(storyTreeNode: StoryTreeNode(fileName: "", uniqueID: 0, requiredStatsDict: nil, next: [], choiceText: nil)), storyViewController: sel )
-    private let player: Player? = nil
+    private var choicesTableViewController = ChoicesTableViewController()
+    private var player: Player?
     private let storyTree = StoryTree.shared
-
     
     
     override func viewDidLoad() {
@@ -38,7 +37,7 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
         updateStoryText(scene: storyTree.getScene())
         updateChoicesTableView(scene: storyTree.getScene())
         choicesTableView.isHidden = true
-        
+        choicesTableViewController.storyTextDelegate = self
         // Do any additional setup after loading the view.
     }
     @objc
@@ -219,7 +218,7 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
     }
     
     private func formatChoicesTableView() {
-        choicesTableViewController = ChoicesTableViewController(storyTree: self.storyTree)
+        choicesTableViewController = ChoicesTableViewController()
         choicesTableView.translatesAutoresizingMaskIntoConstraints = false
         choicesTableView.delegate = choicesTableViewController
         choicesTableView.dataSource = choicesTableViewController
@@ -289,4 +288,12 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         scrollView.contentOffset.x = 0.0
     }
+}
+
+extension StoryViewController: StoryTextDelegate {
+    func textShouldChange() {
+        choiceAlgorithm()
+    }
+    
+    
 }
