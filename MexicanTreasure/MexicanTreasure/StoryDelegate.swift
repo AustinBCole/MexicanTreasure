@@ -8,7 +8,6 @@
 
 import Foundation
 
-protocol StoryTextDelegate {
-    func textShouldChange()
+protocol StoryDelegate {
+    func storyHasChanged()
 }
-

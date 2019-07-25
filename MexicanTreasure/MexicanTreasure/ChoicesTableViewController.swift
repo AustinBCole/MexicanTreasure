@@ -11,9 +11,7 @@ import UIKit
 class ChoicesTableViewController: UITableViewController {
     
     private let storyTree: StoryTree = StoryTree.shared
-    
-    internal var storyTextDelegate: StoryTextDelegate?
- 
+     
     private var choices: [StoryTreeNode] = [] {
         didSet {
             tableView.reloadData()
@@ -59,7 +57,6 @@ class ChoicesTableViewController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         storyTree.advanceToNextScene(index: indexPath.row)
-        storyTextDelegate?.textShouldChange()
         self.setChoices(choices: storyTree.getScene().next)
         
     }

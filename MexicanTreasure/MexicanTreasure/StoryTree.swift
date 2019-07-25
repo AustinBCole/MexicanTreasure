@@ -14,7 +14,9 @@ class StoryTree {
     static let shared = StoryTree()
     private init () {}
     
+    internal var storyDelegate: StoryDelegate?
     
+    private var originalStoryTreeNode: StoryTreeNode = StoryTreeNode(fileName: "opening", uniqueID: 1, requiredStatsDict: nil, next: [], choiceText: nil)
     private var storyTreeNode: StoryTreeNode = StoryTreeNode(fileName: "opening", uniqueID: 1, requiredStatsDict: nil, next: [], choiceText: nil)
     
     //MARK: Internal Methods
@@ -34,7 +36,8 @@ class StoryTree {
         let pizza = StoryTreeNode(fileName: "pizza", uniqueID: 3, requiredStatsDict: nil, next: [], choiceText: "You make the robber a pizza as a peace offering and hope he leaves.")
         let robber = StoryTreeNode(fileName: "robber", uniqueID: 2, requiredStatsDict: nil, next: [pizza, defend, theft], choiceText: nil)
         let opening = StoryTreeNode(fileName: "opening", uniqueID: 1, requiredStatsDict: nil, next: [robber], choiceText: nil)
-        storyTreeNode = opening
+        self.originalStoryTreeNode = opening
+        self.storyTreeNode = opening
         
     }
     
@@ -43,5 +46,9 @@ class StoryTree {
     }
     internal func advanceToNextScene(index: Int) {
         storyTreeNode = storyTreeNode.next[index]
+        storyDelegate?.storyHasChanged()
+    }
+    internal func resetStoryTree() {
+        self.storyTreeNode = originalStoryTreeNode
     }
 }

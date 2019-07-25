@@ -37,7 +37,7 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
         updateStoryText(scene: storyTree.getScene())
         updateChoicesTableView(scene: storyTree.getScene())
         choicesTableView.isHidden = true
-        choicesTableViewController.storyTextDelegate = self
+        storyTree.storyDelegate = self
         // Do any additional setup after loading the view.
     }
     @objc
@@ -290,10 +290,12 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
     }
 }
 
-extension StoryViewController: StoryTextDelegate {
-    func textShouldChange() {
+extension StoryViewController: StoryDelegate {
+    func storyHasChanged() {
         choiceAlgorithm()
     }
+    
+
     
     
 }
