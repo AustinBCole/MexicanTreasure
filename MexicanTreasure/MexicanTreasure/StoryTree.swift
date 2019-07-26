@@ -45,8 +45,8 @@ class StoryTree {
         return storyTreeNode
     }
     internal func advanceToNextScene(index: Int, player: Player) {
-        if player.doesMeetSceneStatRequirements(scene: self.storyTreeNode.next[index]) {
-            storyTreeNode = storyTreeNode.next[index]
+        if player.doesMeetSceneStatRequirements(scene: self.storyTreeNode.getNextScenes()[index]) {
+            storyTreeNode = storyTreeNode.getNextScenes()[index]
             storyDelegate?.storyHasChanged()
         }
     }

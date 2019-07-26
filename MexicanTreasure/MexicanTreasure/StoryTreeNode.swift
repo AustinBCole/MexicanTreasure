@@ -18,11 +18,13 @@ class StoryTreeNode {
         self.choiceText = choiceText
     }
     
-    let fileName: String
-    let uniqueID: Int
-    let requiredStatsDict: [Stats: Int]?
-    let next: [StoryTreeNode]
-    let choiceText: String?
+    private let fileName: String
+    private let uniqueID: Int
+    private let requiredStatsDict: [Stats: Int]?
+    private let next: [StoryTreeNode]
+    
+    internal let choiceText: String?
+    internal var isEnabled = true
     
     internal func readFromFile() -> String {
         let file = self.fileName
