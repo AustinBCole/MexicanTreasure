@@ -53,6 +53,11 @@ class ChoicesTableViewController: UITableViewController {
             choiceCell.textLabel?.numberOfLines = 0
             choiceCell.textLabel?.text = choiceText
         }
+        let player = Player.guardPlayer(player: self.player)
+        if player.doesMeetSceneStatRequirements(scene: choices[indexPath.row])  == false {
+            choiceCell.textLabel?.textColor = .gray
+            choiceCell.isUserInteractionEnabled = false
+        }
 
         return choiceCell
     }
