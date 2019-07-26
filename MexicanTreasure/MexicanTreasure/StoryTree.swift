@@ -15,6 +15,7 @@ class StoryTree {
     private init () {}
     
     internal var storyDelegate: StoryDelegate?
+    private let player = Player(statsDict: [.strength: 0, .agility: 1, .ancientLanguages: 0], name: "Bob", infamy: 0)
     
     private var originalStoryTreeNode: StoryTreeNode = StoryTreeNode(fileName: "opening", uniqueID: 1, requiredStatsDict: nil, next: [], choiceText: nil)
     private var storyTreeNode: StoryTreeNode = StoryTreeNode(fileName: "opening", uniqueID: 1, requiredStatsDict: nil, next: [], choiceText: nil)
@@ -44,8 +45,8 @@ class StoryTree {
     internal func getScene() -> StoryTreeNode {
         return storyTreeNode
     }
-    internal func advanceToNextScene(index: Int, player: Player) {
-        if player.doesMeetSceneStatRequirements(scene: self.storyTreeNode.getNextScenes()[index]) {
+    internal func advanceToNextScene(index: Int) {
+        if self.player.doesMeetSceneStatRequirements(scene: self.storyTreeNode.getNextScenes()[index]) {
             storyTreeNode = storyTreeNode.getNextScenes()[index]
             storyDelegate?.storyHasChanged()
         }
@@ -53,5 +54,12 @@ class StoryTree {
     internal func resetStoryTree() {
         self.storyTreeNode = originalStoryTreeNode
         storyDelegate?.storyHasChanged()
+    }
+    internal func getPlayer() -> Player {
+        return self.player
+    }
+    // MARK: Public Methods
+    public func populateStoryTree(storyTreeNodes: [StoryTreeNode]) {
+        
     }
 }

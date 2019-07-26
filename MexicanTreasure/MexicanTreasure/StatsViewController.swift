@@ -16,9 +16,6 @@ class StatsViewController: UIViewController {
     @IBOutlet weak var ancientLanguagesLabel: UILabel!
     @IBOutlet weak var infamyLabel: UILabel!
     
-    //MARK: Private Properties
-    private var player: Player?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,7 +31,7 @@ class StatsViewController: UIViewController {
     
     //MARK: Private Methods
     private func populateLabelsText() {
-        let player = Player.guardPlayer(player: self.player)
+        let player = StoryTree.shared.getPlayer()
         nameLabel.text = player.getName()
         strengthLabel.text = String(player.getStat(stat: .strength))
         agilityLabel.text = String(player.getStat(stat: .agility))
