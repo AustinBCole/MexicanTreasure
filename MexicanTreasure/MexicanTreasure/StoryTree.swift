@@ -8,7 +8,10 @@
 
 import Foundation
 
-class StoryTree {
+/**
+ This singleton object is used to pass around story information. It is recommended to only use this class to initialize the story tree once when the app first loads.
+ */
+public class StoryTree {
     
     //MARK: Singleton
     static let shared = StoryTree()
