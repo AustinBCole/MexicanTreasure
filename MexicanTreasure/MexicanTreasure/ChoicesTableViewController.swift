@@ -11,7 +11,7 @@ import UIKit
 class ChoicesTableViewController: UITableViewController {
     
     private let storyTree: StoryTree = StoryTree.shared
-    var player: Player?
+
      
     private var choices: [StoryTreeNode] = [] {
         didSet {
@@ -47,13 +47,13 @@ class ChoicesTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let player = storyTree.getPlayer()
         let choiceCell = UITableViewCell(style: .default, reuseIdentifier: "reuseIdentifier")
         if let choiceText = choices[indexPath.row].choiceText {
             choiceCell.textLabel?.lineBreakMode = .byWordWrapping
             choiceCell.textLabel?.numberOfLines = 0
             choiceCell.textLabel?.text = choiceText
         }
-        let player = Player.guardPlayer(player: self.player)
         if player.doesMeetSceneStatRequirements(scene: choices[indexPath.row])  == false {
             choiceCell.textLabel?.textColor = .gray
             choiceCell.isUserInteractionEnabled = false
@@ -62,8 +62,7 @@ class ChoicesTableViewController: UITableViewController {
         return choiceCell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let player = Player.guardPlayer(player: self.player)
-        storyTree.advanceToNextScene(index: indexPath.row, player: player)
+        storyTree.advanceToNextScene(index: indexPath.row)
         
     }
 }

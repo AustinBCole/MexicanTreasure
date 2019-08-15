@@ -8,19 +8,52 @@
 
 import Foundation
 
-class StoryTree {
+/**
+ This singleton object is used to pass around story information. It is recommended to only use this class to initialize the story tree once when the app first loads.
+ */
+public class StoryTree {
     
     //MARK: Singleton
     static let shared = StoryTree()
     private init () {}
     
     internal var storyDelegate: StoryDelegate?
+    private let player = Player(statsDict: [.strength: 0, .agility: 1, .ancientLanguages: 0], name: "Bob", infamy: 0)
     
     private var originalStoryTreeNode: StoryTreeNode = StoryTreeNode(fileName: "opening", uniqueID: 1, requiredStatsDict: nil, next: [], choiceText: nil)
     private var storyTreeNode: StoryTreeNode = StoryTreeNode(fileName: "opening", uniqueID: 1, requiredStatsDict: nil, next: [], choiceText: nil)
     
     //MARK: Internal Methods
-    internal func initializeStoryTree() {
+    
+    
+    internal func getScene() -> StoryTreeNode {
+        return storyTreeNode
+    }
+    internal func advanceToNextScene(index: Int) {
+        if self.player.doesMeetSceneStatRequirements(scene: self.storyTreeNode.getNextScenes()[index]) {
+            storyTreeNode = storyTreeNode.getNextScenes()[index]
+            storyDelegate?.storyHasChanged()
+        }
+    }
+    internal func resetStoryTree() {
+        self.storyTreeNode = originalStoryTreeNode
+        storyDelegate?.storyHasChanged()
+    }
+    internal func getPlayer() -> Player {
+        return self.player
+    }
+    // MARK: Public Methods
+    
+    /**
+     Use this method to initialize your story tree.
+     
+     - Parameter storyTreeNodes: The first node in the array will become the root node of the tree.
+
+     */
+    public func initializeStoryTree(storyTreeNodes: [StoryTreeNode]?) {
+        if let storyTreeNodes = storyTreeNodes {
+            storyTreeNode = storyTreeNodes[0]
+        } else {
         let friendScout = StoryTreeNode(fileName: "friend_scout", uniqueID: 15, requiredStatsDict: nil, next: [], choiceText: "You decide that you and yoru friend should scout out the area before going after the treasure.")
         let friendTogether = StoryTreeNode(fileName: "friend_together", uniqueID: 14, requiredStatsDict: nil, next: [], choiceText: "You decide that you and your friend should go search for the treasure immediately.")
         let aloneWithoutRobber = StoryTreeNode(fileName: "alone_without_robber", uniqueID: 13, requiredStatsDict: nil, next: [], choiceText: "You decide that you don't trust the robber and sneak off to get the treasure alone.")
@@ -38,20 +71,6 @@ class StoryTree {
         let opening = StoryTreeNode(fileName: "opening", uniqueID: 1, requiredStatsDict: nil, next: [robber], choiceText: nil)
         self.originalStoryTreeNode = opening
         self.storyTreeNode = opening
-        
-    }
-    
-    internal func getScene() -> StoryTreeNode {
-        return storyTreeNode
-    }
-    internal func advanceToNextScene(index: Int, player: Player) {
-        if player.doesMeetSceneStatRequirements(scene: self.storyTreeNode.getNextScenes()[index]) {
-            storyTreeNode = storyTreeNode.getNextScenes()[index]
-            storyDelegate?.storyHasChanged()
         }
-    }
-    internal func resetStoryTree() {
-        self.storyTreeNode = originalStoryTreeNode
-        storyDelegate?.storyHasChanged()
     }
 }

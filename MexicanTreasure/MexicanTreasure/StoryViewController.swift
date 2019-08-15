@@ -21,7 +21,6 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
     private let nextButton = UIButton()
     private let choicesTableView = IntrinsicTableView()
     private var choicesTableViewController = ChoicesTableViewController()
-    private var player: Player?
     private let storyTree = StoryTree.shared
     
     
@@ -42,14 +41,13 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
     }
     @objc
     private func nextButtonTapped() {
-        let player = Player.guardPlayer(player: self.player)
-        storyTree.advanceToNextScene(index: 0, player: player)
+        storyTree.advanceToNextScene(index: 0)
         choiceAlgorithm()
     }
     //MARK: Internal Methods
     internal func choiceAlgorithm() {
         // Check to see if the choice requires a specific stat
-        let player = Player.guardPlayer(player: self.player)
+        let player = StoryTree.shared.getPlayer()
         let scene = storyTree.getScene()
         // If the player does meet the stat requirement for choice
         if player.doesMeetSceneStatRequirements(scene: scene) {
@@ -68,7 +66,6 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
                 // Display the "next" button and hide the choices table
                 toggleChoicesTableViewAndNextButton(element: .nextButton)
             }
-            // Else
         }
         // Base case for now is just return
         return

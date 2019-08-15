@@ -8,7 +8,8 @@
 
 import Foundation
 
-class StoryTreeNode {
+///This object contains information relevant to a scene in the story.
+public class StoryTreeNode {
     
     init(fileName: String, uniqueID: Int, requiredStatsDict: [Stats: Int]?, next: [StoryTreeNode], choiceText: String?) {
         self.fileName = fileName
@@ -18,13 +19,18 @@ class StoryTreeNode {
         self.choiceText = choiceText
     }
     
+    ///This is the name of the scene's file.
     private let fileName: String
+    ///The unique ID associated with this scene. The unique ID can be any integer, though it is recommended to use some kind of ordered system of IDing each scene.
     private let uniqueID: Int
+    ///This dictionary takes a Stats enum case as a key, and the required level of the desired sat as a value.
     private let requiredStatsDict: [Stats: Int]?
+    ///This is an array of nodes adjacent to this node.
     private let next: [StoryTreeNode]
-    
-    internal let choiceText: String?
-    internal var isEnabled = true
+    ///This is the text that the user will see in the choices table view.
+    private let choiceText: String?
+    ///This boolean is true if the player meets the scene's stat requirements, or false if not.
+    private var isEnabled = true
     
     internal func readFromFile() -> String {
         let file = self.fileName
