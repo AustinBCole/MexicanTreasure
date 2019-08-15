@@ -66,7 +66,6 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
                 // Display the "next" button and hide the choices table
                 toggleChoicesTableViewAndNextButton(element: .nextButton)
             }
-            // Else
         }
         // Base case for now is just return
         return
