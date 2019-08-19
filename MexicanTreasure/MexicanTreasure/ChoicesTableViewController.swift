@@ -49,7 +49,7 @@ class ChoicesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let player = storyTree.getPlayer()
         let choiceCell = UITableViewCell(style: .default, reuseIdentifier: "reuseIdentifier")
-        if let choiceText = choices[indexPath.row].choiceText {
+        if let choiceText = choices[indexPath.row].getchoiceText() {
             choiceCell.textLabel?.lineBreakMode = .byWordWrapping
             choiceCell.textLabel?.numberOfLines = 0
             choiceCell.textLabel?.text = choiceText
