@@ -34,7 +34,7 @@ public class StoryTreeNode {
     
     internal func readFromFile() -> String {
         let file = self.fileName
-        let path = Bundle.main.path(forResource: file, ofType: "txt")
+        let path = Bundle.main.path(forResource: file, ofType: "txt", inDirectory: "StoryFiles")
         let text: String
         do {
             text = try String(contentsOfFile: path!, encoding: .utf8)
@@ -44,13 +44,17 @@ public class StoryTreeNode {
         return text
     }
     internal func getNextScenes() -> [StoryTreeNode] {
-        return next
+        return self.next
     }
     internal func getUniqueID() -> Int {
-        return uniqueID
+        return self.uniqueID
     }
     internal func getRequiredStatsDict() -> [Stats: Int]? {
-        return requiredStatsDict
+        return self.requiredStatsDict
+    }
+    internal func getchoiceText() -> String? {
+        return self.choiceText
+        
     }
     
 }

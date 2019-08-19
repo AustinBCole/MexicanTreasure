@@ -32,7 +32,7 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
         choicesTableView.delegate = choicesTableViewController
         choicesTableView.dataSource = choicesTableViewController
         nextButton.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
-        storyTree.initializeStoryTree()
+        storyTree.initializeStoryTree(storyTreeNodes: nil)
         updateStoryText(scene: storyTree.getScene())
         updateChoicesTableView(scene: storyTree.getScene())
         choicesTableView.isHidden = true
