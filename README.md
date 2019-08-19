@@ -57,3 +57,13 @@ Write an algorithm that:
 # **Stretch Goals**
 
 1. Write a how-to guide or blog post that walks readers through the work done to implement this project
+
+
+# **Second Iteration**
+1. Implement multiplayer functionality
+  - MultiPeerConnectivity
+2. Some kind of indicator to notify player that another player is currently choosing, and that the app hasn't crashed/stopped working/etc
+3. Players can save multiplayer sessions and then pick them back up later.
+4. Player receives notification when using a stat to perform a certain action
+  - example: "Agility Check: Succeeded"
+
