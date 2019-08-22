@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A228CD8F230E52E600D8C09C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A228CD8E230E52E600D8C09C /* StoreKit.framework */; };
 		A2A6C44522E232EA0055DAA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6C44422E232EA0055DAA1 /* AppDelegate.swift */; };
 		A2A6C44722E232EA0055DAA1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6C44622E232EA0055DAA1 /* ViewController.swift */; };
 		A2A6C44A22E232EA0055DAA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2A6C44822E232EA0055DAA1 /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A228CD8E230E52E600D8C09C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		A2A6C44122E232EA0055DAA1 /* MexicanTreasure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MexicanTreasure.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2A6C44422E232EA0055DAA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2A6C44622E232EA0055DAA1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,17 +49,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A228CD8F230E52E600D8C09C /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A228CD8D230E52E600D8C09C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A228CD8E230E52E600D8C09C /* StoreKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A2A6C43822E232EA0055DAA1 = {
 			isa = PBXGroup;
 			children = (
 				A2A6C44322E232EA0055DAA1 /* MexicanTreasure */,
 				A2A6C44222E232EA0055DAA1 /* Products */,
+				A228CD8D230E52E600D8C09C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -123,6 +135,11 @@
 				TargetAttributes = {
 					A2A6C44022E232EA0055DAA1 = {
 						CreatedOnToolsVersion = 10.2;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
