@@ -61,11 +61,9 @@ Write an algorithm that:
 
 # **Complete the First Iteration**
 
-1. Add radio buttons next to available and unavailable choices
-    - The radio buttons only toggle when the choice is available
-2. Add a next button below the choices - the scene does not change until the next button is pressed
-3. Add a border around each choice
-4. Before I complete the list for the completion of this first iteration, perform more competitor research on ipod touch
+1. Visually pleasing style
+    - Copy "Choice of Dragon"'s styling to a T
+    - For iPhone
 
 
 # **Second Iteration**
