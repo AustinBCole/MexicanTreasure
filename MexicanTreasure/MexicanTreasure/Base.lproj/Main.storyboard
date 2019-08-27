@@ -210,67 +210,86 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="L9g-Rb-AIC">
-                                <rect key="frame" x="157" y="318" width="100" height="260"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="B9E-Zz-x95">
+                                <rect key="frame" x="157" y="328" width="100" height="280"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4tL-1N-DMG">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="L9g-Rb-AIC">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="120"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4tL-1N-DMG">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="OpX-L0-fWZ"/>
+                                                </constraints>
+                                                <state key="normal" title="Play">
+                                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="BYZ-38-t0r" kind="show" id="SaF-H3-nPG"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dgo-UV-HmC">
+                                                <rect key="frame" x="0.0" y="70" width="100" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="39A-BO-mTQ"/>
+                                                </constraints>
+                                                <state key="normal" title="Restart">
+                                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="restartGameButtonTapped:" destination="h94-If-Jdy" eventType="touchUpInside" id="rxg-uG-a79"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="lLi-et-341"/>
+                                            <constraint firstItem="Dgo-UV-HmC" firstAttribute="height" secondItem="4tL-1N-DMG" secondAttribute="height" id="zTi-bG-SRX"/>
                                         </constraints>
-                                        <state key="normal" title="Play">
-                                            <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="BYZ-38-t0r" kind="show" id="SaF-H3-nPG"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dgo-UV-HmC">
-                                        <rect key="frame" x="0.0" y="70" width="100" height="50"/>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="D8T-Gs-Fd8">
+                                        <rect key="frame" x="0.0" y="160" width="100" height="120"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ENc-rt-4Mm">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="sqa-XG-DGg"/>
+                                                </constraints>
+                                                <state key="normal" title="About">
+                                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="3vo-j4-qnB" kind="show" id="Yyx-uh-7Wj"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X0E-YB-fKZ">
+                                                <rect key="frame" x="0.0" y="70" width="100" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="F5v-Mf-0Ix"/>
+                                                </constraints>
+                                                <state key="normal" title="Settings">
+                                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="2er-sQ-Ccy" kind="show" id="7Su-LQ-d5w"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="VDQ-UI-2Ln"/>
+                                            <constraint firstItem="X0E-YB-fKZ" firstAttribute="height" secondItem="ENc-rt-4Mm" secondAttribute="height" id="ztc-9Z-hcW"/>
                                         </constraints>
-                                        <state key="normal" title="Restart">
-                                            <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="restartGameButtonTapped:" destination="h94-If-Jdy" eventType="touchUpInside" id="rxg-uG-a79"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ENc-rt-4Mm">
-                                        <rect key="frame" x="0.0" y="140" width="100" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="46q-XN-z2h"/>
-                                        </constraints>
-                                        <state key="normal" title="About">
-                                            <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="3vo-j4-qnB" kind="show" id="Yyx-uh-7Wj"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X0E-YB-fKZ">
-                                        <rect key="frame" x="0.0" y="210" width="100" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="Nse-Be-HdX"/>
-                                        </constraints>
-                                        <state key="normal" title="Settings">
-                                            <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="2er-sQ-Ccy" kind="show" id="7Su-LQ-d5w"/>
-                                        </connections>
-                                    </button>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="Ltq-s6-WeU"/>
+                                    <constraint firstItem="D8T-Gs-Fd8" firstAttribute="leading" secondItem="B9E-Zz-x95" secondAttribute="leading" id="6KJ-JV-kx8"/>
+                                    <constraint firstAttribute="trailing" secondItem="D8T-Gs-Fd8" secondAttribute="trailing" id="Vxg-0y-aWV"/>
+                                    <constraint firstItem="D8T-Gs-Fd8" firstAttribute="width" secondItem="L9g-Rb-AIC" secondAttribute="width" id="bkH-g6-ZIk"/>
+                                    <constraint firstAttribute="width" constant="100" id="bwh-hl-PXe"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="L9g-Rb-AIC" firstAttribute="centerY" secondItem="cKA-aO-qQx" secondAttribute="centerY" id="Jam-mb-B1n"/>
-                            <constraint firstItem="L9g-Rb-AIC" firstAttribute="centerX" secondItem="cKA-aO-qQx" secondAttribute="centerX" id="kCq-Lg-DHh"/>
+                            <constraint firstItem="B9E-Zz-x95" firstAttribute="centerX" secondItem="cKA-aO-qQx" secondAttribute="centerX" id="ZGn-sv-ao6"/>
+                            <constraint firstItem="B9E-Zz-x95" firstAttribute="centerY" secondItem="cKA-aO-qQx" secondAttribute="centerY" constant="20" id="qN4-pf-rbl"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1hJ-Ww-ncL"/>
                     </view>
