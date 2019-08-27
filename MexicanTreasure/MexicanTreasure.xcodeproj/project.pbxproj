@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A228CD8F230E52E600D8C09C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A228CD8E230E52E600D8C09C /* StoreKit.framework */; };
+		A28B0EEB2315EA770050FBBA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28B0EEA2315EA770050FBBA /* HomeViewController.swift */; };
 		A2A6C44522E232EA0055DAA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6C44422E232EA0055DAA1 /* AppDelegate.swift */; };
 		A2A6C44722E232EA0055DAA1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6C44622E232EA0055DAA1 /* ViewController.swift */; };
 		A2A6C44A22E232EA0055DAA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2A6C44822E232EA0055DAA1 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		A228CD8E230E52E600D8C09C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		A28B0EEA2315EA770050FBBA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A2A6C44122E232EA0055DAA1 /* MexicanTreasure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MexicanTreasure.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2A6C44422E232EA0055DAA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2A6C44622E232EA0055DAA1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				A2A6C44422E232EA0055DAA1 /* AppDelegate.swift */,
 				A2A6C44622E232EA0055DAA1 /* ViewController.swift */,
 				A2A6C44822E232EA0055DAA1 /* Main.storyboard */,
+				A28B0EEA2315EA770050FBBA /* HomeViewController.swift */,
 				A2A6C45622E233470055DAA1 /* StoryViewController.swift */,
 				A2A6C46422E268790055DAA1 /* StatsViewController.swift */,
 				A2A6C48A22EA55AE0055DAA1 /* StoryDelegate.swift */,
@@ -187,6 +190,7 @@
 				A2A6C45B22E246710055DAA1 /* IntrinsicTableView.swift in Sources */,
 				A2A6C45F22E262DD0055DAA1 /* StoryTreeNode.swift in Sources */,
 				A2A6C45D22E24AED0055DAA1 /* Player.swift in Sources */,
+				A28B0EEB2315EA770050FBBA /* HomeViewController.swift in Sources */,
 				A2A6C46522E268790055DAA1 /* StatsViewController.swift in Sources */,
 				A2A6C48B22EA55AE0055DAA1 /* StoryDelegate.swift in Sources */,
 				A2A6C44522E232EA0055DAA1 /* AppDelegate.swift in Sources */,

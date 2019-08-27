@@ -25,9 +25,6 @@ class StatsViewController: UIViewController {
         super.viewWillAppear(animated)
         populateLabelsText()
     }
-    @IBAction func restartGameButtonTapped(_ sender: Any) {
-        StoryTree.shared.resetStoryTree()
-    }
     
     //MARK: Private Methods
     private func populateLabelsText() {

@@ -41,7 +41,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="ab5-aF-gJs">
-                                <rect key="frame" x="40" y="64" width="334" height="110.5"/>
+                                <rect key="frame" x="40" y="108" width="334" height="110.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="zDv-pK-QMN">
                                         <rect key="frame" x="0.0" y="0.0" width="197.5" height="20.5"/>
@@ -144,20 +144,11 @@
                                     <constraint firstItem="QUM-XQ-nb1" firstAttribute="width" secondItem="fmG-BX-zUx" secondAttribute="width" id="bSa-xh-WjQ"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RFV-wB-42a">
-                                <rect key="frame" x="160" y="182.5" width="94" height="30"/>
-                                <state key="normal" title="Restart Game"/>
-                                <connections>
-                                    <action selector="restartGameButtonTapped:" destination="QKg-GT-mUa" eventType="touchUpInside" id="SFR-1u-6p8"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="ab5-aF-gJs" secondAttribute="trailing" constant="20" id="Ezh-TB-KNt"/>
-                            <constraint firstItem="RFV-wB-42a" firstAttribute="centerX" secondItem="Zu9-Ur-Nhg" secondAttribute="centerX" id="Seb-4k-7Ao"/>
                             <constraint firstItem="ab5-aF-gJs" firstAttribute="top" secondItem="Zu9-Ur-Nhg" secondAttribute="topMargin" constant="20" id="Z1s-0E-Yjm"/>
-                            <constraint firstItem="RFV-wB-42a" firstAttribute="top" secondItem="ab5-aF-gJs" secondAttribute="bottom" constant="8" id="smC-Nc-1lR"/>
                             <constraint firstItem="ab5-aF-gJs" firstAttribute="leading" secondItem="Zu9-Ur-Nhg" secondAttribute="leadingMargin" constant="20" id="tCi-vL-smy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="E9R-Dn-XqD"/>
@@ -195,10 +186,26 @@
             </objects>
             <point key="canvasLocation" x="467" y="19"/>
         </scene>
+        <!--Settings-->
+        <scene sceneID="JRP-Ja-U2z">
+            <objects>
+                <viewController id="2er-sQ-Ccy" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Zal-he-AYn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="fml-cW-XFq"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Settings" id="Qw9-8h-4tM"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lJG-8h-Gxp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1183" y="-658"/>
+        </scene>
         <!--Home-->
         <scene sceneID="e13-EC-5kX">
             <objects>
-                <viewController id="h94-If-Jdy" sceneMemberID="viewController">
+                <viewController id="h94-If-Jdy" customClass="HomeViewController" customModule="MexicanTreasure" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cKA-aO-qQx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -214,6 +221,9 @@
                                         <state key="normal" title="Play">
                                             <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="SaF-H3-nPG"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dgo-UV-HmC">
                                         <rect key="frame" x="0.0" y="70" width="100" height="50"/>
@@ -223,6 +233,9 @@
                                         <state key="normal" title="Restart">
                                             <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="restartGameButtonTapped:" destination="h94-If-Jdy" eventType="touchUpInside" id="rxg-uG-a79"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ENc-rt-4Mm">
                                         <rect key="frame" x="0.0" y="140" width="100" height="50"/>
@@ -232,6 +245,9 @@
                                         <state key="normal" title="About">
                                             <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="3vo-j4-qnB" kind="show" id="Yyx-uh-7Wj"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X0E-YB-fKZ">
                                         <rect key="frame" x="0.0" y="210" width="100" height="50"/>
@@ -241,6 +257,9 @@
                                         <state key="normal" title="Settings">
                                             <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="2er-sQ-Ccy" kind="show" id="7Su-LQ-d5w"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -260,6 +279,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Md8-gB-Ydg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1183" y="19"/>
+        </scene>
+        <!--About-->
+        <scene sceneID="9Jx-NC-1d1">
+            <objects>
+                <viewController id="3vo-j4-qnB" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nns-js-gnh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="v3K-Ky-wf2"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="About" id="cgv-mJ-mKv"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DAv-GM-HJZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1183" y="698"/>
         </scene>
     </scenes>
 </document>
