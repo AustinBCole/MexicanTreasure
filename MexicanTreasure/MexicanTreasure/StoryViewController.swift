@@ -39,6 +39,10 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
         storyTree.storyDelegate = self
         // Do any additional setup after loading the view.
     }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+    }
     @objc
     private func nextButtonTapped() {
         storyTree.advanceToNextScene(index: 0)
@@ -115,10 +119,10 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
         let topConstraint = NSLayoutConstraint(item: storyContentView,
                                                attribute: .top,
                                                relatedBy: .equal,
-                                               toItem: view,
+                                               toItem: storyScrollView,
                                                attribute: .top,
                                                multiplier: 1.0,
-                                               constant: 60)
+                                               constant: 20)
         let leadingConstraint = NSLayoutConstraint(item: storyContentView,
                                                    attribute: .leading,
                                                    relatedBy: .equal,

@@ -59,6 +59,13 @@ Write an algorithm that:
 1. Write a how-to guide or blog post that walks readers through the work done to implement this project
 
 
+# **Complete the First Iteration**
+
+1. Visually pleasing style
+    - Copy "Choice of Dragon"'s styling to a T
+    - For iPhone
+
+
 # **Second Iteration**
 1. Implement multiplayer functionality
   - MultiPeerConnectivity
