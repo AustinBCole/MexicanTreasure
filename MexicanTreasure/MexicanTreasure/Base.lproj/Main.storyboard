@@ -163,6 +163,7 @@
                         <viewLayoutGuide key="safeArea" id="E9R-Dn-XqD"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Stats" id="GNe-em-Tkz"/>
+                    <navigationItem key="navigationItem" title="Stats" id="8AI-yU-h1R"/>
                     <connections>
                         <outlet property="agilityLabel" destination="4Oe-ir-sAf" id="cTC-8i-1dG"/>
                         <outlet property="ancientLanguagesLabel" destination="izC-ce-XGN" id="eHb-va-crZ"/>
