@@ -32,9 +32,8 @@ class HomeViewController: UIViewController {
         let position: CGFloat = 100.0
         UIView.animateKeyframes(withDuration: animationDuration, delay: 0.0, options: .calculationModeLinear, animations: {
             UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1/3, animations: {
-                self.settingsView.frame = CGRect(x: self.settingsView.frame.midX, y: 20, width: 100, height: 100)
-                self.deactivateConstraints(targetedView: self.settingsView)
-                self.setNewSettingsViewConstraints()
+                self.settingsView.frame = CGRect(x: self.settingsView.frame.midX - 50, y: self.settingsView.frame.midY - 200, width: 100, height: 100)
+
             })
         }, completion: { completed in
             if completed {
@@ -47,38 +46,6 @@ class HomeViewController: UIViewController {
             constraint.isActive = false
         }
     }
-    private func setNewSettingsViewConstraints() {
-        let bottomConstraint = NSLayoutConstraint(item: settingsView,
-                                               attribute: .bottom,
-                                               relatedBy: .equal,
-                                               toItem: view,
-                                               attribute: .bottom,
-                                               multiplier: 1.0,
-                                               constant: 20)
-        let widthConstraint = NSLayoutConstraint(item: settingsView,
-                                                   attribute: .width,
-                                                   relatedBy: .equal,
-                                                   toItem: nil,
-                                                   attribute: .width,
-                                                   multiplier: 1.0,
-                                                   constant: 100)
-        let heightConstraint = NSLayoutConstraint(item: settingsView,
-                                                    attribute: .height,
-                                                    relatedBy: .equal,
-                                                    toItem: nil,
-                                                    attribute: .height,
-                                                    multiplier: 1.0,
-                                                    constant: 100)
-        let centerXConstraint = NSLayoutConstraint(item: settingsView,
-                                                  attribute: .centerX,
-                                                  relatedBy: .equal,
-                                                  toItem: view,
-                                                  attribute: .centerX,
-                                                  multiplier: 1.0,
-                                                  constant: 0)
-        NSLayoutConstraint.activate([bottomConstraint, widthConstraint, heightConstraint, centerXConstraint])
-    }
-    
     /*
     // MARK: - Navigation
 
