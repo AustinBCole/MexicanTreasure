@@ -186,22 +186,6 @@
             </objects>
             <point key="canvasLocation" x="467" y="19"/>
         </scene>
-        <!--Settings-->
-        <scene sceneID="JRP-Ja-U2z">
-            <objects>
-                <viewController id="2er-sQ-Ccy" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Zal-he-AYn">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="fml-cW-XFq"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Settings" id="Qw9-8h-4tM"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lJG-8h-Gxp" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1183" y="-658"/>
-        </scene>
         <!--Home-->
         <scene sceneID="e13-EC-5kX">
             <objects>
@@ -269,7 +253,7 @@
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                 <state key="normal" title="Settings"/>
                                                 <connections>
-                                                    <segue destination="2er-sQ-Ccy" kind="show" id="7Su-LQ-d5w"/>
+                                                    <action selector="settingsButtonTapped:" destination="h94-If-Jdy" eventType="touchUpInside" id="oLZ-kn-xwn"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -285,15 +269,28 @@
                                     <constraint firstAttribute="width" constant="100" id="bwh-hl-PXe"/>
                                 </constraints>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LZz-tl-u1l">
+                                <rect key="frame" x="157" y="896" width="100" height="100"/>
+                                <color key="backgroundColor" red="1" green="0.274480418" blue="0.21762272320000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Z3j-Ug-4dB"/>
+                                    <constraint firstAttribute="width" constant="100" id="oma-Kd-riQ"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="LZz-tl-u1l" firstAttribute="top" secondItem="cKA-aO-qQx" secondAttribute="bottom" id="AfX-fE-dwO"/>
                             <constraint firstItem="B9E-Zz-x95" firstAttribute="centerX" secondItem="cKA-aO-qQx" secondAttribute="centerX" id="ZGn-sv-ao6"/>
+                            <constraint firstItem="LZz-tl-u1l" firstAttribute="centerX" secondItem="cKA-aO-qQx" secondAttribute="centerX" id="kgR-tx-K95"/>
                             <constraint firstItem="B9E-Zz-x95" firstAttribute="centerY" secondItem="cKA-aO-qQx" secondAttribute="centerY" constant="20" id="qN4-pf-rbl"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1hJ-Ww-ncL"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="q0k-QE-vtW"/>
+                    <connections>
+                        <outlet property="settingsView" destination="LZz-tl-u1l" id="bXp-uc-7XJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Md8-gB-Ydg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -313,7 +310,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DAv-GM-HJZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1183" y="698"/>
+            <point key="canvasLocation" x="1183" y="-664"/>
         </scene>
     </scenes>
 </document>
