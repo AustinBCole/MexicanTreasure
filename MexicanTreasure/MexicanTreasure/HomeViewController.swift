@@ -36,7 +36,7 @@ class HomeViewController: UIViewController {
         let position: CGFloat = 100.0
         UIView.animateKeyframes(withDuration: animationDuration, delay: 0.0, options: .calculationModeLinear, animations: {
             UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1/3, animations: {
-                self.settingsStackView.frame = CGRect(x: self.settingsStackView.frame.midX - 100, y: self.settingsStackView.frame.midY - 300, width: 200, height: 150)
+                self.settingsStackView.frame = CGRect(x: 0, y: self.view.frame.midY + self.view.frame.height * 0.2, width: 200, height: 150)
 
             })
         }, completion: { completed in
