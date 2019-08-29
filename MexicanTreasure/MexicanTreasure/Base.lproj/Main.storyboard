@@ -269,27 +269,60 @@
                                     <constraint firstAttribute="width" constant="100" id="bwh-hl-PXe"/>
                                 </constraints>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LZz-tl-u1l">
-                                <rect key="frame" x="157" y="896" width="100" height="100"/>
-                                <color key="backgroundColor" red="1" green="0.274480418" blue="0.21762272320000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="TLZ-Sv-hmk">
+                                <rect key="frame" x="107" y="896" width="200" height="150"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LZz-tl-u1l">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="100"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="MeR-VX-6Jd">
+                                                <rect key="frame" x="35.5" y="16" width="129" height="68"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EFa-H6-VuE">
+                                                        <rect key="frame" x="0.0" y="0.0" width="129" height="30"/>
+                                                        <state key="normal" title="Change Font Size"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aT0-ZM-Be3">
+                                                        <rect key="frame" x="0.0" y="38" width="129" height="30"/>
+                                                        <state key="normal" title="Change Font Color"/>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="MeR-VX-6Jd" firstAttribute="centerY" secondItem="LZz-tl-u1l" secondAttribute="centerY" id="LbG-zh-BBF"/>
+                                            <constraint firstAttribute="height" constant="100" id="Z3j-Ug-4dB"/>
+                                            <constraint firstItem="MeR-VX-6Jd" firstAttribute="centerX" secondItem="LZz-tl-u1l" secondAttribute="centerX" id="dGG-ub-NXQ"/>
+                                            <constraint firstAttribute="width" constant="200" id="oma-Kd-riQ"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iM8-Ko-Ttu">
+                                        <rect key="frame" x="0.0" y="121" width="200" height="29"/>
+                                        <state key="normal" title="Cancel"/>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="Z3j-Ug-4dB"/>
-                                    <constraint firstAttribute="width" constant="100" id="oma-Kd-riQ"/>
+                                    <constraint firstItem="iM8-Ko-Ttu" firstAttribute="width" secondItem="LZz-tl-u1l" secondAttribute="width" id="fEC-im-4x8"/>
+                                    <constraint firstAttribute="width" constant="200" id="o1p-p8-nha"/>
+                                    <constraint firstAttribute="height" constant="150" id="w95-Ff-k9w"/>
                                 </constraints>
-                            </view>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="LZz-tl-u1l" firstAttribute="top" secondItem="cKA-aO-qQx" secondAttribute="bottom" id="AfX-fE-dwO"/>
+                            <constraint firstItem="TLZ-Sv-hmk" firstAttribute="centerX" secondItem="cKA-aO-qQx" secondAttribute="centerX" id="7ON-I7-8o1"/>
                             <constraint firstItem="B9E-Zz-x95" firstAttribute="centerX" secondItem="cKA-aO-qQx" secondAttribute="centerX" id="ZGn-sv-ao6"/>
-                            <constraint firstItem="LZz-tl-u1l" firstAttribute="centerX" secondItem="cKA-aO-qQx" secondAttribute="centerX" id="kgR-tx-K95"/>
                             <constraint firstItem="B9E-Zz-x95" firstAttribute="centerY" secondItem="cKA-aO-qQx" secondAttribute="centerY" constant="20" id="qN4-pf-rbl"/>
+                            <constraint firstItem="TLZ-Sv-hmk" firstAttribute="top" secondItem="cKA-aO-qQx" secondAttribute="bottom" id="xP6-OT-9C8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1hJ-Ww-ncL"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="q0k-QE-vtW"/>
                     <connections>
-                        <outlet property="settingsView" destination="LZz-tl-u1l" id="bXp-uc-7XJ"/>
+                        <outlet property="cancelButton" destination="iM8-Ko-Ttu" id="dPK-QG-Brp"/>
+                        <outlet property="settingsStackView" destination="TLZ-Sv-hmk" id="hpW-Ng-cbe"/>
+                        <outlet property="settingsView" destination="LZz-tl-u1l" id="UfK-1P-6sd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Md8-gB-Ydg" userLabel="First Responder" sceneMemberID="firstResponder"/>

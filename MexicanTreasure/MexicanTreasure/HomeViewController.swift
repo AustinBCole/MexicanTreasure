@@ -11,6 +11,8 @@ import UIKit
 class HomeViewController: UIViewController {
     
     private var settingsViewController = SettingsViewController()
+    @IBOutlet weak var settingsStackView: UIView!
+    @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var settingsView: UIView!
     
 
@@ -18,6 +20,8 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "mexican_treasure_home_resized_smaller")!)
+        settingsView.layer.cornerRadius = 10
+        cancelButton.layer.cornerRadius = 10
     }
     
     @IBAction func restartGameButtonTapped(_ sender: Any) {
@@ -32,7 +36,7 @@ class HomeViewController: UIViewController {
         let position: CGFloat = 100.0
         UIView.animateKeyframes(withDuration: animationDuration, delay: 0.0, options: .calculationModeLinear, animations: {
             UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1/3, animations: {
-                self.settingsView.frame = CGRect(x: self.settingsView.frame.midX - 50, y: self.settingsView.frame.midY - 200, width: 100, height: 100)
+                self.settingsStackView.frame = CGRect(x: self.settingsStackView.frame.midX - 100, y: self.settingsStackView.frame.midY - 300, width: 200, height: 150)
 
             })
         }, completion: { completed in
