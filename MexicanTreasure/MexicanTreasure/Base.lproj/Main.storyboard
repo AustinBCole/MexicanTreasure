@@ -186,22 +186,6 @@
             </objects>
             <point key="canvasLocation" x="467" y="19"/>
         </scene>
-        <!--Settings-->
-        <scene sceneID="JRP-Ja-U2z">
-            <objects>
-                <viewController id="2er-sQ-Ccy" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Zal-he-AYn">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="fml-cW-XFq"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Settings" id="Qw9-8h-4tM"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lJG-8h-Gxp" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1183" y="-658"/>
-        </scene>
         <!--Home-->
         <scene sceneID="e13-EC-5kX">
             <objects>
@@ -269,7 +253,7 @@
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                 <state key="normal" title="Settings"/>
                                                 <connections>
-                                                    <segue destination="2er-sQ-Ccy" kind="show" id="7Su-LQ-d5w"/>
+                                                    <action selector="settingsButtonTapped:" destination="h94-If-Jdy" eventType="touchUpInside" id="oLZ-kn-xwn"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -285,15 +269,63 @@
                                     <constraint firstAttribute="width" constant="100" id="bwh-hl-PXe"/>
                                 </constraints>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="TLZ-Sv-hmk">
+                                <rect key="frame" x="0.0" y="896" width="414" height="181"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LZz-tl-u1l">
+                                        <rect key="frame" x="50" y="0.0" width="314" height="110"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="MeR-VX-6Jd">
+                                                <rect key="frame" x="92.5" y="21" width="129" height="68"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EFa-H6-VuE">
+                                                        <rect key="frame" x="0.0" y="0.0" width="129" height="30"/>
+                                                        <state key="normal" title="Change Font Size"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aT0-ZM-Be3">
+                                                        <rect key="frame" x="0.0" y="38" width="129" height="30"/>
+                                                        <state key="normal" title="Change Font Color"/>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="MeR-VX-6Jd" firstAttribute="centerY" secondItem="LZz-tl-u1l" secondAttribute="centerY" id="LbG-zh-BBF"/>
+                                            <constraint firstItem="MeR-VX-6Jd" firstAttribute="centerX" secondItem="LZz-tl-u1l" secondAttribute="centerX" id="dGG-ub-NXQ"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iM8-Ko-Ttu">
+                                        <rect key="frame" x="50" y="131" width="314" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="3Xj-QB-2S4"/>
+                                        </constraints>
+                                        <state key="normal" title="Cancel"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="LZz-tl-u1l" firstAttribute="width" secondItem="TLZ-Sv-hmk" secondAttribute="width" constant="-100" id="CIf-ip-Lal"/>
+                                    <constraint firstItem="iM8-Ko-Ttu" firstAttribute="width" secondItem="LZz-tl-u1l" secondAttribute="width" id="fEC-im-4x8"/>
+                                    <constraint firstAttribute="height" constant="181" id="w95-Ff-k9w"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="TLZ-Sv-hmk" firstAttribute="centerX" secondItem="cKA-aO-qQx" secondAttribute="centerX" id="7ON-I7-8o1"/>
+                            <constraint firstItem="TLZ-Sv-hmk" firstAttribute="width" secondItem="1hJ-Ww-ncL" secondAttribute="width" id="CJc-mA-F84"/>
                             <constraint firstItem="B9E-Zz-x95" firstAttribute="centerX" secondItem="cKA-aO-qQx" secondAttribute="centerX" id="ZGn-sv-ao6"/>
                             <constraint firstItem="B9E-Zz-x95" firstAttribute="centerY" secondItem="cKA-aO-qQx" secondAttribute="centerY" constant="20" id="qN4-pf-rbl"/>
+                            <constraint firstItem="TLZ-Sv-hmk" firstAttribute="top" secondItem="cKA-aO-qQx" secondAttribute="bottom" id="xP6-OT-9C8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1hJ-Ww-ncL"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="q0k-QE-vtW"/>
+                    <connections>
+                        <outlet property="cancelButton" destination="iM8-Ko-Ttu" id="dPK-QG-Brp"/>
+                        <outlet property="settingsStackView" destination="TLZ-Sv-hmk" id="hpW-Ng-cbe"/>
+                        <outlet property="settingsView" destination="LZz-tl-u1l" id="UfK-1P-6sd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Md8-gB-Ydg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -313,7 +345,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DAv-GM-HJZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1183" y="698"/>
+            <point key="canvasLocation" x="1183" y="-664"/>
         </scene>
     </scenes>
 </document>
