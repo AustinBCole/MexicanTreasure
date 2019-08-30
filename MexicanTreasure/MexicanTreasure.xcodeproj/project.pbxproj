@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		A228CD8F230E52E600D8C09C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A228CD8E230E52E600D8C09C /* StoreKit.framework */; };
+		A25F091D231994DA003C2D24 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25F091C231994DA003C2D24 /* SettingsTableViewCell.swift */; };
 		A28B0EEB2315EA770050FBBA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28B0EEA2315EA770050FBBA /* HomeViewController.swift */; };
 		A28B0EED2315F63E0050FBBA /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28B0EEC2315F63E0050FBBA /* AboutViewController.swift */; };
 		A28B0EF0231621560050FBBA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28B0EEE231621560050FBBA /* SettingsViewController.swift */; };
-		A28B0EF42316F2DF0050FBBA /* SettingsModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28B0EF32316F2DF0050FBBA /* SettingsModalView.swift */; };
 		A2A6C44522E232EA0055DAA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6C44422E232EA0055DAA1 /* AppDelegate.swift */; };
 		A2A6C44722E232EA0055DAA1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6C44622E232EA0055DAA1 /* ViewController.swift */; };
 		A2A6C44A22E232EA0055DAA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2A6C44822E232EA0055DAA1 /* Main.storyboard */; };
@@ -30,10 +30,10 @@
 
 /* Begin PBXFileReference section */
 		A228CD8E230E52E600D8C09C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		A25F091C231994DA003C2D24 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		A28B0EEA2315EA770050FBBA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A28B0EEC2315F63E0050FBBA /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		A28B0EEE231621560050FBBA /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		A28B0EF32316F2DF0050FBBA /* SettingsModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModalView.swift; sourceTree = "<group>"; };
 		A2A6C44122E232EA0055DAA1 /* MexicanTreasure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MexicanTreasure.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2A6C44422E232EA0055DAA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2A6C44622E232EA0055DAA1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -105,7 +105,7 @@
 				A2A6C45C22E24AED0055DAA1 /* Player.swift */,
 				A2A6C45E22E262DD0055DAA1 /* StoryTreeNode.swift */,
 				A2A6C46222E266B80055DAA1 /* StoryTree.swift */,
-				A28B0EF32316F2DF0050FBBA /* SettingsModalView.swift */,
+				A25F091C231994DA003C2D24 /* SettingsTableViewCell.swift */,
 				A2A6C45A22E246710055DAA1 /* IntrinsicTableView.swift */,
 				A2DA8E82230B55BA009719C1 /* StoryFiles */,
 				A2A6C44B22E232EA0055DAA1 /* Assets.xcassets */,
@@ -199,7 +199,7 @@
 				A2A6C45B22E246710055DAA1 /* IntrinsicTableView.swift in Sources */,
 				A2A6C45F22E262DD0055DAA1 /* StoryTreeNode.swift in Sources */,
 				A28B0EED2315F63E0050FBBA /* AboutViewController.swift in Sources */,
-				A28B0EF42316F2DF0050FBBA /* SettingsModalView.swift in Sources */,
+				A25F091D231994DA003C2D24 /* SettingsTableViewCell.swift in Sources */,
 				A2A6C45D22E24AED0055DAA1 /* Player.swift in Sources */,
 				A28B0EEB2315EA770050FBBA /* HomeViewController.swift in Sources */,
 				A2A6C46522E268790055DAA1 /* StatsViewController.swift in Sources */,

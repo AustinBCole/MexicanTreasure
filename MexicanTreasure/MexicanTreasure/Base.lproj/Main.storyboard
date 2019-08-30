@@ -269,67 +269,47 @@
                                     <constraint firstAttribute="width" constant="100" id="bwh-hl-PXe"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="TLZ-Sv-hmk">
-                                <rect key="frame" x="0.0" y="896" width="414" height="181"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LZz-tl-u1l">
-                                        <rect key="frame" x="50" y="0.0" width="314" height="110"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="MeR-VX-6Jd">
-                                                <rect key="frame" x="92.5" y="21" width="129" height="68"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EFa-H6-VuE">
-                                                        <rect key="frame" x="0.0" y="0.0" width="129" height="30"/>
-                                                        <state key="normal" title="Change Font Size"/>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aT0-ZM-Be3">
-                                                        <rect key="frame" x="0.0" y="38" width="129" height="30"/>
-                                                        <state key="normal" title="Change Font Color"/>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstItem="MeR-VX-6Jd" firstAttribute="centerY" secondItem="LZz-tl-u1l" secondAttribute="centerY" id="LbG-zh-BBF"/>
-                                            <constraint firstItem="MeR-VX-6Jd" firstAttribute="centerX" secondItem="LZz-tl-u1l" secondAttribute="centerX" id="dGG-ub-NXQ"/>
-                                        </constraints>
-                                    </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iM8-Ko-Ttu">
-                                        <rect key="frame" x="50" y="131" width="314" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="3Xj-QB-2S4"/>
-                                        </constraints>
-                                        <state key="normal" title="Cancel"/>
-                                    </button>
-                                </subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LHo-yE-byT">
+                                <rect key="frame" x="82" y="901" width="250" height="140"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="LZz-tl-u1l" firstAttribute="width" secondItem="TLZ-Sv-hmk" secondAttribute="width" constant="-100" id="CIf-ip-Lal"/>
-                                    <constraint firstItem="iM8-Ko-Ttu" firstAttribute="width" secondItem="LZz-tl-u1l" secondAttribute="width" id="fEC-im-4x8"/>
-                                    <constraint firstAttribute="height" constant="181" id="w95-Ff-k9w"/>
+                                    <constraint firstAttribute="height" constant="140" id="V0j-O7-b7j"/>
+                                    <constraint firstAttribute="width" constant="250" id="rh7-Pm-hug"/>
                                 </constraints>
-                            </stackView>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="bun-Zm-2Bi">
+                                    <rect key="frame" x="0.0" y="72" width="250" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" id="Ev6-9X-XoM" customClass="SettingsTableViewCell" customModule="MexicanTreasure" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="250" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ev6-9X-XoM" id="gai-oJ-qiv">
+                                            <rect key="frame" x="0.0" y="0.0" width="250" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="TLZ-Sv-hmk" firstAttribute="centerX" secondItem="cKA-aO-qQx" secondAttribute="centerX" id="7ON-I7-8o1"/>
-                            <constraint firstItem="TLZ-Sv-hmk" firstAttribute="width" secondItem="1hJ-Ww-ncL" secondAttribute="width" id="CJc-mA-F84"/>
+                            <constraint firstItem="LHo-yE-byT" firstAttribute="centerY" secondItem="cKA-aO-qQx" secondAttribute="bottom" constant="75" id="Got-Ng-no8"/>
                             <constraint firstItem="B9E-Zz-x95" firstAttribute="centerX" secondItem="cKA-aO-qQx" secondAttribute="centerX" id="ZGn-sv-ao6"/>
                             <constraint firstItem="B9E-Zz-x95" firstAttribute="centerY" secondItem="cKA-aO-qQx" secondAttribute="centerY" constant="20" id="qN4-pf-rbl"/>
-                            <constraint firstItem="TLZ-Sv-hmk" firstAttribute="top" secondItem="cKA-aO-qQx" secondAttribute="bottom" id="xP6-OT-9C8"/>
+                            <constraint firstItem="LHo-yE-byT" firstAttribute="centerX" secondItem="cKA-aO-qQx" secondAttribute="centerX" id="w7Z-uR-5QY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1hJ-Ww-ncL"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="q0k-QE-vtW"/>
                     <connections>
-                        <outlet property="cancelButton" destination="iM8-Ko-Ttu" id="dPK-QG-Brp"/>
-                        <outlet property="settingsStackView" destination="TLZ-Sv-hmk" id="hpW-Ng-cbe"/>
-                        <outlet property="settingsView" destination="LZz-tl-u1l" id="UfK-1P-6sd"/>
+                        <outlet property="settingsTableView" destination="LHo-yE-byT" id="JZl-qI-fPx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Md8-gB-Ydg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1183" y="19"/>
+            <point key="canvasLocation" x="1182.608695652174" y="18.75"/>
         </scene>
         <!--About-->
         <scene sceneID="9Jx-NC-1d1">
