@@ -36,7 +36,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     private func animateSettingsView() {
         let animationDuration = 3.0
-        let position: CGFloat = 100.0
         UIView.animateKeyframes(withDuration: animationDuration, delay: 0.0, options: .calculationModeLinear, animations: {
             UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1/3, animations: {
 //                self.settingsStackView.frame = CGRect(x: 0, y: self.view.frame.midY + self.view.frame.height * 0.2, width: 200, height: 150)
