@@ -8,27 +8,30 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
     
     private var settingsViewController = SettingsViewController()
-    @IBOutlet weak var settingsStackView: UIView!
-    @IBOutlet weak var cancelButton: UIButton!
-    @IBOutlet weak var settingsView: UIView!
-    
+//    @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var settingsTableView: UITableView!
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "mexican_treasure_home_resized_smaller")!)
-        settingsView.layer.cornerRadius = 10
-        cancelButton.layer.cornerRadius = 10
+        settingsTableView.layer.cornerRadius = 10
+//        cancelButton.layer.cornerRadius = 10
+        settingsTableView.delegate = self
+        settingsTableView.dataSource = self
+        settingsTableView.reloadData()
     }
     
     @IBAction func restartGameButtonTapped(_ sender: Any) {
         StoryTree.shared.resetStoryTree()
     }
     @IBAction func settingsButtonTapped(_ sender: Any) {
-        animateSettingsView()
+//        animateSettingsView()
         
     }
     private func animateSettingsView() {
@@ -36,7 +39,7 @@ class HomeViewController: UIViewController {
         let position: CGFloat = 100.0
         UIView.animateKeyframes(withDuration: animationDuration, delay: 0.0, options: .calculationModeLinear, animations: {
             UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1/3, animations: {
-                self.settingsStackView.frame = CGRect(x: 0, y: self.view.frame.midY + self.view.frame.height * 0.2, width: 200, height: 150)
+//                self.settingsStackView.frame = CGRect(x: 0, y: self.view.frame.midY + self.view.frame.height * 0.2, width: 200, height: 150)
 
             })
         }, completion: { completed in
@@ -50,6 +53,27 @@ class HomeViewController: UIViewController {
             constraint.isActive = false
         }
     }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! SettingsTableViewCell
+        switch indexPath.row {
+        case 0:
+            cell.formatSettingsLabel()
+        case 1:
+            break
+        default:
+            break
+        }
+        cell.contentMode = .center
+        return cell
+    }
+    
     /*
     // MARK: - Navigation
 
