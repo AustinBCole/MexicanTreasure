@@ -24,7 +24,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 //        cancelButton.layer.cornerRadius = 10
         settingsTableView.delegate = self
         settingsTableView.dataSource = self
-        settingsTableView.reloadData()
+        
     }
     
     @IBAction func restartGameButtonTapped(_ sender: Any) {
@@ -62,16 +62,23 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! SettingsTableViewCell
+        
         switch indexPath.row {
         case 0:
+//            cell.formatSettingsLabel()
             cell.formatSettingsLabel()
-        case 1:
-            break
         default:
-            break
+            cell.formatButton(index: indexPath.row)
         }
         cell.contentMode = .center
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row != 2 {
+            cell.separatorInset = UIEdgeInsets.zero
+            cell.layoutMargins = UIEdgeInsets.zero
+        }
     }
     
     /*

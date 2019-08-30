@@ -17,7 +17,17 @@ class SettingsTableViewCell: UITableViewCell {
         settingsLabel.text = "Settings"
         settingsLabel.textColor = .darkGray
     }
-    func formatSettingsLabel() {
-        
+    func formatButton(index: Int) {
+        let button = UIButton(type: .system)
+        self.contentView.addSubview(button)
+        button.frame = CGRect(x: self.bounds.midX - 100, y: 0, width: 200, height: 50)
+        button.titleLabel?.font = .boldSystemFont(ofSize: 18)
+        switch index {
+        case 1:
+            button.setTitle("Choose Text Color", for: .normal)
+            
+        default:
+            button.setTitle("Choose Text Size", for: .normal)
+        }
     }
 }
