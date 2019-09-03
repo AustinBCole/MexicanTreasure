@@ -292,11 +292,24 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7a-Jz-lT2">
+                                <rect key="frame" x="82" y="1061" width="250" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ciX-sh-kWK"/>
+                                </constraints>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelButtonTapped:" destination="h94-If-Jdy" eventType="touchUpInside" id="mpW-F4-TnC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="LHo-yE-byT" firstAttribute="centerY" secondItem="cKA-aO-qQx" secondAttribute="bottom" constant="75" id="Got-Ng-no8"/>
+                            <constraint firstItem="a7a-Jz-lT2" firstAttribute="width" secondItem="LHo-yE-byT" secondAttribute="width" id="R3T-cz-a1T"/>
+                            <constraint firstItem="a7a-Jz-lT2" firstAttribute="centerX" secondItem="cKA-aO-qQx" secondAttribute="centerX" id="Rhh-Vp-sFz"/>
                             <constraint firstItem="B9E-Zz-x95" firstAttribute="centerX" secondItem="cKA-aO-qQx" secondAttribute="centerX" id="ZGn-sv-ao6"/>
+                            <constraint firstItem="a7a-Jz-lT2" firstAttribute="top" secondItem="LHo-yE-byT" secondAttribute="bottom" constant="20" id="q6A-DT-G8t"/>
                             <constraint firstItem="B9E-Zz-x95" firstAttribute="centerY" secondItem="cKA-aO-qQx" secondAttribute="centerY" constant="20" id="qN4-pf-rbl"/>
                             <constraint firstItem="LHo-yE-byT" firstAttribute="centerX" secondItem="cKA-aO-qQx" secondAttribute="centerX" id="w7Z-uR-5QY"/>
                         </constraints>
@@ -304,6 +317,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="q0k-QE-vtW"/>
                     <connections>
+                        <outlet property="cancelButton" destination="a7a-Jz-lT2" id="gsu-MW-7jC"/>
                         <outlet property="settingsTableView" destination="LHo-yE-byT" id="JZl-qI-fPx"/>
                     </connections>
                 </viewController>

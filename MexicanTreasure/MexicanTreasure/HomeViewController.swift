@@ -14,6 +14,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     private var settingsViewController = SettingsViewController()
     //    @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var settingsTableView: UITableView!
+    @IBOutlet weak var cancelButton: UIButton!
     
     
     override func viewDidLoad() {
@@ -24,6 +25,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         //        cancelButton.layer.cornerRadius = 10
         settingsTableView.delegate = self
         settingsTableView.dataSource = self
+        cancelButton.layer.cornerRadius = 10
+        cancelButton.titleLabel?.font = .boldSystemFont(ofSize: 18)
         
     }
     
@@ -34,11 +37,15 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         animateSettingsView()
         
     }
+    @IBAction func cancelButtonTapped(_ sender: Any) {
+    }
     private func animateSettingsView() {
         let animationDuration = 2.0
         UIView.animateKeyframes(withDuration: animationDuration, delay: 0.0, options: .calculationModeLinear, animations: {
             UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1/3, animations: {
                 self.settingsTableView.frame = CGRect(x: self.view.frame.midX - 125, y: self.view.frame.midY + self.view.frame.height * 0.2, width: 250, height: 140)
+                
+                self.cancelButton.frame = CGRect(x: self.view.frame.midX - 125, y: self.settingsTableView.frame.maxY + 20, width: 250, height: 50)
                 
             })
         }, completion: { completed in
