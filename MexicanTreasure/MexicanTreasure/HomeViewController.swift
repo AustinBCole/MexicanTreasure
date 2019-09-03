@@ -12,6 +12,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     private var settingsViewController = SettingsViewController()
+    private var settingsTableViewOriginalFrame = CGRect(x: 0, y: 0, width: 0, height: 0)
+    private var cancelButtonOriginalFrame = CGRect(x: 0, y: 0, width: 0, height: 0)
     //    @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var settingsTableView: UITableView!
     @IBOutlet weak var cancelButton: UIButton!
@@ -27,7 +29,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         settingsTableView.dataSource = self
         cancelButton.layer.cornerRadius = 10
         cancelButton.titleLabel?.font = .boldSystemFont(ofSize: 18)
-        
+        settingsTableViewOriginalFrame = settingsTableView.frame
+        cancelButtonOriginalFrame = cancelButton.frame
     }
     
     @IBAction func restartGameButtonTapped(_ sender: Any) {
@@ -38,6 +41,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
     @IBAction func cancelButtonTapped(_ sender: Any) {
+        deanimateSettingsView()
     }
     private func animateSettingsView() {
         let animationDuration = 2.0
@@ -46,16 +50,18 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 self.settingsTableView.frame = CGRect(x: self.view.frame.midX - 125, y: self.view.frame.midY + self.view.frame.height * 0.2, width: 250, height: 140)
                 
                 self.cancelButton.frame = CGRect(x: self.view.frame.midX - 125, y: self.settingsTableView.frame.maxY + 20, width: 250, height: 50)
-                
             })
-        }, completion: { completed in
-            if completed {
-                
-            }
-        })
+        }, completion: nil)
     }
     private func deanimateSettingsView() {
-        
+        let animationDuration = 2.0
+        UIView.animateKeyframes(withDuration: animationDuration, delay: 0.0, options: .calculationModeLinear, animations: {
+            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1/3, animations: {
+                self.settingsTableView.frame = self.settingsTableViewOriginalFrame
+                
+                self.cancelButton.frame = self.cancelButtonOriginalFrame
+            })
+        }, completion: nil)
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1

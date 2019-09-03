@@ -270,7 +270,7 @@
                                 </constraints>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LHo-yE-byT">
-                                <rect key="frame" x="82" y="901" width="250" height="140"/>
+                                <rect key="frame" x="62" y="901" width="250" height="140"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="140" id="V0j-O7-b7j"/>
@@ -293,7 +293,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7a-Jz-lT2">
-                                <rect key="frame" x="82" y="1061" width="250" height="50"/>
+                                <rect key="frame" x="62" y="1061" width="250" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="ciX-sh-kWK"/>
                                 </constraints>
@@ -307,11 +307,11 @@
                         <constraints>
                             <constraint firstItem="LHo-yE-byT" firstAttribute="centerY" secondItem="cKA-aO-qQx" secondAttribute="bottom" constant="75" id="Got-Ng-no8"/>
                             <constraint firstItem="a7a-Jz-lT2" firstAttribute="width" secondItem="LHo-yE-byT" secondAttribute="width" id="R3T-cz-a1T"/>
-                            <constraint firstItem="a7a-Jz-lT2" firstAttribute="centerX" secondItem="cKA-aO-qQx" secondAttribute="centerX" id="Rhh-Vp-sFz"/>
+                            <constraint firstItem="a7a-Jz-lT2" firstAttribute="centerX" secondItem="cKA-aO-qQx" secondAttribute="centerX" constant="-20" id="Rhh-Vp-sFz"/>
                             <constraint firstItem="B9E-Zz-x95" firstAttribute="centerX" secondItem="cKA-aO-qQx" secondAttribute="centerX" id="ZGn-sv-ao6"/>
                             <constraint firstItem="a7a-Jz-lT2" firstAttribute="top" secondItem="LHo-yE-byT" secondAttribute="bottom" constant="20" id="q6A-DT-G8t"/>
                             <constraint firstItem="B9E-Zz-x95" firstAttribute="centerY" secondItem="cKA-aO-qQx" secondAttribute="centerY" constant="20" id="qN4-pf-rbl"/>
-                            <constraint firstItem="LHo-yE-byT" firstAttribute="centerX" secondItem="cKA-aO-qQx" secondAttribute="centerX" id="w7Z-uR-5QY"/>
+                            <constraint firstItem="LHo-yE-byT" firstAttribute="centerX" secondItem="cKA-aO-qQx" secondAttribute="centerX" constant="-20" id="w7Z-uR-5QY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1hJ-Ww-ncL"/>
                     </view>
