@@ -54,12 +54,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
         })
     }
-    private func deactivateConstraints(targetedView: UIView) {
-        for constraint in targetedView.constraints {
-            constraint.isActive = false
-        }
+    private func deanimateSettingsView() {
+        
     }
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
