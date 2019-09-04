@@ -22,8 +22,6 @@ class SettingsViewController: UIViewController {
 
     private func createSubviews() {
         formatSettingsLabel()
-        createChangeFontSizeButton()
-        createDarkModeSwitch()
     }
     private func formatSettingsLabel() {
         settingsLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -61,12 +59,6 @@ class SettingsViewController: UIViewController {
                                                   constant: 80)
         
         NSLayoutConstraint.activate([topConstraint, leadingConstraint, trailingConstraint])
-    }
-    private func createChangeFontSizeButton() {
-        
-    }
-    private func createDarkModeSwitch() {
-        
     }
     
     /*

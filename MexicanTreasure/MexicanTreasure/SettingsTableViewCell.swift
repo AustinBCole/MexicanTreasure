@@ -15,13 +15,16 @@ class SettingsTableViewCell: UITableViewCell {
         self.addSubview(settingsLabel)
         settingsLabel.frame = CGRect(x: self.bounds.midX - 34, y: 0, width: 100, height: 50)
         settingsLabel.text = "Settings"
-        settingsLabel.textColor = .darkGray
+        settingsLabel.textColor = .gray
+        settingsLabel.font = .boldSystemFont(ofSize: 14)
+
     }
     func formatButton(index: Int) {
         let button = UIButton(type: .system)
         self.contentView.addSubview(button)
         button.frame = CGRect(x: self.bounds.midX - 100, y: 0, width: 200, height: 50)
-        button.titleLabel?.font = .boldSystemFont(ofSize: 18)
+        button.titleLabel?.font = .boldSystemFont(ofSize: 16)
+
         switch index {
         case 1:
             button.setTitle("Choose Text Color", for: .normal)
