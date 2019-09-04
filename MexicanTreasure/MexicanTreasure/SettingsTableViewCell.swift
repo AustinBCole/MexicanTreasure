@@ -10,16 +10,16 @@ import UIKit
 
 class SettingsTableViewCell: UITableViewCell {
     
-    func formatSettingsLabel() {
+    internal func formatSettingsLabel() {
         let settingsLabel = UILabel()
-        self.addSubview(settingsLabel)
+        self.contentView.addSubview(settingsLabel)
         settingsLabel.frame = CGRect(x: self.bounds.midX - 34, y: 0, width: 100, height: 50)
         settingsLabel.text = "Settings"
         settingsLabel.textColor = .gray
         settingsLabel.font = .boldSystemFont(ofSize: 14)
 
     }
-    func formatButton(index: Int) {
+    internal func formatButton(index: Int) {
         let button = UIButton(type: .system)
         self.contentView.addSubview(button)
         button.frame = CGRect(x: self.bounds.midX - 100, y: 0, width: 200, height: 50)
@@ -27,8 +27,7 @@ class SettingsTableViewCell: UITableViewCell {
 
         switch index {
         case 1:
-            button.setTitle("Choose Text Color", for: .normal)
-            
+            button.setTitle("Choose Text Color", for: .normal)            
         default:
             button.setTitle("Choose Text Size", for: .normal)
         }

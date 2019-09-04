@@ -186,6 +186,36 @@
             </objects>
             <point key="canvasLocation" x="467" y="19"/>
         </scene>
+        <!--Change Font Size View Controller-->
+        <scene sceneID="Qlq-bE-3WY">
+            <objects>
+                <viewController id="fsm-RM-2jE" customClass="ChangeFontSizeViewController" customModule="MexicanTreasure" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cNb-1Q-9ub">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="lZ4-cg-vSg"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8TX-Mv-vB1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="618" y="716"/>
+        </scene>
+        <!--Toggle Dark View Controller-->
+        <scene sceneID="8yN-y4-6D9">
+            <objects>
+                <viewController id="Iak-nc-rNa" customClass="ToggleDarkViewController" customModule="MexicanTreasure" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FrK-gy-Bwt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="jao-W7-PiX"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uWw-2E-HG2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1706" y="716"/>
+        </scene>
         <!--Home-->
         <scene sceneID="e13-EC-5kX">
             <objects>
@@ -319,6 +349,8 @@
                     <connections>
                         <outlet property="cancelButton" destination="a7a-Jz-lT2" id="gsu-MW-7jC"/>
                         <outlet property="settingsTableView" destination="LHo-yE-byT" id="JZl-qI-fPx"/>
+                        <segue destination="fsm-RM-2jE" kind="show" identifier="FontSizeSegue" id="RES-L6-o0O"/>
+                        <segue destination="Iak-nc-rNa" kind="show" identifier="DarkModeSegue" id="V70-bp-wec"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Md8-gB-Ydg" userLabel="First Responder" sceneMemberID="firstResponder"/>

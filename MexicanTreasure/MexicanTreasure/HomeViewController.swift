@@ -11,7 +11,6 @@ import UIKit
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
-    private var settingsViewController = SettingsViewController()
     private var settingsTableViewOriginalFrame = CGRect(x: 0, y: 0, width: 0, height: 0)
     private var cancelButtonOriginalFrame = CGRect(x: 0, y: 0, width: 0, height: 0)
     //    @IBOutlet weak var cancelButton: UIButton!
@@ -63,6 +62,15 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             })
         }, completion: nil)
     }
+    @objc
+    private func presentToggleDarkModeVC() {
+        performSegue(withIdentifier: "DarkModeSegue", sender: nil)
+    }
+    @objc
+    private func changeTextSizeVC() {
+        performSegue(withIdentifier: "ChangeFontSegue", sender: nil)
+    }
+    //MARK: TableView Delegate and Data Source Methods
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -75,8 +83,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         switch indexPath.row {
         case 0:
             cell.formatSettingsLabel()
+            let settingsLabel = cell.contentView.subviews[0] as! UILabel
+            
         default:
             cell.formatButton(index: indexPath.row)
+            let settingsButton = cell.contentView.subviews[0] as! UIButton
+            settingsButton.addTarget(self, action: Selector("presentToggleDarkModeVC"), for: .touchUpInside)
         }
         cell.contentMode = .center
         return cell
