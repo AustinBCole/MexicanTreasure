@@ -36,7 +36,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         StoryTree.shared.resetStoryTree()
     }
     @IBAction func settingsButtonTapped(_ sender: Any) {
-//        animateSettingsView()
+        animateSettingsView()
         
     }
     @IBAction func cancelButtonTapped(_ sender: Any) {
