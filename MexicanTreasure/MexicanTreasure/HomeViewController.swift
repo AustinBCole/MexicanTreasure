@@ -18,7 +18,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var settingsTableView: UITableView!
     @IBOutlet weak var cancelButton: UIButton!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -37,7 +36,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         StoryTree.shared.resetStoryTree()
     }
     @IBAction func settingsButtonTapped(_ sender: Any) {
-        animateSettingsView()
+//        animateSettingsView()
         
     }
     @IBAction func cancelButtonTapped(_ sender: Any) {
@@ -50,6 +49,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 self.settingsTableView.frame = CGRect(x: self.view.frame.midX - 125, y: self.view.frame.midY + self.view.frame.height * 0.2, width: 250, height: 140)
                 
                 self.cancelButton.frame = CGRect(x: self.view.frame.midX - 125, y: self.settingsTableView.frame.maxY + 20, width: 250, height: 50)
+              
             })
         }, completion: nil)
     }
@@ -87,16 +87,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell.separatorInset = UIEdgeInsets.zero
             cell.layoutMargins = UIEdgeInsets.zero
         }
+
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }
