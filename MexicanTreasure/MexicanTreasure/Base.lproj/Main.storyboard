@@ -201,7 +201,7 @@
             </objects>
             <point key="canvasLocation" x="618" y="716"/>
         </scene>
-        <!--Toggle Dark View Controller-->
+        <!--Change Text Color-->
         <scene sceneID="8yN-y4-6D9">
             <objects>
                 <viewController id="Iak-nc-rNa" customClass="ToggleDarkViewController" customModule="MexicanTreasure" customModuleProvider="target" sceneMemberID="viewController">
@@ -231,6 +231,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jao-W7-PiX"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Change Text Color" id="OWn-mb-PjG"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uWw-2E-HG2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
