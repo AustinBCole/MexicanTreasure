@@ -208,7 +208,27 @@
                     <view key="view" contentMode="scaleToFill" id="FrK-gy-Bwt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="nPc-iV-6D6">
+                                <rect key="frame" x="100.5" y="108" width="213.5" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toggle Dark Mode:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hJ9-vg-HQN">
+                                        <rect key="frame" x="0.0" y="0.0" width="144.5" height="31"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ufo-IF-fhV">
+                                        <rect key="frame" x="164.5" y="0.0" width="51" height="31"/>
+                                    </switch>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="nPc-iV-6D6" firstAttribute="top" secondItem="jao-W7-PiX" secondAttribute="top" constant="20" id="Y6u-OA-NtS"/>
+                            <constraint firstItem="nPc-iV-6D6" firstAttribute="centerX" secondItem="FrK-gy-Bwt" secondAttribute="centerX" id="oCu-Eg-N0V"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="jao-W7-PiX"/>
                     </view>
                 </viewController>
