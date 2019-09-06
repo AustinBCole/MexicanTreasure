@@ -377,6 +377,10 @@
                     <connections>
                         <outlet property="cancelButton" destination="a7a-Jz-lT2" id="gsu-MW-7jC"/>
                         <outlet property="settingsTableView" destination="LHo-yE-byT" id="JZl-qI-fPx"/>
+                        <outletCollection property="menuButtonCollection" destination="X0E-YB-fKZ" collectionClass="NSMutableArray" id="72s-Zn-QA6"/>
+                        <outletCollection property="menuButtonCollection" destination="ENc-rt-4Mm" collectionClass="NSMutableArray" id="wAa-NU-MT4"/>
+                        <outletCollection property="menuButtonCollection" destination="Dgo-UV-HmC" collectionClass="NSMutableArray" id="Ydx-qD-WYP"/>
+                        <outletCollection property="menuButtonCollection" destination="4tL-1N-DMG" collectionClass="NSMutableArray" id="rbw-d0-pG9"/>
                         <segue destination="fsm-RM-2jE" kind="show" identifier="FontSizeSegue" id="RES-L6-o0O"/>
                         <segue destination="Iak-nc-rNa" kind="show" identifier="DarkModeSegue" id="V70-bp-wec"/>
                     </connections>

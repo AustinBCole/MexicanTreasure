@@ -9,6 +9,11 @@
 import UIKit
 
 class ToggleDarkViewController: UIViewController {
+    
+    var originalNavBarStyle = UIBarStyle.black
+    var originalNavBarBarTintColor = UIColor.blue
+    var originalNavBarTintColor = UIColor.blue
+    var originalNavBarBackColor = UIColor.blue
 
     @IBOutlet weak var toggleDarkModeLabel: UILabel!
     @IBOutlet weak var darkModeSwitch: UISwitch!
@@ -17,23 +22,23 @@ class ToggleDarkViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        // Add Dark Mode Observers
-        NotificationCenter.default.addObserver(self, selector: #selector(darkModeEnabled(_:)), name: .darkModeEnabled, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(darkModeDisabled(_:)), name: .darkModeDisabled, object: nil)
     }
     @IBAction func darkModeSwitchToggled(_ sender: Any) {
-        if darkModeSwitch.isOn == true {
+        if darkModeSwitch.isOn {
             UserDefaults.standard.set(true, forKey: "darkModeEnabled")
-            NotificationCenter.default.post(name: .darkModeEnabled, object: nil)
-            
+            darkModeEnabled()
         } else {
             
             UserDefaults.standard.set(false, forKey: "darkModeEnabled")
-            NotificationCenter.default.post(name: .darkModeDisabled, object: nil)
+            darkModeDisabled()
         }
     }
     
-    @objc private func darkModeEnabled(_ notification: Notification) {
+    private func darkModeEnabled() {
+        originalNavBarStyle = self.navigationController?.navigationBar.barStyle ?? UIBarStyle.blackTranslucent
+        originalNavBarBarTintColor = self.navigationController?.navigationBar.barTintColor ?? UIColor.blue
+        originalNavBarTintColor = self.navigationController?.navigationBar.tintColor ?? UIColor.blue
+        originalNavBarBackColor = self.navigationController?.navigationBar.backgroundColor ?? UIColor.blue
         self.toggleDarkModeLabel.textColor = .white
         self.view.backgroundColor = .black
         self.navigationController?.navigationBar.barTintColor = .black
@@ -43,8 +48,14 @@ class ToggleDarkViewController: UIViewController {
 
     }
     
-    @objc private func darkModeDisabled(_ notification: Notification) {
-        // Write your non-dark mode code here
+    private func darkModeDisabled() {
+        self.toggleDarkModeLabel.textColor = .black
+        self.view.backgroundColor = .white
+        self.navigationController?.navigationBar.barTintColor = originalNavBarTintColor
+        self.navigationController?.navigationBar.barStyle = originalNavBarStyle
+        self.navigationController?.navigationBar.tintColor = originalNavBarTintColor
+        self.navigationController?.navigationBar.backgroundColor = originalNavBarBackColor
+        
     }
     
     

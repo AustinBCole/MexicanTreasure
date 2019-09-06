@@ -17,6 +17,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var settingsTableView: UITableView!
     @IBOutlet weak var cancelButton: UIButton!
     
+    @IBOutlet var menuButtonCollection: [UIButton]!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -29,10 +30,16 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         cancelButton.titleLabel?.font = .boldSystemFont(ofSize: 18)
         settingsTableViewOriginalFrame = settingsTableView.frame
         cancelButtonOriginalFrame = cancelButton.frame
-        
-        // Add Dark Mode Observers
-        NotificationCenter.default.addObserver(self, selector: #selector(darkModeEnabled(_:)), name: .darkModeEnabled, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(darkModeDisabled(_:)), name: .darkModeDisabled, object: nil)
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // Dark Mode or not
+        settingsTableView.reloadData()
+        if UserDefaults.standard.bool(forKey: "darkModeEnabled") {
+            darkModeEnabled()
+        } else {
+            darkModeDisabled()
+        }
     }
     
     @IBAction func restartGameButtonTapped(_ sender: Any) {
@@ -75,11 +82,19 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         performSegue(withIdentifier: "ChangeFontSegue", sender: nil)
     }
     
-    @objc private func darkModeEnabled(_ notification: Notification) {
-        settingsTableView.
+    private func darkModeEnabled() {
+        settingsTableView.reloadData()
+        for button in menuButtonCollection {
+            button.backgroundColor = .black
+            button.setTitleColor(.white, for: .normal)
+        }
+        settingsTableView.backgroundColor = .black
+        cancelButton.backgroundColor = .black
+        cancelButton.setTitleColor(.white, for: .normal)
+        settingsTableView.tableFooterView?.backgroundColor = .black
     }
     
-    @objc private func darkModeDisabled(_ notification: Notification) {
+    private func darkModeDisabled() {
         // Write your non-dark mode code here
     }
     
@@ -106,17 +121,19 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         return 3
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let isDarkModeEnabled = UserDefaults.standard.bool(forKey: "darkModeEnabled")
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! SettingsTableViewCell
         
         switch indexPath.row {
         case 0:
-            cell.formatSettingsLabel()
+            cell.formatSettingsLabel(isDarkModeEnabled: isDarkModeEnabled)
             let settingsLabel = cell.contentView.subviews[0] as! UILabel
             
         default:
-            cell.formatButton(index: indexPath.row)
+            cell.formatButton(index: indexPath.row, isDarkModeEnabled: isDarkModeEnabled)
             let settingsButton = cell.contentView.subviews[0] as! UIButton
             settingsButton.addTarget(self, action: Selector("presentToggleDarkModeVC"), for: .touchUpInside)
+            print("hello")
         }
         cell.contentMode = .center
         return cell
