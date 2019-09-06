@@ -402,7 +402,7 @@
         <!--About-->
         <scene sceneID="9Jx-NC-1d1">
             <objects>
-                <viewController id="3vo-j4-qnB" sceneMemberID="viewController">
+                <viewController id="3vo-j4-qnB" customClass="AboutViewController" customModule="MexicanTreasure" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nns-js-gnh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

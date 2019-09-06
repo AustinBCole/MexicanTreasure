@@ -14,7 +14,9 @@ class AboutViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         // Dark Mode or not
         if UserDefaults.standard.bool(forKey: "darkModeEnabled") {
             darkModeEnabled()
@@ -28,7 +30,7 @@ class AboutViewController: UIViewController {
     }
     
     private func darkModeDisabled() {
-        // Write your non-dark mode code here
+        self.view.backgroundColor = .white
     }
     
 

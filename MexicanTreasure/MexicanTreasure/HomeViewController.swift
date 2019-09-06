@@ -144,7 +144,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell.formatButton(index: indexPath.row, isDarkModeEnabled: isDarkModeEnabled)
             let settingsButton = cell.contentView.subviews[0] as! UIButton
             settingsButton.addTarget(self, action: #selector(presentToggleDarkModeVC), for: .touchUpInside)
-            print("hello")
         }
         cell.contentMode = .center
         return cell
