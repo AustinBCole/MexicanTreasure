@@ -92,6 +92,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         cancelButton.backgroundColor = .black
         cancelButton.setTitleColor(.white, for: .normal)
         settingsTableView.tableFooterView?.backgroundColor = .black
+        self.navigationController?.navigationBar.barTintColor = .black
+        self.navigationController?.navigationBar.barStyle = .black
+        self.navigationController?.navigationBar.tintColor = .black
+        self.navigationController?.navigationBar.backgroundColor = .black
     }
     
     private func darkModeDisabled() {

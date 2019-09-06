@@ -15,6 +15,7 @@ class StatsViewController: UIViewController {
     @IBOutlet weak var agilityLabel: UILabel!
     @IBOutlet weak var ancientLanguagesLabel: UILabel!
     @IBOutlet weak var infamyLabel: UILabel!
+    @IBOutlet var statsLabelsCollection: [UILabel]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,10 +47,16 @@ class StatsViewController: UIViewController {
 
     private func darkModeEnabled() {
         self.view.backgroundColor = .black
+        for label in statsLabelsCollection {
+            label.textColor = .white
+        }
     }
     
     private func darkModeDisabled() {
-        // Write your non-dark mode code here
+        self.view.backgroundColor = .white
+        for label in statsLabelsCollection {
+            label.textColor = .black
+        }
     }
     
     

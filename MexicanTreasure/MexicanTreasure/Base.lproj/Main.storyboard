@@ -161,6 +161,16 @@
                         <outlet property="infamyLabel" destination="ry5-V3-lQS" id="CQ3-74-GCP"/>
                         <outlet property="nameLabel" destination="fmG-BX-zUx" id="xNS-TJ-pjv"/>
                         <outlet property="strengthLabel" destination="QUM-XQ-nb1" id="t9d-cV-OPR"/>
+                        <outletCollection property="statsLabelsCollection" destination="ry5-V3-lQS" collectionClass="NSMutableArray" id="TWB-n8-zir"/>
+                        <outletCollection property="statsLabelsCollection" destination="J8Y-lf-ROl" collectionClass="NSMutableArray" id="Fnu-Sj-ODA"/>
+                        <outletCollection property="statsLabelsCollection" destination="fmG-BX-zUx" collectionClass="NSMutableArray" id="oXK-D3-Qzk"/>
+                        <outletCollection property="statsLabelsCollection" destination="QUM-XQ-nb1" collectionClass="NSMutableArray" id="404-rk-hWW"/>
+                        <outletCollection property="statsLabelsCollection" destination="m44-oT-RcI" collectionClass="NSMutableArray" id="21t-ZM-CWT"/>
+                        <outletCollection property="statsLabelsCollection" destination="bHW-Zv-zTL" collectionClass="NSMutableArray" id="2jP-Ka-i7Q"/>
+                        <outletCollection property="statsLabelsCollection" destination="4Oe-ir-sAf" collectionClass="NSMutableArray" id="eex-6U-17M"/>
+                        <outletCollection property="statsLabelsCollection" destination="9hu-m9-61H" collectionClass="NSMutableArray" id="RkW-vI-va8"/>
+                        <outletCollection property="statsLabelsCollection" destination="izC-ce-XGN" collectionClass="NSMutableArray" id="A53-kd-7U3"/>
+                        <outletCollection property="statsLabelsCollection" destination="2Kc-mQ-sU1" collectionClass="NSMutableArray" id="Z3Z-uU-iRh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="32r-WO-KNw" userLabel="First Responder" sceneMemberID="firstResponder"/>
