@@ -26,6 +26,10 @@ class ChoicesTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        // Add Dark Mode Observers
+        NotificationCenter.default.addObserver(self, selector: #selector(darkModeEnabled(_:)), name: .darkModeEnabled, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(darkModeDisabled(_:)), name: .darkModeDisabled, object: nil)
     }
     
     //MARK: Internal Methods
@@ -65,4 +69,13 @@ class ChoicesTableViewController: UITableViewController {
         storyTree.advanceToNextScene(index: indexPath.row)
         
     }
+    
+    @objc private func darkModeEnabled(_ notification: Notification) {
+        self.view.backgroundColor = .black
+    }
+    
+    @objc private func darkModeDisabled(_ notification: Notification) {
+        // Write your non-dark mode code here
+    }
+    
 }

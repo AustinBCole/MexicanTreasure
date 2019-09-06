@@ -29,6 +29,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         cancelButton.titleLabel?.font = .boldSystemFont(ofSize: 18)
         settingsTableViewOriginalFrame = settingsTableView.frame
         cancelButtonOriginalFrame = cancelButton.frame
+        
+        // Add Dark Mode Observers
+        NotificationCenter.default.addObserver(self, selector: #selector(darkModeEnabled(_:)), name: .darkModeEnabled, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(darkModeDisabled(_:)), name: .darkModeDisabled, object: nil)
     }
     
     @IBAction func restartGameButtonTapped(_ sender: Any) {
@@ -70,6 +74,30 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     private func changeTextSizeVC() {
         performSegue(withIdentifier: "ChangeFontSegue", sender: nil)
     }
+    
+    @objc private func darkModeEnabled(_ notification: Notification) {
+        settingsTableView.
+    }
+    
+    @objc private func darkModeDisabled(_ notification: Notification) {
+        // Write your non-dark mode code here
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     //MARK: TableView Delegate and Data Source Methods
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1

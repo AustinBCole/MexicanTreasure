@@ -20,6 +20,10 @@ class StatsViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        // Add Dark Mode Observers
+        NotificationCenter.default.addObserver(self, selector: #selector(darkModeEnabled(_:)), name: .darkModeEnabled, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(darkModeDisabled(_:)), name: .darkModeDisabled, object: nil)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -36,9 +40,13 @@ class StatsViewController: UIViewController {
         infamyLabel.text = String(player.getInfamy())
     }
 
-    //MARK: Internal Methods
+    @objc private func darkModeEnabled(_ notification: Notification) {
+        self.view.backgroundColor = .black
+    }
     
-    //MARK: Public Methods
+    @objc private func darkModeDisabled(_ notification: Notification) {
+        // Write your non-dark mode code here
+    }
     
     
     
