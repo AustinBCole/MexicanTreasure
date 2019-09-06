@@ -299,10 +299,20 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
     
     private func darkModeEnabled() {
         self.view.backgroundColor = .black
+        nextButton.backgroundColor = .black
+        nextButton.setTitleColor(.white, for: .normal)
+        storyTextLabel.textColor = .white
+        storyTextLabel.backgroundColor = .black
+        storyScrollView.backgroundColor = .black
     }
     
     private func darkModeDisabled() {
-        // Write your non-dark mode code here
+        self.view.backgroundColor = .white
+        nextButton.backgroundColor = .white
+        nextButton.setTitleColor(self.view.tintColor, for: .normal)
+        storyTextLabel.textColor = .black
+        storyTextLabel.backgroundColor = .white
+        storyScrollView.backgroundColor = .white
     }
     
 }

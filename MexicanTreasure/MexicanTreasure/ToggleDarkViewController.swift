@@ -9,11 +9,6 @@
 import UIKit
 
 class ToggleDarkViewController: UIViewController {
-    
-    var originalNavBarStyle = UIBarStyle.black
-    var originalNavBarBarTintColor = UIColor.blue
-    var originalNavBarTintColor = UIColor.blue
-    var originalNavBarBackColor = UIColor.blue
 
     @IBOutlet weak var toggleDarkModeLabel: UILabel!
     @IBOutlet weak var darkModeSwitch: UISwitch!
@@ -35,10 +30,6 @@ class ToggleDarkViewController: UIViewController {
     }
     
     private func darkModeEnabled() {
-        originalNavBarStyle = self.navigationController?.navigationBar.barStyle ?? UIBarStyle.blackTranslucent
-        originalNavBarBarTintColor = self.navigationController?.navigationBar.barTintColor ?? UIColor.blue
-        originalNavBarTintColor = self.navigationController?.navigationBar.tintColor ?? UIColor.blue
-        originalNavBarBackColor = self.navigationController?.navigationBar.backgroundColor ?? UIColor.blue
         self.toggleDarkModeLabel.textColor = .white
         self.view.backgroundColor = .black
         self.navigationController?.navigationBar.barTintColor = .black
@@ -51,10 +42,10 @@ class ToggleDarkViewController: UIViewController {
     private func darkModeDisabled() {
         self.toggleDarkModeLabel.textColor = .black
         self.view.backgroundColor = .white
-        self.navigationController?.navigationBar.barTintColor = originalNavBarTintColor
-        self.navigationController?.navigationBar.barStyle = originalNavBarStyle
-        self.navigationController?.navigationBar.tintColor = originalNavBarTintColor
-        self.navigationController?.navigationBar.backgroundColor = originalNavBarBackColor
+        self.navigationController?.navigationBar.barTintColor = UINavigationBar().barTintColor
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.default
+        self.navigationController?.navigationBar.tintColor = UINavigationBar().tintColor
+        self.navigationController?.navigationBar.backgroundColor = UINavigationBar().backgroundColor
         
     }
     

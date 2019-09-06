@@ -95,7 +95,14 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     private func darkModeDisabled() {
-        // Write your non-dark mode code here
+        for button in menuButtonCollection {
+            button.backgroundColor = .white
+            button.setTitleColor(self.view.tintColor, for: .normal)
+        }
+        settingsTableView.backgroundColor = .white
+        cancelButton.backgroundColor = .white
+        cancelButton.setTitleColor(self.view.tintColor, for: .normal)
+        settingsTableView.tableFooterView?.backgroundColor = .white
     }
     
     
@@ -132,7 +139,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         default:
             cell.formatButton(index: indexPath.row, isDarkModeEnabled: isDarkModeEnabled)
             let settingsButton = cell.contentView.subviews[0] as! UIButton
-            settingsButton.addTarget(self, action: Selector("presentToggleDarkModeVC"), for: .touchUpInside)
+            settingsButton.addTarget(self, action: #selector(presentToggleDarkModeVC), for: .touchUpInside)
             print("hello")
         }
         cell.contentMode = .center

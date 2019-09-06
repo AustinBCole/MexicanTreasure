@@ -32,11 +32,8 @@ class ChoicesTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         // Dark Mode or not
-        if UserDefaults.standard.bool(forKey: "darkModeEnabled") {
-            darkModeEnabled()
-        } else {
-            darkModeDisabled()
-        }
+        tableView.reloadData()
+        
     }
     
     //MARK: Internal Methods
@@ -69,7 +66,17 @@ class ChoicesTableViewController: UITableViewController {
             choiceCell.textLabel?.textColor = .gray
             choiceCell.isUserInteractionEnabled = false
         }
-
+        
+        if UserDefaults.standard.bool(forKey: "darkModeEnabled") {
+            choiceCell.textLabel?.textColor = .white
+            choiceCell.contentView.backgroundColor = .black
+            
+        }
+        if UserDefaults.standard.bool(forKey: "darkModeEnabled") {
+            darkModeEnabled()
+        } else {
+            darkModeDisabled()
+        }
         return choiceCell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -78,11 +85,13 @@ class ChoicesTableViewController: UITableViewController {
     }
     
     private func darkModeEnabled() {
+        self.tableView.backgroundColor = .black
         self.view.backgroundColor = .black
     }
     
     private func darkModeDisabled() {
-        // Write your non-dark mode code here
+        self.tableView.backgroundColor = .white
+        self.view.backgroundColor = .white
     }
     
 }

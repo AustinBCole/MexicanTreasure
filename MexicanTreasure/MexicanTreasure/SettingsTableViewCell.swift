@@ -46,7 +46,7 @@ class SettingsTableViewCell: UITableViewCell {
             self.contentView.backgroundColor = .black
         } else {
             button.backgroundColor = .white
-            button.setTitleColor(.blue, for: .normal)
+            button.setTitleColor(self.tintColor, for: .normal)
             self.contentView.backgroundColor = .white
         }
     }
