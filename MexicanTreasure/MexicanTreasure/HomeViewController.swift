@@ -109,21 +109,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         settingsTableView.tableFooterView?.backgroundColor = .white
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     //MARK: TableView Delegate and Data Source Methods
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
