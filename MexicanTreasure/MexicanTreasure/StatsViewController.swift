@@ -15,15 +15,24 @@ class StatsViewController: UIViewController {
     @IBOutlet weak var agilityLabel: UILabel!
     @IBOutlet weak var ancientLanguagesLabel: UILabel!
     @IBOutlet weak var infamyLabel: UILabel!
+    @IBOutlet var statsLabelsCollection: [UILabel]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         populateLabelsText()
+        
+        // Dark Mode or not
+        if UserDefaults.standard.bool(forKey: "darkModeEnabled") {
+            darkModeEnabled()
+        } else {
+            darkModeDisabled()
+        }
     }
     
     //MARK: Private Methods
@@ -36,9 +45,19 @@ class StatsViewController: UIViewController {
         infamyLabel.text = String(player.getInfamy())
     }
 
-    //MARK: Internal Methods
+    private func darkModeEnabled() {
+        self.view.backgroundColor = .black
+        for label in statsLabelsCollection {
+            label.textColor = .white
+        }
+    }
     
-    //MARK: Public Methods
+    private func darkModeDisabled() {
+        self.view.backgroundColor = .white
+        for label in statsLabelsCollection {
+            label.textColor = .black
+        }
+    }
     
     
     

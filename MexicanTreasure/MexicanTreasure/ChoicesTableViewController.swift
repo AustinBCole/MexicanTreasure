@@ -26,6 +26,14 @@ class ChoicesTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // Dark Mode or not
+        tableView.reloadData()
+        
     }
     
     //MARK: Internal Methods
@@ -58,11 +66,32 @@ class ChoicesTableViewController: UITableViewController {
             choiceCell.textLabel?.textColor = .gray
             choiceCell.isUserInteractionEnabled = false
         }
-
+        
+        if UserDefaults.standard.bool(forKey: "darkModeEnabled") {
+            choiceCell.textLabel?.textColor = .white
+            choiceCell.contentView.backgroundColor = .black
+            
+        }
+        if UserDefaults.standard.bool(forKey: "darkModeEnabled") {
+            darkModeEnabled()
+        } else {
+            darkModeDisabled()
+        }
         return choiceCell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         storyTree.advanceToNextScene(index: indexPath.row)
         
     }
+    
+    private func darkModeEnabled() {
+        self.tableView.backgroundColor = .black
+        self.view.backgroundColor = .black
+    }
+    
+    private func darkModeDisabled() {
+        self.tableView.backgroundColor = .white
+        self.view.backgroundColor = .white
+    }
+    
 }

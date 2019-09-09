@@ -1,14 +1,14 @@
 //
-//  AboutViewController.swift
+//  ChangeFontSizeViewController.swift
 //  MexicanTreasure
 //
-//  Created by Austin Cole on 8/27/19.
+//  Created by Austin Cole on 9/4/19.
 //  Copyright © 2019 Austin Cole. All rights reserved.
 //
 
 import UIKit
 
-class AboutViewController: UIViewController {
+class ChangeFontSizeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,9 +30,8 @@ class AboutViewController: UIViewController {
     }
     
     private func darkModeDisabled() {
-        self.view.backgroundColor = .white
+        // Write your non-dark mode code here
     }
-    
 
     /*
     // MARK: - Navigation

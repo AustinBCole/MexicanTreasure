@@ -39,9 +39,14 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
         storyTree.storyDelegate = self
         // Do any additional setup after loading the view.
     }
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // Dark Mode or not
+        if UserDefaults.standard.bool(forKey: "darkModeEnabled") {
+            darkModeEnabled()
+        } else {
+            darkModeDisabled()
+        }
     }
     @objc
     private func nextButtonTapped() {
@@ -291,7 +296,28 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         scrollView.contentOffset.x = 0.0
     }
+    
+    private func darkModeEnabled() {
+        self.view.backgroundColor = .black
+        nextButton.backgroundColor = .black
+        nextButton.setTitleColor(.white, for: .normal)
+        storyTextLabel.textColor = .white
+        storyTextLabel.backgroundColor = .black
+        storyScrollView.backgroundColor = .black
+    }
+    
+    private func darkModeDisabled() {
+        self.view.backgroundColor = .white
+        nextButton.backgroundColor = .white
+        nextButton.setTitleColor(self.view.tintColor, for: .normal)
+        storyTextLabel.textColor = .black
+        storyTextLabel.backgroundColor = .white
+        storyScrollView.backgroundColor = .white
+    }
+    
 }
+
+
 
 extension StoryViewController: StoryDelegate {
     func storyHasChanged() {

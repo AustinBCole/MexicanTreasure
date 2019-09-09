@@ -161,6 +161,16 @@
                         <outlet property="infamyLabel" destination="ry5-V3-lQS" id="CQ3-74-GCP"/>
                         <outlet property="nameLabel" destination="fmG-BX-zUx" id="xNS-TJ-pjv"/>
                         <outlet property="strengthLabel" destination="QUM-XQ-nb1" id="t9d-cV-OPR"/>
+                        <outletCollection property="statsLabelsCollection" destination="ry5-V3-lQS" collectionClass="NSMutableArray" id="TWB-n8-zir"/>
+                        <outletCollection property="statsLabelsCollection" destination="J8Y-lf-ROl" collectionClass="NSMutableArray" id="Fnu-Sj-ODA"/>
+                        <outletCollection property="statsLabelsCollection" destination="fmG-BX-zUx" collectionClass="NSMutableArray" id="oXK-D3-Qzk"/>
+                        <outletCollection property="statsLabelsCollection" destination="QUM-XQ-nb1" collectionClass="NSMutableArray" id="404-rk-hWW"/>
+                        <outletCollection property="statsLabelsCollection" destination="m44-oT-RcI" collectionClass="NSMutableArray" id="21t-ZM-CWT"/>
+                        <outletCollection property="statsLabelsCollection" destination="bHW-Zv-zTL" collectionClass="NSMutableArray" id="2jP-Ka-i7Q"/>
+                        <outletCollection property="statsLabelsCollection" destination="4Oe-ir-sAf" collectionClass="NSMutableArray" id="eex-6U-17M"/>
+                        <outletCollection property="statsLabelsCollection" destination="9hu-m9-61H" collectionClass="NSMutableArray" id="RkW-vI-va8"/>
+                        <outletCollection property="statsLabelsCollection" destination="izC-ce-XGN" collectionClass="NSMutableArray" id="A53-kd-7U3"/>
+                        <outletCollection property="statsLabelsCollection" destination="2Kc-mQ-sU1" collectionClass="NSMutableArray" id="Z3Z-uU-iRh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="32r-WO-KNw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -185,6 +195,64 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="swp-4M-vJX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="467" y="19"/>
+        </scene>
+        <!--Change Font Size View Controller-->
+        <scene sceneID="Qlq-bE-3WY">
+            <objects>
+                <viewController id="fsm-RM-2jE" customClass="ChangeFontSizeViewController" customModule="MexicanTreasure" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cNb-1Q-9ub">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="lZ4-cg-vSg"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8TX-Mv-vB1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="618" y="716"/>
+        </scene>
+        <!--Change Text Color-->
+        <scene sceneID="8yN-y4-6D9">
+            <objects>
+                <viewController id="Iak-nc-rNa" customClass="ToggleDarkViewController" customModule="MexicanTreasure" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FrK-gy-Bwt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="nPc-iV-6D6">
+                                <rect key="frame" x="100.5" y="108" width="213.5" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toggle Dark Mode:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hJ9-vg-HQN">
+                                        <rect key="frame" x="0.0" y="0.0" width="144.5" height="31"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ufo-IF-fhV">
+                                        <rect key="frame" x="164.5" y="0.0" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="darkModeSwitchToggled:" destination="Iak-nc-rNa" eventType="valueChanged" id="LOi-bl-tmF"/>
+                                        </connections>
+                                    </switch>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="nPc-iV-6D6" firstAttribute="top" secondItem="jao-W7-PiX" secondAttribute="top" constant="20" id="Y6u-OA-NtS"/>
+                            <constraint firstItem="nPc-iV-6D6" firstAttribute="centerX" secondItem="FrK-gy-Bwt" secondAttribute="centerX" id="oCu-Eg-N0V"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jao-W7-PiX"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Change Text Color" id="OWn-mb-PjG"/>
+                    <connections>
+                        <outlet property="darkModeSwitch" destination="ufo-IF-fhV" id="99H-F6-UcU"/>
+                        <outlet property="toggleDarkModeLabel" destination="hJ9-vg-HQN" id="adx-R4-syk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uWw-2E-HG2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1706" y="716"/>
         </scene>
         <!--Home-->
         <scene sceneID="e13-EC-5kX">
@@ -319,6 +387,12 @@
                     <connections>
                         <outlet property="cancelButton" destination="a7a-Jz-lT2" id="gsu-MW-7jC"/>
                         <outlet property="settingsTableView" destination="LHo-yE-byT" id="JZl-qI-fPx"/>
+                        <outletCollection property="menuButtonCollection" destination="X0E-YB-fKZ" collectionClass="NSMutableArray" id="72s-Zn-QA6"/>
+                        <outletCollection property="menuButtonCollection" destination="ENc-rt-4Mm" collectionClass="NSMutableArray" id="wAa-NU-MT4"/>
+                        <outletCollection property="menuButtonCollection" destination="Dgo-UV-HmC" collectionClass="NSMutableArray" id="Ydx-qD-WYP"/>
+                        <outletCollection property="menuButtonCollection" destination="4tL-1N-DMG" collectionClass="NSMutableArray" id="rbw-d0-pG9"/>
+                        <segue destination="fsm-RM-2jE" kind="show" identifier="FontSizeSegue" id="RES-L6-o0O"/>
+                        <segue destination="Iak-nc-rNa" kind="show" identifier="DarkModeSegue" id="V70-bp-wec"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Md8-gB-Ydg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -328,7 +402,7 @@
         <!--About-->
         <scene sceneID="9Jx-NC-1d1">
             <objects>
-                <viewController id="3vo-j4-qnB" sceneMemberID="viewController">
+                <viewController id="3vo-j4-qnB" customClass="AboutViewController" customModule="MexicanTreasure" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nns-js-gnh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

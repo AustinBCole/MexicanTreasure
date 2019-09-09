@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A202549123217E5F006F9734 /* NotificationsName+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A202549023217E5F006F9734 /* NotificationsName+Extension.swift */; };
 		A228CD8F230E52E600D8C09C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A228CD8E230E52E600D8C09C /* StoreKit.framework */; };
 		A25F091D231994DA003C2D24 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25F091C231994DA003C2D24 /* SettingsTableViewCell.swift */; };
 		A28B0EEB2315EA770050FBBA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28B0EEA2315EA770050FBBA /* HomeViewController.swift */; };
 		A28B0EED2315F63E0050FBBA /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28B0EEC2315F63E0050FBBA /* AboutViewController.swift */; };
-		A28B0EF0231621560050FBBA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28B0EEE231621560050FBBA /* SettingsViewController.swift */; };
 		A2A6C44522E232EA0055DAA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6C44422E232EA0055DAA1 /* AppDelegate.swift */; };
 		A2A6C44722E232EA0055DAA1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6C44622E232EA0055DAA1 /* ViewController.swift */; };
 		A2A6C44A22E232EA0055DAA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2A6C44822E232EA0055DAA1 /* Main.storyboard */; };
@@ -25,15 +25,17 @@
 		A2A6C46322E266B80055DAA1 /* StoryTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6C46222E266B80055DAA1 /* StoryTree.swift */; };
 		A2A6C46522E268790055DAA1 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6C46422E268790055DAA1 /* StatsViewController.swift */; };
 		A2A6C48B22EA55AE0055DAA1 /* StoryDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6C48A22EA55AE0055DAA1 /* StoryDelegate.swift */; };
+		A2ABC0A023206EA2000A7899 /* ToggleDarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ABC09F23206EA2000A7899 /* ToggleDarkViewController.swift */; };
+		A2ABC0A223206EA9000A7899 /* ChangeFontSizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ABC0A123206EA9000A7899 /* ChangeFontSizeViewController.swift */; };
 		A2DA8E83230B55BA009719C1 /* StoryFiles in Resources */ = {isa = PBXBuildFile; fileRef = A2DA8E82230B55BA009719C1 /* StoryFiles */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A202549023217E5F006F9734 /* NotificationsName+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationsName+Extension.swift"; sourceTree = "<group>"; };
 		A228CD8E230E52E600D8C09C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		A25F091C231994DA003C2D24 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		A28B0EEA2315EA770050FBBA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A28B0EEC2315F63E0050FBBA /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
-		A28B0EEE231621560050FBBA /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		A2A6C44122E232EA0055DAA1 /* MexicanTreasure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MexicanTreasure.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2A6C44422E232EA0055DAA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2A6C44622E232EA0055DAA1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +51,8 @@
 		A2A6C46222E266B80055DAA1 /* StoryTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryTree.swift; sourceTree = "<group>"; };
 		A2A6C46422E268790055DAA1 /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		A2A6C48A22EA55AE0055DAA1 /* StoryDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryDelegate.swift; sourceTree = "<group>"; };
+		A2ABC09F23206EA2000A7899 /* ToggleDarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleDarkViewController.swift; sourceTree = "<group>"; };
+		A2ABC0A123206EA9000A7899 /* ChangeFontSizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeFontSizeViewController.swift; sourceTree = "<group>"; };
 		A2DA8E82230B55BA009719C1 /* StoryFiles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = StoryFiles; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -97,7 +101,8 @@
 				A2A6C44822E232EA0055DAA1 /* Main.storyboard */,
 				A28B0EEA2315EA770050FBBA /* HomeViewController.swift */,
 				A28B0EEC2315F63E0050FBBA /* AboutViewController.swift */,
-				A28B0EEE231621560050FBBA /* SettingsViewController.swift */,
+				A2ABC09F23206EA2000A7899 /* ToggleDarkViewController.swift */,
+				A2ABC0A123206EA9000A7899 /* ChangeFontSizeViewController.swift */,
 				A2A6C45622E233470055DAA1 /* StoryViewController.swift */,
 				A2A6C45822E234CC0055DAA1 /* ChoicesTableViewController.swift */,
 				A2A6C46422E268790055DAA1 /* StatsViewController.swift */,
@@ -107,6 +112,7 @@
 				A2A6C46222E266B80055DAA1 /* StoryTree.swift */,
 				A25F091C231994DA003C2D24 /* SettingsTableViewCell.swift */,
 				A2A6C45A22E246710055DAA1 /* IntrinsicTableView.swift */,
+				A202549023217E5F006F9734 /* NotificationsName+Extension.swift */,
 				A2DA8E82230B55BA009719C1 /* StoryFiles */,
 				A2A6C44B22E232EA0055DAA1 /* Assets.xcassets */,
 				A2A6C44D22E232EA0055DAA1 /* LaunchScreen.storyboard */,
@@ -196,14 +202,16 @@
 				A2A6C45722E233470055DAA1 /* StoryViewController.swift in Sources */,
 				A2A6C44722E232EA0055DAA1 /* ViewController.swift in Sources */,
 				A2A6C46322E266B80055DAA1 /* StoryTree.swift in Sources */,
+				A2ABC0A223206EA9000A7899 /* ChangeFontSizeViewController.swift in Sources */,
 				A2A6C45B22E246710055DAA1 /* IntrinsicTableView.swift in Sources */,
 				A2A6C45F22E262DD0055DAA1 /* StoryTreeNode.swift in Sources */,
 				A28B0EED2315F63E0050FBBA /* AboutViewController.swift in Sources */,
 				A25F091D231994DA003C2D24 /* SettingsTableViewCell.swift in Sources */,
 				A2A6C45D22E24AED0055DAA1 /* Player.swift in Sources */,
 				A28B0EEB2315EA770050FBBA /* HomeViewController.swift in Sources */,
+				A2ABC0A023206EA2000A7899 /* ToggleDarkViewController.swift in Sources */,
 				A2A6C46522E268790055DAA1 /* StatsViewController.swift in Sources */,
-				A28B0EF0231621560050FBBA /* SettingsViewController.swift in Sources */,
+				A202549123217E5F006F9734 /* NotificationsName+Extension.swift in Sources */,
 				A2A6C48B22EA55AE0055DAA1 /* StoryDelegate.swift in Sources */,
 				A2A6C44522E232EA0055DAA1 /* AppDelegate.swift in Sources */,
 			);

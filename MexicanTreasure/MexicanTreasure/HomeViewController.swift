@@ -11,13 +11,13 @@ import UIKit
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
-    private var settingsViewController = SettingsViewController()
     private var settingsTableViewOriginalFrame = CGRect(x: 0, y: 0, width: 0, height: 0)
     private var cancelButtonOriginalFrame = CGRect(x: 0, y: 0, width: 0, height: 0)
     //    @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var settingsTableView: UITableView!
     @IBOutlet weak var cancelButton: UIButton!
     
+    @IBOutlet var menuButtonCollection: [UIButton]!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -30,6 +30,16 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         cancelButton.titleLabel?.font = .boldSystemFont(ofSize: 18)
         settingsTableViewOriginalFrame = settingsTableView.frame
         cancelButtonOriginalFrame = cancelButton.frame
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // Dark Mode or not
+        settingsTableView.reloadData()
+        if UserDefaults.standard.bool(forKey: "darkModeEnabled") {
+            darkModeEnabled()
+        } else {
+            darkModeDisabled()
+        }
     }
     
     @IBAction func restartGameButtonTapped(_ sender: Any) {
@@ -63,6 +73,43 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             })
         }, completion: nil)
     }
+    @objc
+    private func presentToggleDarkModeVC() {
+        performSegue(withIdentifier: "DarkModeSegue", sender: nil)
+    }
+    @objc
+    private func changeTextSizeVC() {
+        performSegue(withIdentifier: "ChangeFontSegue", sender: nil)
+    }
+    
+    private func darkModeEnabled() {
+        settingsTableView.reloadData()
+        for button in menuButtonCollection {
+            button.backgroundColor = .black
+            button.setTitleColor(.white, for: .normal)
+        }
+        settingsTableView.backgroundColor = .black
+        cancelButton.backgroundColor = .black
+        cancelButton.setTitleColor(.white, for: .normal)
+        settingsTableView.tableFooterView?.backgroundColor = .black
+        self.navigationController?.navigationBar.barTintColor = .black
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.tintColor = .white
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+    }
+    
+    private func darkModeDisabled() {
+        for button in menuButtonCollection {
+            button.backgroundColor = .white
+            button.setTitleColor(self.view.tintColor, for: .normal)
+        }
+        settingsTableView.backgroundColor = .white
+        cancelButton.backgroundColor = .white
+        cancelButton.setTitleColor(self.view.tintColor, for: .normal)
+        settingsTableView.tableFooterView?.backgroundColor = .white
+    }
+    
+    //MARK: TableView Delegate and Data Source Methods
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -70,13 +117,18 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         return 3
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let isDarkModeEnabled = UserDefaults.standard.bool(forKey: "darkModeEnabled")
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! SettingsTableViewCell
         
         switch indexPath.row {
         case 0:
-            cell.formatSettingsLabel()
+            cell.formatSettingsLabel(isDarkModeEnabled: isDarkModeEnabled)
+            let settingsLabel = cell.contentView.subviews[0] as! UILabel
+            
         default:
-            cell.formatButton(index: indexPath.row)
+            cell.formatButton(index: indexPath.row, isDarkModeEnabled: isDarkModeEnabled)
+            let settingsButton = cell.contentView.subviews[0] as! UIButton
+            settingsButton.addTarget(self, action: #selector(presentToggleDarkModeVC), for: .touchUpInside)
         }
         cell.contentMode = .center
         return cell
