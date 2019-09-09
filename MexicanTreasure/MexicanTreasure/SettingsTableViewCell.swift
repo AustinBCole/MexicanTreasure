@@ -27,6 +27,7 @@ class SettingsTableViewCell: UITableViewCell {
             settingsLabel.backgroundColor = .white
             self.contentView.backgroundColor = .white
         }
+        settingsLabel.font = UIFont.systemFont(ofSize: CGFloat(UserDefaults.standard.double(forKey: "fontSize")) - 2)
     }
     internal func formatButton(index: Int, isDarkModeEnabled: Bool) {
         let button = UIButton(type: .system)
@@ -49,5 +50,6 @@ class SettingsTableViewCell: UITableViewCell {
             button.setTitleColor(self.tintColor, for: .normal)
             self.contentView.backgroundColor = .white
         }
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: CGFloat(UserDefaults.standard.double(forKey: "fontSize")))
     }
 }

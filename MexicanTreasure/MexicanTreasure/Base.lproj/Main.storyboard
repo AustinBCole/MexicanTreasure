@@ -203,13 +203,40 @@
                     <view key="view" contentMode="scaleToFill" id="cNb-1Q-9ub">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7yb-Xo-slr">
+                                <rect key="frame" x="78" y="108" width="258.5" height="57.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Increment or decrement font size:" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VSg-yS-SFI">
+                                        <rect key="frame" x="0.0" y="0.0" width="258.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="chm-FY-jlQ">
+                                        <rect key="frame" x="82" y="28.5" width="94" height="29"/>
+                                        <connections>
+                                            <action selector="fontStepperWasTapped:" destination="fsm-RM-2jE" eventType="valueChanged" id="W2r-T2-OG7"/>
+                                        </connections>
+                                    </stepper>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="7yb-Xo-slr" firstAttribute="top" secondItem="lZ4-cg-vSg" secondAttribute="top" constant="20" id="F5f-vt-m2R"/>
+                            <constraint firstItem="7yb-Xo-slr" firstAttribute="centerX" secondItem="cNb-1Q-9ub" secondAttribute="centerX" id="gZZ-Zq-XV9"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="lZ4-cg-vSg"/>
                     </view>
+                    <connections>
+                        <outlet property="fontStepper" destination="chm-FY-jlQ" id="1Rd-YC-nek"/>
+                        <outlet property="stepperLabel" destination="VSg-yS-SFI" id="0YE-GB-1ae"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8TX-Mv-vB1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="618" y="716"/>
+            <point key="canvasLocation" x="617.39130434782612" y="715.84821428571422"/>
         </scene>
         <!--Change Text Color-->
         <scene sceneID="8yN-y4-6D9">

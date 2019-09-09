@@ -30,6 +30,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         cancelButton.titleLabel?.font = .boldSystemFont(ofSize: 18)
         settingsTableViewOriginalFrame = settingsTableView.frame
         cancelButtonOriginalFrame = cancelButton.frame
+        
+        UserDefaults.standard.set(15, forKey: "fontSize")
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -40,6 +43,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         } else {
             darkModeDisabled()
         }
+        setFontSize()
     }
     
     @IBAction func restartGameButtonTapped(_ sender: Any) {
@@ -79,7 +83,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     @objc
     private func changeTextSizeVC() {
-        performSegue(withIdentifier: "ChangeFontSegue", sender: nil)
+        performSegue(withIdentifier: "FontSizeSegue", sender: nil)
     }
     
     private func darkModeEnabled() {
@@ -108,6 +112,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         cancelButton.setTitleColor(self.view.tintColor, for: .normal)
         settingsTableView.tableFooterView?.backgroundColor = .white
     }
+    private func setFontSize() {
+        for button in menuButtonCollection {
+            button.titleLabel?.font = UIFont.systemFont(ofSize: CGFloat(UserDefaults.standard.double(forKey: "fontSize")))
+        }
+        settingsTableView.reloadData()
+    }
     
     //MARK: TableView Delegate and Data Source Methods
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -128,8 +138,14 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         default:
             cell.formatButton(index: indexPath.row, isDarkModeEnabled: isDarkModeEnabled)
             let settingsButton = cell.contentView.subviews[0] as! UIButton
+            if indexPath.row == 1 {
             settingsButton.addTarget(self, action: #selector(presentToggleDarkModeVC), for: .touchUpInside)
+                
+            } else {
+                settingsButton.addTarget(self, action: #selector(changeTextSizeVC), for: .touchUpInside)
+            }
         }
+        
         cell.contentMode = .center
         return cell
     }
