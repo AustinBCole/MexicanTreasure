@@ -12,6 +12,7 @@ class ChoicesTableViewController: UITableViewController {
     
     private let storyTree: StoryTree = StoryTree.shared
     private var cellArray: [UITableViewCell] = []
+    private var radioButtonDictionary: [String: String] = [:]
 
      
     private var choices: [StoryTreeNode] = [] {
@@ -78,17 +79,17 @@ class ChoicesTableViewController: UITableViewController {
             darkModeDisabled()
         }
         choiceCell.textLabel?.font = UIFont.systemFont(ofSize: CGFloat(UserDefaults.standard.double(forKey: "fontSize")))
-        choiceCell.imageView?.image = UIImage(named: "Dark Radio Unselected Resized")
+        choiceCell.imageView?.image = UIImage(named: radioButtonDictionary["unselected"]!)
         choiceCell.selectionStyle = .none
         cellArray.append(choiceCell)
         return choiceCell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        storyTree.advanceToNextScene(index: indexPath.row)
-        tableView.cellForRow(at: indexPath)?.imageView?.image = UIImage(named: "Dark Radio Selected Resized")
+        tableView.cellForRow(at: indexPath)?.imageView?.image = UIImage(named: radioButtonDictionary["selected"]!)
         for cell in cellArray {
             if cell != tableView.cellForRow(at: indexPath) {
-                cell.imageView?.image = UIImage(named:"Dark Radio Unselected Resized")
+                cell.imageView?.image = UIImage(named: radioButtonDictionary["unselected"]!)
             }
         }
         
@@ -98,11 +99,15 @@ class ChoicesTableViewController: UITableViewController {
     private func darkModeEnabled() {
         self.tableView.backgroundColor = .black
         self.view.backgroundColor = .black
+        radioButtonDictionary["selected"] = "Dark Radio Selected Resized"
+        radioButtonDictionary["unselected"] = "Dark Radio Unselected Resized"
     }
     
     private func darkModeDisabled() {
         self.tableView.backgroundColor = .white
         self.view.backgroundColor = .white
+        radioButtonDictionary["selected"] = "Radio Selected Resized"
+        radioButtonDictionary["unselected"] = "Radio Unselected Resized"
     }
     
 }
