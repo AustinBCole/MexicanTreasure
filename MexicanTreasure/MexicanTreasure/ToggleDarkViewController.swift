@@ -33,9 +33,9 @@ class ToggleDarkViewController: UIViewController {
         self.toggleDarkModeLabel.textColor = .white
         self.view.backgroundColor = .black
         self.navigationController?.navigationBar.barTintColor = .black
-        self.navigationController?.navigationBar.barStyle = .black
-        self.navigationController?.navigationBar.tintColor = .black
-        self.navigationController?.navigationBar.backgroundColor = .black
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.tintColor = .white
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
 
     }
     
@@ -43,9 +43,8 @@ class ToggleDarkViewController: UIViewController {
         self.toggleDarkModeLabel.textColor = .black
         self.view.backgroundColor = .white
         self.navigationController?.navigationBar.barTintColor = UINavigationBar().barTintColor
-        self.navigationController?.navigationBar.barStyle = UIBarStyle.default
         self.navigationController?.navigationBar.tintColor = UINavigationBar().tintColor
-        self.navigationController?.navigationBar.backgroundColor = UINavigationBar().backgroundColor
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
         
     }
     
