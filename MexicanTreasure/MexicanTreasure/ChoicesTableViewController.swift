@@ -11,6 +11,7 @@ import UIKit
 class ChoicesTableViewController: UITableViewController {
     
     private let storyTree: StoryTree = StoryTree.shared
+    private var cellArray: [UITableViewCell] = []
 
      
     private var choices: [StoryTreeNode] = [] {
@@ -26,7 +27,6 @@ class ChoicesTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -79,10 +79,19 @@ class ChoicesTableViewController: UITableViewController {
         }
         choiceCell.textLabel?.font = UIFont.systemFont(ofSize: CGFloat(UserDefaults.standard.double(forKey: "fontSize")))
         choiceCell.imageView?.image = UIImage(named: "Dark Radio Unselected Resized")
+        choiceCell.selectionStyle = .none
+        cellArray.append(choiceCell)
         return choiceCell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        storyTree.advanceToNextScene(index: indexPath.row)
+//        storyTree.advanceToNextScene(index: indexPath.row)
+        tableView.cellForRow(at: indexPath)?.imageView?.image = UIImage(named: "Dark Radio Selected Resized")
+        for cell in cellArray {
+            if cell != tableView.cellForRow(at: indexPath) {
+                cell.imageView?.image = UIImage(named:"Dark Radio Unselected Resized")
+            }
+        }
+        
         
     }
     
