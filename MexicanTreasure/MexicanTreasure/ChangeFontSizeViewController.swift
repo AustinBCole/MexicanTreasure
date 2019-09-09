@@ -9,30 +9,41 @@
 import UIKit
 
 class ChangeFontSizeViewController: UIViewController {
-
+    @IBOutlet weak var stepperLabel: UILabel!
+    @IBOutlet weak var fontStepper: UIStepper!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        fontStepper.minimumValue = 12
+        fontStepper.maximumValue = 30
+        fontStepper.autorepeat = false
+        fontStepper.stepValue = 1
+        fontStepper.value = 15
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         // Dark Mode or not
         if UserDefaults.standard.bool(forKey: "darkModeEnabled") {
             darkModeEnabled()
-        } else {
-            darkModeDisabled()
         }
+        
     }
+    @IBAction func fontStepperWasTapped(_ sender: Any) {
+        stepperLabel.text = "The current number is \(fontStepper.value)"
+        UserDefaults.standard.set(fontStepper.value, forKey: "fontSize")
+        stepperLabel.font = UIFont.systemFont(ofSize: CGFloat(fontStepper.value))
+
+    }
+    
     
     private func darkModeEnabled() {
         self.view.backgroundColor = .black
+        stepperLabel.textColor = .white
+        fontStepper.layer.backgroundColor = UIColor.white.cgColor
+        
     }
-    
-    private func darkModeDisabled() {
-        // Write your non-dark mode code here
-    }
-
     /*
     // MARK: - Navigation
 

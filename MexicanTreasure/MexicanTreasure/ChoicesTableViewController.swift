@@ -77,6 +77,7 @@ class ChoicesTableViewController: UITableViewController {
         } else {
             darkModeDisabled()
         }
+        choiceCell.textLabel?.font = UIFont.systemFont(ofSize: CGFloat(UserDefaults.standard.double(forKey: "fontSize")))
         return choiceCell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

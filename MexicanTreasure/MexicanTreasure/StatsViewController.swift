@@ -33,6 +33,7 @@ class StatsViewController: UIViewController {
         } else {
             darkModeDisabled()
         }
+        setFontSize()
     }
     
     //MARK: Private Methods
@@ -56,6 +57,12 @@ class StatsViewController: UIViewController {
         self.view.backgroundColor = .white
         for label in statsLabelsCollection {
             label.textColor = .black
+        }
+    }
+    
+    private func setFontSize() {
+        for label in statsLabelsCollection {
+            label.font = UIFont.systemFont(ofSize: CGFloat(UserDefaults.standard.double(forKey: "fontSize")))
         }
     }
     

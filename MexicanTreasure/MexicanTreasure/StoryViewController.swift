@@ -47,6 +47,7 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
         } else {
             darkModeDisabled()
         }
+        changeFontSize()
     }
     @objc
     private func nextButtonTapped() {
@@ -107,6 +108,11 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
     private func updateChoicesTableView(scene: StoryTreeNode) {
         let choices = scene.getNextScenes()
         choicesTableViewController.setChoices(choices: choices)
+    }
+    
+    private func changeFontSize() {
+        storyTextLabel.font = UIFont.systemFont(ofSize: CGFloat(UserDefaults.standard.double(forKey: "fontSize")))
+        nextButton.titleLabel?.font = UIFont.systemFont(ofSize: CGFloat(UserDefaults.standard.double(forKey: "fontSize")))
     }
     
     private func createViews() {

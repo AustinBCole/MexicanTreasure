@@ -24,6 +24,7 @@ class ToggleDarkViewController: UIViewController {
             darkModeEnabled()
             darkModeSwitch.isOn = true
         }
+        toggleDarkModeLabel.font = UIFont.systemFont(ofSize: CGFloat(UserDefaults.standard.double(forKey: "fontSize")))
     }
     @IBAction func darkModeSwitchToggled(_ sender: Any) {
         if darkModeSwitch.isOn {
