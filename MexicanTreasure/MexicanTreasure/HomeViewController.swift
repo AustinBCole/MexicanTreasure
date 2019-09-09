@@ -133,7 +133,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         switch indexPath.row {
         case 0:
             cell.formatSettingsLabel(isDarkModeEnabled: isDarkModeEnabled)
-            let settingsLabel = cell.contentView.subviews[0] as! UILabel
             
         default:
             cell.formatButton(index: indexPath.row, isDarkModeEnabled: isDarkModeEnabled)
