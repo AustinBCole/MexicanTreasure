@@ -34,6 +34,7 @@ class ChangeFontSizeViewController: UIViewController {
         stepperLabel.text = "The current number is \(fontStepper.value)"
         UserDefaults.standard.set(fontStepper.value, forKey: "fontSize")
         stepperLabel.font = UIFont.systemFont(ofSize: CGFloat(fontStepper.value))
+
     }
     
     
