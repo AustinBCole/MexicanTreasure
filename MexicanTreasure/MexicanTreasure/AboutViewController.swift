@@ -9,7 +9,9 @@
 import UIKit
 
 class AboutViewController: UIViewController {
-
+    @IBOutlet weak var writtenByLabel: UILabel!
+    @IBOutlet weak var developedByLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,10 +29,14 @@ class AboutViewController: UIViewController {
     
     private func darkModeEnabled() {
         self.view.backgroundColor = .black
+        writtenByLabel.textColor = .white
+        developedByLabel.textColor = .white
     }
     
     private func darkModeDisabled() {
         self.view.backgroundColor = .white
+        writtenByLabel.textColor = .black
+        developedByLabel.textColor = .black
     }
     
 

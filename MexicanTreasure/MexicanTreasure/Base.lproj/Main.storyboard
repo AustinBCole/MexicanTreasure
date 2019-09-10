@@ -434,14 +434,38 @@
                     <view key="view" contentMode="scaleToFill" id="nns-js-gnh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Written by: Austin Cole" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lWW-dN-zPv">
+                                <rect key="frame" x="20" y="108" width="175" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Developed by: Austin Cole" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PeN-ve-fdS">
+                                <rect key="frame" x="20" y="148.5" width="201" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="lWW-dN-zPv" firstAttribute="leading" secondItem="v3K-Ky-wf2" secondAttribute="leading" constant="20" id="Eb5-db-fjJ"/>
+                            <constraint firstItem="PeN-ve-fdS" firstAttribute="leading" secondItem="v3K-Ky-wf2" secondAttribute="leading" constant="20" id="I8B-9d-zId"/>
+                            <constraint firstItem="lWW-dN-zPv" firstAttribute="top" secondItem="v3K-Ky-wf2" secondAttribute="top" constant="20" id="Upi-xs-dRg"/>
+                            <constraint firstItem="PeN-ve-fdS" firstAttribute="top" secondItem="lWW-dN-zPv" secondAttribute="bottom" constant="20" id="qe0-x6-Udw"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="v3K-Ky-wf2"/>
                     </view>
                     <navigationItem key="navigationItem" title="About" id="cgv-mJ-mKv"/>
+                    <connections>
+                        <outlet property="developedByLabel" destination="PeN-ve-fdS" id="OJo-ax-iOM"/>
+                        <outlet property="writtenByLabel" destination="lWW-dN-zPv" id="Orl-BN-Cdd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DAv-GM-HJZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1183" y="-664"/>
+            <point key="canvasLocation" x="1182.608695652174" y="-664.28571428571422"/>
         </scene>
     </scenes>
 </document>
