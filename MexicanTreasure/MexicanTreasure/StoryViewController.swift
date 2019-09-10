@@ -276,7 +276,7 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
     
     private func formatNextButton() {
         nextButton.setTitle("Next", for: .normal)
-        nextButton.setTitleColor(.blue, for: .normal)
+        nextButton.layer.cornerRadius = 10
         nextButton.translatesAutoresizingMaskIntoConstraints = false
         storyContentView.addSubview(nextButton)
         
@@ -294,10 +294,18 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
                                                    attribute: .centerX,
                                                    multiplier: 1.0,
                                                    constant: 0)
-        NSLayoutConstraint.activate([topConstraint, centerXConstraint])
+        let widthConstraint = NSLayoutConstraint(item: nextButton,
+                                                 attribute: .width,
+                                                 relatedBy: .equal,
+                                                 toItem: nil,
+                                                 attribute: .width,
+                                                 multiplier: 1.0,
+                                                 constant: 100)
+        NSLayoutConstraint.activate([topConstraint, centerXConstraint, widthConstraint])
 
         
     }
+    
     //MARK: UIScrollViewDelegate Methods
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         scrollView.contentOffset.x = 0.0
@@ -314,8 +322,8 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
     
     private func darkModeDisabled() {
         self.view.backgroundColor = .white
-        nextButton.backgroundColor = .white
-        nextButton.setTitleColor(self.view.tintColor, for: .normal)
+        nextButton.setTitleColor(.black, for: .normal)
+        nextButton.backgroundColor = UIColor(white: 0.9, alpha: 1)
         storyTextLabel.textColor = .black
         storyTextLabel.backgroundColor = .white
         storyScrollView.backgroundColor = .white
