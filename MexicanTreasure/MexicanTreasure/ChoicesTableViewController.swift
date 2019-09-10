@@ -53,6 +53,9 @@ class ChoicesTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        if choices.count == 0 {
+            return 0
+        }
         return choices.count + 1
     }
     
