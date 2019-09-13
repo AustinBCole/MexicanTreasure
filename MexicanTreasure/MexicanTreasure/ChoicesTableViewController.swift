@@ -158,6 +158,7 @@ class ChoicesTableViewController: UITableViewController {
     private func darkModeEnabled() {
         self.tableView.backgroundColor = .black
         self.view.backgroundColor = .black
+        nextButton.backgroundColor = UIColor(white: 0.9, alpha: 1)
         radioButtonDictionary["selected"] = "Dark Radio Selected Resized"
         radioButtonDictionary["unselected"] = "Dark Radio Unselected Resized"
     }
@@ -165,6 +166,7 @@ class ChoicesTableViewController: UITableViewController {
     private func darkModeDisabled() {
         self.tableView.backgroundColor = .white
         self.view.backgroundColor = .white
+        nextButton.backgroundColor = UIColor(white: 0.5, alpha: 1)
         radioButtonDictionary["selected"] = "Radio Selected Resized"
         radioButtonDictionary["unselected"] = "Radio Unselected Resized"
     }

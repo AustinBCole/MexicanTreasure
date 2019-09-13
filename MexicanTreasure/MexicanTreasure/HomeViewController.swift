@@ -61,9 +61,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         UIView.animateKeyframes(withDuration: animationDuration, delay: 0.0, options: .calculationModeLinear, animations: {
             UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1/3, animations: {
                 self.settingsTableView.frame = CGRect(x: self.view.frame.midX - 125, y: self.view.frame.midY + self.view.frame.height * 0.2, width: 250, height: 140)
-                
+
                 self.cancelButton.frame = CGRect(x: self.view.frame.midX - 125, y: self.settingsTableView.frame.maxY + 20, width: 250, height: 50)
-              
             })
         }, completion: nil)
     }

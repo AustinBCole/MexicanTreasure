@@ -278,6 +278,7 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
         nextButton.setTitle("Next", for: .normal)
         nextButton.layer.cornerRadius = 10
         nextButton.translatesAutoresizingMaskIntoConstraints = false
+        nextButton.titleLabel?.font = UIFont.systemFont(ofSize: 18)
         storyContentView.addSubview(nextButton)
         
         let topConstraint = NSLayoutConstraint(item: nextButton,
@@ -301,7 +302,14 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
                                                  attribute: .width,
                                                  multiplier: 1.0,
                                                  constant: 100)
-        NSLayoutConstraint.activate([topConstraint, centerXConstraint, widthConstraint])
+        let heightConstraint = NSLayoutConstraint(item: nextButton,
+                                                  attribute: .height,
+                                                  relatedBy: .equal,
+                                                  toItem: nil,
+                                                  attribute: .height,
+                                                  multiplier: 1.0,
+                                                  constant: 34)
+        NSLayoutConstraint.activate([topConstraint, centerXConstraint, widthConstraint, heightConstraint])
 
         
     }
@@ -313,7 +321,7 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
     
     private func darkModeEnabled() {
         self.view.backgroundColor = .black
-        nextButton.backgroundColor = .black
+        nextButton.backgroundColor = UIColor(white: 0.5, alpha: 1)
         nextButton.setTitleColor(.white, for: .normal)
         storyTextLabel.textColor = .white
         storyTextLabel.backgroundColor = .black
