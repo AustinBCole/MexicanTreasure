@@ -68,9 +68,10 @@ Write an algorithm that:
 
 # **Second Iteration**
 1. Implement multiplayer functionality
-  - MultiPeerConnectivity
-2. Some kind of indicator to notify player that another player is currently choosing, and that the app hasn't crashed/stopped working/etc
-3. Players can save multiplayer sessions and then pick them back up later.
-4. Player receives notification when using a stat to perform a certain action
-  - example: "Agility Check: Succeeded"
+  - Player can connect to other players using internet connection
+  - Player can start games, join games or pick up already existing games
+  - Player can play a CYOA game with one other player
+2. Features for Future Iterations
+  - Player can connect to other player without internet connection
+  - All functionality is also on FE
 
